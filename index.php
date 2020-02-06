@@ -23,8 +23,8 @@
     <div class="row" id="wrapper">
         <div class="col s8 teal" id="col-left">
         </div>
-        <div class="col s4">
-            <form class="col s10 offset-s1" action="src/php/login/login.php" method=" post">
+        <div class="col s4 blue-grey darken-2" id="col-right">
+            <form class="col s10 offset-s1" action="src/php/login.php" method="POST">
                 <div class="input-field col s12">
                     <input placeholder="Enter Username" id="user_name" name="user_name" type="text" class="validate" required>
                     <label for="user_name">username</label>

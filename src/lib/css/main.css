@@ -6,6 +6,10 @@ form {
     height: 100vh;
 }
 
+#col-right {
+    height: 100vh;
+}
+
 #submit {
     margin-top: 5%;
 }
