@@ -4,7 +4,6 @@ require_once '../db/conn.php';
 if (isset($_POST['action'])) {
     $username = mysqli_real_escape_string($link, $_POST['user_name']);
     $password = mysqli_real_escape_string($link, $_POST['password']);
-    // $password_hash  = password_hash($password, PASSWORD_BCRYPT);
     $query = 'SELECT `user_type`,`user_name`,`user_password` FROM `user` WHERE `user_name` = ? LIMIT 1';
 
     $stmt = mysqli_stmt_init($link);
@@ -22,6 +21,15 @@ if (isset($_POST['action'])) {
             // echo $type, $name, $_password;
             if (password_verify($password, $_password)) {
                 if ($type != null) {
+                    if (isset($_POST['check'])) {
+                        session_start();
+                        $_SESSION['user'] = $username;
+                        $_SESSION['type'] = $type;
+                        if ($_SESSION['user'] != null) {
+                            echo 'welcome' . $_SESSION['user'];
+                        }
+                        setcookie('username', $username, time() + 3600);
+                    };
                     switch ($type) {
                         case 0:
                             echo "redirect overal_user";
@@ -31,12 +39,13 @@ if (isset($_POST['action'])) {
                             break;
                         case 2:
                             echo "redirect afdeling 2";
+                            header('location:home/home.php');
                             break;
                     }
                 }
             } else {
                 echo 'passwords do not match!';
-                header('location:../../index.php');
+                // header('location:../../index.php');
             }
         } else {
             echo 'user does not exist!';
@@ -44,3 +53,4 @@ if (isset($_POST['action'])) {
     };
 }
 //TODO:implement error array to display to user;
+//TODO:implement sessions & cookies 
