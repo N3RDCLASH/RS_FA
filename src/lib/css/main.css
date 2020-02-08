@@ -17,3 +17,7 @@
 #wrapper {
     margin-bottom: 0 !important;
 }
+
+table.highlight>tbody>tr:hover {
+    background-color: rgba(255, 181, 145, 0.5);
+}
