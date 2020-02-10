@@ -1,1 +1,7 @@
 M.AutoInit();
+
+$(document).ready(
+    function () {
+        $('.datepicker').datepicker({ format: 'yyyy-mm-dd', container: 'body' });
+    }
+);

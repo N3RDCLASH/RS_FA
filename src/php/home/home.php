@@ -1,6 +1,9 @@
 <?php
 require_once '../session.php';
+require '../checkSession.php';
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,8 +14,8 @@ require_once '../session.php';
     <title>Home</title>
 
     <!-- local resources -->
-    <link type="text/css" rel="stylesheet" href="../../lib/css/main.css" media="screen,projection" />
     <link type="text/css" rel="stylesheet" href="../../lib/materialize/css/materialize.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="../../lib/css/main.css" media="screen,projection" />
 
     <!-- external libraries -->
     <!--Import Google Icon Font-->
@@ -27,26 +30,29 @@ require_once '../session.php';
         <!-- <li class="divider"></li> -->
         <li><a href="#!">Log Out</a></li>
     </ul>
-    <nav class="col s8 offset-s4">
-        <div class="nav-wrapper teal">
+    <div class="navbar-fixed">
 
-            <a href="#" class="brand-logo">Home</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <!-- <li><a href="collapsible.html">JavaScript</a></li> -->
-                <li>
-                    <form>
-                        <div class="input-field">
-                            <input id="search" class="white-text" type="search" required>
-                            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                            <i class="material-icons">close</i>
-                        </div>
-                    </form>
-                </li>
-                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Account<i class="material-icons right">arrow_drop_down</i></a></li>
+        <nav class="col s8 offset-s4">
+            <div class="nav-wrapper teal">
 
-            </ul>
-        </div>
-    </nav>
+                <a href="#" class="brand-logo center">Dashboard</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <!-- <li><a href="collapsible.html">JavaScript</a></li> -->
+                    <li>
+                        <form>
+                            <div class="input-field">
+                                <input id="search" class="white-text" type="search" required>
+                                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                                <i class="material-icons">close</i>
+                            </div>
+                        </form>
+                    </li>
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Account<i class="material-icons right">arrow_drop_down</i></a></li>
+
+                </ul>
+            </div>
+        </nav>
+    </div>
     <ul id="slide-out" class="sidenav sidenav-fixed blue-grey darken-4 white-text">
         <li>
             <div class="user-view">
@@ -101,35 +107,71 @@ require_once '../session.php';
             </table>
         </div>
     </div>
-    <div class="fixed-action-btn">
-        <a class="btn-floating btn-large waves-effect waves-light blue-grey darken-4 modal-trigger" href="#modal1"><i class="material-icons">add</i></a>
-    </div>
-    <form>
-        <div id="modal1" class="modal col s6 offset-s3 modal">
-            <!-- <div class="modal-content"> -->
-            <div class="row">
-                <div class="input-field col s10 offset-s1">
-                    <input placeholder="naam" id="naam" name="naam" type="text" class="validate white-text">
-                    <label for="naam">Naam</label>
+    <div class="row">
+        <div id="add_form" class="col s9 offset-s3 ">
+            <form autocomplete="false" class="z-depth-3" id='project'>
+                <!-- <div class=" modal-content"> -->
+                <h5 class="center white-text">Project Informatie</h5>
+                <div class="row">
+                    <div class="input-field col s10 offset-s1">
+                        <input placeholder="naam" id="naam" name="naam" type="text" class="validate white-text">
+                        <label for="naam">Naam</label>
+                    </div>
+                </div> 
+                <div class="row">
+                    <div class="input-field col s10 offset-s1">
+                        <textarea id="omschrijving" name="omschrijving" id="textarea1" cols="30" rows="10" class="materialize-textarea"></textarea>
+                        <label for="omscrijving">Omschrijving</label>
+                    </div>
                 </div>
                 <div class="input-field col s10 offset-s1">
-                    <input id="begin_datum" name="begin_datum" type="text" class="validate white-text datepicker ">
-                    <label for="begin_datum">Begin Datum</label>
+                    <select id="type">
+                        <option value="" disabled selected>Kies het type project.</option>
+                        <option class="white-text" value="1">Option 1</option>
+                        <option class="white-text" value="2">Option 2</option>
+                        <option class="white-text" value="3">Option 3</option>
+                    </select>
+                    <label>Materialize Select</label>
                 </div>
-                <div class="input-field col s10 offset-s1">
-                    <input id="eind_datum" name="eind_datum" type="text" class="validate white-text datepicker ">
-                    <label for="eind_datum"> Eind Datum</label>
+                <div class="row">
+                    <div class="input-field col s10 offset-s1">
+                        <input id="begin_datum" name="begin_datum" type="text" class="validate white-text datepicker ">
+                        <label for="begin_datum">Begin Datum</label>
+                    </div>
                 </div>
-            </div>
-            <!-- </div> -->
-            <div class="modal-footer">
-                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-            </div>
+                <div class="row">
+                    <div class="input-field col s10 offset-s1">
+                        <input id="eind_datum" name="eind_datum" type="text" class="validate white-text datepicker ">
+                        <label for="eind_datum"> Eind Datum</label>
+                    </div>
+                </div>
+                <h5 class="center white-text">Deelnemers</h5>
+                <div class="row">
+                    <div class="col s10 offset-s1">
+                        <div class="chips chips-autocomplete" name="contacts"></div>
+                        <!-- <label for="contacts"> Contacts</label> -->
+
+                    </div>
+                </div>
+
+
+                <div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                </div>
+            </form>
         </div>
-    </form>
+    </div>
+    <div class="fixed-action-btn">
+        <a onclick='' class="btn-floating btn-large waves-effect waves-light blue-grey darken-4 modal-trigger" href="#modal1"><i class="material-icons">add</i></a>
+    </div>
+    <!-- </div> -->
     <!--JavaScript at end of body for optimized loading-->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../../lib/materialize/js/materialize.min.js"></script>
+    <script type="text/javascript" src="../../lib/materialize/js/materialize.js"></script>
     <script type="text/javascript" src="../../lib/js/main.js"></script>
+
 </body>
 
 </html>

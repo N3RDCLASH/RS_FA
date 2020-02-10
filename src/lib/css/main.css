@@ -10,6 +10,10 @@
     height: 100vh;
 }
 
+#project {
+    padding-top: 10%;
+}
+
 #submit {
     margin-top: 5%;
 }
@@ -20,4 +24,8 @@
 
 table.highlight>tbody>tr:hover {
     background-color: rgba(255, 181, 145, 0.5);
+}
+
+.background>img {
+    filter: hue-rotate(150deg);
 }
