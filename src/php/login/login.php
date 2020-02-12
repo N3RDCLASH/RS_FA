@@ -23,9 +23,9 @@
 
 <body>
     <div class="row" id="wrapper">
-        <div class="col s8 teal" id="col-left">
+        <div class="col s12 m8 teal" id="col-left">
         </div>
-        <div class="col s4 blue-grey darken-2" id="col-right">
+        <div class="col s12  m4 blue-grey darken-2" id="col-right">
             <form class="col s10 offset-s1" id="form" action="../login.php" method="POST">
                 <div class="input-field col s12">
                     <input placeholder="Enter Username" id="user_name" name="user_name" type="text" class="validate white-text" required>

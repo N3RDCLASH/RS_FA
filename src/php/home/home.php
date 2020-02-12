@@ -1,7 +1,6 @@
 <?php
 require_once '../session.php';
 require '../checkSession.php';
-
 ?>
 
 <!DOCTYPE html>
@@ -23,12 +22,14 @@ require '../checkSession.php';
     <!--Import materialize.css-->
 </head>
 
-<body class="blue-grey darken-2">
+<body class="-2">
     <ul id="dropdown1" class="dropdown-content">
         <!-- <li><a href="#!">one</a></li> -->
         <!-- <li><a href="#!">two</a></li> -->
         <!-- <li class="divider"></li> -->
-        <li><a href="#!">Log Out</a></li>
+        <li>
+            <a href="../logout.php">Log Out</a>
+        </li>
     </ul>
     <div class="navbar-fixed">
 
@@ -41,7 +42,7 @@ require '../checkSession.php';
                     <li>
                         <form>
                             <div class="input-field">
-                                <input id="search" class="white-text" type="search" required>
+                                <input id="search" class="" type="search" required>
                                 <label class="label-icon" for="search"><i class="material-icons">search</i></label>
                                 <i class="material-icons">close</i>
                             </div>
@@ -53,25 +54,25 @@ require '../checkSession.php';
             </div>
         </nav>
     </div>
-    <ul id="slide-out" class="sidenav sidenav-fixed blue-grey darken-4 white-text">
+    <ul id="slide-out" class="sidenav sidenav-fixed -4 ">
         <li>
             <div class="user-view">
                 <div class="background">
                     <img src="../../lib/images/office.jpg">
                 </div>
-                <a href="#user"><img class="circle" src="../../lib/images/yuna.jpg"></a>
+                <a href="#user"><img class="white-text circle" src="../../lib/images/yuna.jpg"></a>
                 <a href="#name"><span class="white-text name">John Doe</span></a>
                 <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
             </div>
         </li>
-        <li><a href="#!" class="white-text">First Sidebar Link</a></li>
-        <li><a href="#!" class="white-text">Second Sidebar Link</a></li>
+        <li><a href="#!" class="">First Sidebar Link</a></li>
+        <li><a href="#!" class="">Second Sidebar Link</a></li>
     </ul>
     <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     <div class="row ">
-        <div class="col s9 offset-s3">
-            <table class="highlight responsive-table z-depth-4 white-text">
-                <thead class="blue-grey darken-4">
+        <div class="col  s12 m9 offset-m3">
+            <table id="projects_table" class="highlight responsive-table z-depth-3 ">
+                <thead class="-3">
                     <tr>
                         <th>Naam</th>
                         <th>Omschrijving</th>
@@ -83,7 +84,7 @@ require '../checkSession.php';
 
                 <tbody>
                     <tr>
-                        <td>Alvin</td>
+                        <td>Test</td>
                         <td>Eclair</td>
                         <td>$0.87</td>
                         <td>Eclair</td>
@@ -108,66 +109,86 @@ require '../checkSession.php';
         </div>
     </div>
     <div class="row">
-        <div id="add_form" class="col s9 offset-s3 ">
-            <form autocomplete="false" class="z-depth-3" id='project'>
-                <!-- <div class=" modal-content"> -->
-                <h5 class="center white-text">Project Informatie</h5>
-                <div class="row">
-                    <div class="input-field col s10 offset-s1">
-                        <input placeholder="naam" id="naam" name="naam" type="text" class="validate white-text">
-                        <label for="naam">Naam</label>
-                    </div>
-                </div> 
-                <div class="row">
-                    <div class="input-field col s10 offset-s1">
-                        <textarea id="omschrijving" name="omschrijving" id="textarea1" cols="30" rows="10" class="materialize-textarea"></textarea>
-                        <label for="omscrijving">Omschrijving</label>
-                    </div>
-                </div>
-                <div class="input-field col s10 offset-s1">
-                    <select id="type">
-                        <option value="" disabled selected>Kies het type project.</option>
-                        <option class="white-text" value="1">Option 1</option>
-                        <option class="white-text" value="2">Option 2</option>
-                        <option class="white-text" value="3">Option 3</option>
-                    </select>
-                    <label>Materialize Select</label>
-                </div>
-                <div class="row">
-                    <div class="input-field col s10 offset-s1">
-                        <input id="begin_datum" name="begin_datum" type="text" class="validate white-text datepicker ">
-                        <label for="begin_datum">Begin Datum</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s10 offset-s1">
-                        <input id="eind_datum" name="eind_datum" type="text" class="validate white-text datepicker ">
-                        <label for="eind_datum"> Eind Datum</label>
-                    </div>
-                </div>
-                <h5 class="center white-text">Deelnemers</h5>
-                <div class="row">
-                    <div class="col s10 offset-s1">
-                        <div class="chips chips-autocomplete" name="contacts"></div>
-                        <!-- <label for="contacts"> Contacts</label> -->
+        <div id="add_form" class="col m9 s12 offset-m3 white z-depth-3 ">
 
+            <h5 class="center ">Project Informatie</h5>
+            <div class="row">
+                <div class="input-field col s8 offset-s2">
+                    <input placeholder="naam" id="naam" name="naam" type="text" class="validate ">
+                    <label for="naam">Naam</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s8 offset-s2">
+                    <textarea id="omschrijving" name="omschrijving" id="textarea1" cols="30" rows="10" class="materialize-textarea"></textarea>
+                    <label for="omscrijving">Omschrijving</label>
+                </div>
+            </div>
+            <div class="input-field col s8 offset-s2">
+                <select id="type">
+                    <option value="" disabled selected>Kies het type project.</option>
+                    <option class="" value="1">Option 1</option>
+                    <option class="" value="2">Option 2</option>
+                    <option class="" value="3">Option 3</option>
+                </select>
+                <label>Materialize Select</label>
+            </div>
+            <div class="row">
+                <div class="input-field col s8 offset-s2">
+                    <input id="begin_datum" name="begin_datum" type="text" class="validate  datepicker ">
+                    <label for="begin_datum">Begin Datum</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s8 offset-s2">
+                    <input id="eind_datum" name="eind_datum" type="text" class="validate  datepicker ">
+                    <label for="eind_datum"> Eind Datum</label>
+                </div>
+            </div>
+            <h5 class="center ">Deelnemers</h5>
+            <div class="row">
+                <div class="col s8 offset-s2">
+                    <div class="chips chips-autocomplete" name="contacts">
+                        <i class="material-icons prefix">account_circle</i>
                     </div>
                 </div>
+            </div>
+            <h5 class="center ">Bestedingen</h5>
+            <div class="col s10 offset-s1">
+                <ul class="collection">
+                    <li class="collection-item">
+                        <div>Test<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div>
+                    </li>
+                    <li class="collection-item">
+                        <div>Test<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div>
+                    </li>
+                    <li class="collection-item">
+                        <div>Test<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div>
+                    </li>
+                    <li class="collection-item">
+                        <div>Test<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div>
+                    </li>
+                </ul>
+                <div id="besteding_add">
+                    <a class="btn-floating btn-small waves-effect waves-light teal"><i class="material-icons">add</i></a>
+                </div>
+            </div>
 
-
-                <div class="modal-footer">
+            <!-- <div class="modal-footer">
                     <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-                </div>
+                </div> -->
             </form>
         </div>
     </div>
+
     <div class="fixed-action-btn">
-        <a onclick='' class="btn-floating btn-large waves-effect waves-light blue-grey darken-4 modal-trigger" href="#modal1"><i class="material-icons">add</i></a>
+        <a onclick='showForm()' class="btn-floating btn-large waves-effect waves-light -3"><i class="material-icons">add</i></a>
     </div>
-    <!-- </div> -->
+
     <!--JavaScript at end of body for optimized loading-->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script> -->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="../../lib/js/jquery-3.2.1.min.js"></script>
+
     <script type="text/javascript" src="../../lib/materialize/js/materialize.min.js"></script>
     <script type="text/javascript" src="../../lib/materialize/js/materialize.js"></script>
     <script type="text/javascript" src="../../lib/js/main.js"></script>
@@ -175,3 +196,7 @@ require '../checkSession.php';
 </body>
 
 </html>
+<!-- 
+                    //TODO:Implement Project Navigation
+                    //TODO:ImplemenT form Submission
+             -->
