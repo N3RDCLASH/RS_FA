@@ -21,15 +21,15 @@ if (isset($_POST['action'])) {
             // echo $type, $name, $_password;
             if (password_verify($password, $_password)) {
                 if ($type != null) {
+                    session_start();
+                    $_SESSION['user'] = $username;
+                    $_SESSION['type'] = $type;
+                    if ($_SESSION['user'] != null) {
+                        echo 'welcome' . $_SESSION['user'];
+                    }
                     if (isset($_POST['check'])) {
-                        session_start();
-                        $_SESSION['user'] = $username;
-                        $_SESSION['type'] = $type;
-                        if ($_SESSION['user'] != null) {
-                            echo 'welcome' . $_SESSION['user'];
-                        }
                         setcookie('username', $username, time() + 3600);
-                    };
+                    }
                     switch ($type) {
                         case 0:
                             echo "redirect overal_user";

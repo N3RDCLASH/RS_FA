@@ -40,13 +40,6 @@ require '../checkSession.php';
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <!-- <li><a href="collapsible.html">JavaScript</a></li> -->
                     <li>
-                        <form>
-                            <div class="input-field">
-                                <input id="search" class="" type="search" required>
-                                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                                <i class="material-icons">close</i>
-                            </div>
-                        </form>
                     </li>
                     <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Account<i class="material-icons right">arrow_drop_down</i></a></li>
 
@@ -69,7 +62,16 @@ require '../checkSession.php';
         <li><a href="#!" class="">Second Sidebar Link</a></li>
     </ul>
     <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    <div class="row ">
+    <div class="row">
+        <div class="col m9 offset-m3">
+            <form>
+                <div class="input-field">
+                    <input id="search" class="" type="search" required>
+                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                    <i class="material-icons">close</i>
+                </div>
+            </form>
+        </div>
         <div class="col  s12 m9 offset-m3">
             <table id="projects_table" class="highlight responsive-table z-depth-3 ">
                 <thead class="-3">
@@ -153,30 +155,11 @@ require '../checkSession.php';
                     </div>
                 </div>
             </div>
-            <h5 class="center ">Bestedingen</h5>
-            <div class="col s10 offset-s1">
-                <ul class="collection">
-                    <li class="collection-item">
-                        <div>Test<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div>
-                    </li>
-                    <li class="collection-item">
-                        <div>Test<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div>
-                    </li>
-                    <li class="collection-item">
-                        <div>Test<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div>
-                    </li>
-                    <li class="collection-item">
-                        <div>Test<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div>
-                    </li>
-                </ul>
-                <div id="besteding_add">
-                    <a class="btn-floating btn-small waves-effect waves-light teal"><i class="material-icons">add</i></a>
-                </div>
-            </div>
 
-            <!-- <div class="modal-footer">
-                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-                </div> -->
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+
+            </div>
             </form>
         </div>
     </div>
