@@ -12,7 +12,7 @@ require '../checkSession.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Overzicht admin afdeling</title>
+    <title>Overzicht Fin afdeling</title>
 
     <!-- local resources -->
     <link type="text/css" rel="stylesheet" href="../../lib/materialize/css/materialize.css" media="screen,projection" />
@@ -74,6 +74,7 @@ require '../checkSession.php';
                         <th>Soort project</th>
                         <th>Start Datum </th>
                         <th>Eind Datum</th>
+                        <th>Status project</th>
 
 
                     </tr>
@@ -91,6 +92,7 @@ require '../checkSession.php';
                 if (mysqli_num_rows($query) > 0) {
                     while ($row = mysqli_fetch_assoc($query)) {
                         echo "<tr>";
+                        //  echo "<td>"<a href="test.html">Edit</a>"</td>"
                         echo "<td>" . $row{
                         'naam'} . "</td>";
                         echo "<td>" . $row{
@@ -101,6 +103,9 @@ require '../checkSession.php';
                         'datum_start'} . "</td>";
                         echo "<td>" . $row{
                         'datum_eind'} . "</td>";
+                        echo "<td>" . $row{
+                        'status'} . "</td>";
+
 
                         echo "</tr>";
                     }
@@ -110,6 +115,19 @@ require '../checkSession.php';
             </table>
         </div>
     </div>
+
+
+    <!-- <script>
+            document.addEventListener("DOMContentLoaded",()=> {
+                const rows=document.querySelectorAll("tr[data-href]");
+   rows.forEach(row =>{
+       row.addEventListener("click",()=>{
+           window.location.href= row.dataset.href;
+       });
+
+   });
+            });
+            </script> -->
     <div class="row">
         <div id="add_form" class="col m9 s12 offset-m3 white z-depth-3 ">
 

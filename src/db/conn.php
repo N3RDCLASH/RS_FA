@@ -1,8 +1,8 @@
 <?php
 $host = "remotemysql.com";
-$user = "CU2tBzS9Zc";
-$pass = "gSbL8MhLvl";
-$db = "CU2tBzS9Zc";
+$user = "Bq9P4zfMp9";
+$pass = "rBdbks98ib";
+$db = "Bq9P4zfMp9";
 
 try {
     $link = mysqli_connect($host, $user, $pass, $db);
@@ -10,3 +10,4 @@ try {
     throw $th;
     echo mysqli_error($link);
 }
+?>
