@@ -12,6 +12,6 @@ $einddatum=  $_POST["eind_datum"];
     if (!mysqli_query($link,$sql)){
         echo mysqli_error($link);
     };
-   //header("index.html")
+   header("location:home.php")
 
 ?>
