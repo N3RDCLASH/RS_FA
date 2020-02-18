@@ -110,56 +110,57 @@ require '../checkSession.php';
             </table>
         </div>
     </div>
+
+    <form action="createProject.php" method="POST">
     <div class="row">
         <div id="add_form" class="col m9 s12 offset-m3 white z-depth-3 ">
-
-            <h5 class="center ">Project Informatie</h5>
-            <div class="row">
-                <div class="input-field col s8 offset-s2">
-                    <input placeholder="naam" id="naam" name="naam" type="text" class="validate ">
-                    <label for="naam">Naam</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s8 offset-s2">
-                    <textarea id="omschrijving" name="omschrijving" id="textarea1" cols="30" rows="10" class="materialize-textarea"></textarea>
-                    <label for="omscrijving">Omschrijving</label>
-                </div>
-            </div>
-            <div class="input-field col s8 offset-s2">
-                <select id="type">
-                    <option value="" disabled selected>Kies het type project.</option>
-                    <option class="" value="1">Option 1</option>
-                    <option class="" value="2">Option 2</option>
-                    <option class="" value="3">Option 3</option>
-                </select>
-                <label>Materialize Select</label>
-            </div>
-            <div class="row">
-                <div class="input-field col s8 offset-s2">
-                    <input id="begin_datum" name="begin_datum" type="text" class="validate  datepicker ">
-                    <label for="begin_datum">Begin Datum</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s8 offset-s2">
-                    <input id="eind_datum" name="eind_datum" type="text" class="validate  datepicker ">
-                    <label for="eind_datum"> Eind Datum</label>
-                </div>
-            </div>
-            <h5 class="center ">Deelnemers</h5>
-            <div class="row">
-                <div class="col s8 offset-s2">
-                    <div class="chips chips-autocomplete" name="contacts">
-                        <i class="material-icons prefix">account_circle</i>
+        
+                <h5 class="center ">Project Informatie</h5>
+                
+                <div class="row">
+                    <div class="input-field col s8 offset-s2">
+                        <input placeholder="naam" id="naam" name="naam" type="text" class="validate ">
+                        <label for="naam">Naam</label>
                     </div>
                 </div>
-            </div>
+               
+                <div class="row">
+                    <div class="input-field col s8 offset-s2">
+                        <textarea id="omschrijving" name="omschrijving" id="textarea1" cols="30" rows="10" class="materialize-textarea"></textarea>
+                        <label for="omscrijving">Omschrijving</label>
+                    </div>
+                </div>
 
-            <div class="modal-footer">
-                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                <div class="input-field col s8 offset-s2">
+                    <select name="type" id="type">
+                        <option value="" disabled selected>Kies het type project.</option>
+                        <option class="" value="1">Option 1</option>
+                        <option class="" value="2">Option 2</option>
+                        <option class="" value="3">Option 3</option>
+                    </select>
+                    <label>Kies Project</label>
+                </div>
 
-            </div>
+                <div class="row">
+                    <div class="input-field col s8 offset-s2">
+                        <input name="begin_datum" type="text" class="validate  datepicker ">
+                        <label for="begin_datum">Begin Datum</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s8 offset-s2">
+                        <input id="eind_datum" name="eind_datum" type="text" class="validate  datepicker ">
+                        <label for="eind_datum"> Eind Datum</label>
+                    </div>
+                </div>
+
+                
+
+                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+
             </form>
         </div>
     </div>
