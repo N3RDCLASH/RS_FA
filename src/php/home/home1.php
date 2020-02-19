@@ -53,7 +53,7 @@ require '../checkSession.php';
     <!-- <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a> -->
     <div class="row">
         <div class="col m9 offset-m3">
-            <form action="search.php" method="GET">
+            <form id="search_bar" action="search.php" method="GET">
                 <div class="input-field">
                     <input id="search" class="" type="search" required placeholder="      naam van het project of deelnemer" size="30">
                     <input id=searchb type="submit" value="Search" />
@@ -64,6 +64,7 @@ require '../checkSession.php';
             </form>
         </div>
         <div class="col  s12 m9 offset-m3">
+
 
 
             <table id="projects_table" class="highlight responsive-table z-depth-3 ">
@@ -81,30 +82,26 @@ require '../checkSession.php';
                 </thead>
 
                 <?php
-                $host = "remotemysql.com";
-                $user = "Bq9P4zfMp9";
-                $pass = "rBdbks98ib";
-                $db = "Bq9P4zfMp9";
-                $dbhandle = mysqli_connect($host, $user, $pass, $db);
 
-                $query =  mysqli_query($dbhandle, "SELECT * FROM projecten");
+                $query =  mysqli_query($link, "SELECT * FROM projecten");
 
                 if (mysqli_num_rows($query) > 0) {
                     while ($row = mysqli_fetch_assoc($query)) {
-                        echo "<tr>";
+                        echo "<tr data-id=" . $row{
+                            'project_id'} . ">";
                         //  echo "<td>"<a href="test.html">Edit</a>"</td>"
                         echo "<td>" . $row{
-                        'naam'} . "</td>";
+                            'naam'} . "</td>";
                         echo "<td>" . $row{
-                        'omschrijving'} . "</td>";
+                            'omschrijving'} . "</td>";
                         echo "<td>" . $row{
-                        'type'} . "</td>";
+                            'type'} . "</td>";
                         echo "<td>" . $row{
-                        'datum_start'} . "</td>";
+                            'datum_start'} . "</td>";
                         echo "<td>" . $row{
-                        'datum_eind'} . "</td>";
+                            'datum_eind'} . "</td>";
                         echo "<td>" . $row{
-                        'status'} . "</td>";
+                            'status'} . "</td>";
 
 
                         echo "</tr>";
@@ -114,34 +111,59 @@ require '../checkSession.php';
                 ?>
             </table>
         </div>
+        <div class="row">
+            <div class="col m9 s12 offset-m3 z-depth-3 flip-in-ver-right" id="project_informatie">
+                <h2 class="center">Project Informatie</h2>
+                <div class="row">
+                    <div class="input-field col s8 offset-s2">
+                        <input placeholder="naam" id="naam" name="naam" type="text" class="validate" disabled>
+                        <label for="naam" class="active">Naam</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s8 offset-s2">
+                        <textarea id="omschrijving" name="omschrijving" id="textarea1" cols="30" rows="10" class="materialize-textarea" disabled></textarea>
+                        <label for="omschrijving" class="active">Omschrijving</label>
+                    </div>
+                </div>
+                <div class="input-field col s8 offset-s2">
+                    <select id="type" disabled>
+                        <option value="" disabled selected>Kies het type project.</option>
+                        <option class="" value="1">Option 1</option>
+                        <option class="" value="2">Option 2</option>
+                        <option class="" value="3">Option 3</option>
+                    </select>
+                    <label class="active">Project Type</label>
+                </div>
+                <div class="row">
+                    <div class="input-field col s8 offset-s2">
+                        <input id="begin_datum" name="begin_datum" type="text" class="validate  datepicker " disabled>
+                        <label for="begin_datum" class="active">Begin Datum</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s8 offset-s2">
+                        <input id="eind_datum" name="eind_datum" type="text" class="validate datepicker" disabled>
+                        <label for="eind_datum" class="active">Eind Datum</label>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-
-    <!-- <script>
-            document.addEventListener("DOMContentLoaded",()=> {
-                const rows=document.querySelectorAll("tr[data-href]");
-   rows.forEach(row =>{
-       row.addEventListener("click",()=>{
-           window.location.href= row.dataset.href;
-       });
-
-   });
-            });
-            </script> -->
+    </div>
     <div class="row">
         <div id="add_form" class="col m9 s12 offset-m3 white z-depth-3 ">
-
             <h5 class="center ">Project Informatie</h5>
             <div class="row">
                 <div class="input-field col s8 offset-s2">
                     <input placeholder="naam" id="naam" name="naam" type="text" class="validate ">
-                    <label for="naam">Naam</label>
+                    <label for="naam" class="active">Naam</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s8 offset-s2">
                     <textarea id="omschrijving" name="omschrijving" id="textarea1" cols="30" rows="10" class="materialize-textarea"></textarea>
-                    <label for="omscrijving">Omschrijving</label>
+                    <label for="omschrijving" class="active">Omschrijving</label>
                 </div>
             </div>
             <div class="input-field col s8 offset-s2">
@@ -151,7 +173,7 @@ require '../checkSession.php';
                     <option class="" value="2">Option 2</option>
                     <option class="" value="3">Option 3</option>
                 </select>
-                <label>Materialize Select</label>
+                <label class="active">Project Type</label>
             </div>
             <div class="row">
                 <div class="input-field col s8 offset-s2">

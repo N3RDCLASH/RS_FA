@@ -62,7 +62,7 @@ require '../checkSession.php';
                     <i class="material-icons">close</i>
                 </div>
             </form>
-        </div>
+           
         <div class="col  s12 m9 offset-m3">
 
 
@@ -80,27 +80,21 @@ require '../checkSession.php';
                 </thead>
 
                 <?php
-                $host = "remotemysql.com";
-                $user = "Bq9P4zfMp9";
-                $pass = "rBdbks98ib";
-                $db = "Bq9P4zfMp9";
-                $dbhandle = mysqli_connect($host, $user, $pass, $db);
-
-                $query =  mysqli_query($dbhandle, "SELECT * FROM projecten");
+                $query =  mysqli_query($link, "SELECT * FROM projecten");
 
                 if (mysqli_num_rows($query) > 0) {
                     while ($row = mysqli_fetch_assoc($query)) {
                         echo "<tr>";
                         echo "<td>" . $row{
-                        'naam'} . "</td>";
+                            'naam'} . "</td>";
                         echo "<td>" . $row{
-                        'omschrijving'} . "</td>";
+                            'omschrijving'} . "</td>";
                         echo "<td>" . $row{
-                        'type'} . "</td>";
+                            'type'} . "</td>";
                         echo "<td>" . $row{
-                        'datum_start'} . "</td>";
+                            'datum_start'} . "</td>";
                         echo "<td>" . $row{
-                        'datum_eind'} . "</td>";
+                            'datum_eind'} . "</td>";
 
                         echo "</tr>";
                     }
@@ -112,18 +106,18 @@ require '../checkSession.php';
     </div>
 
     <form action="createProject.php" method="POST">
-    <div class="row">
-        <div id="add_form" class="col m9 s12 offset-m3 white z-depth-3 ">
-        
+        <div class="row">
+            <div id="add_form" class="col m9 s12 offset-m3 white z-depth-3 ">
+
                 <h5 class="center ">Project Informatie</h5>
-                
+
                 <div class="row">
                     <div class="input-field col s8 offset-s2">
                         <input placeholder="naam" id="naam" name="naam" type="text" class="validate ">
                         <label for="naam">Naam</label>
                     </div>
                 </div>
-               
+
                 <div class="row">
                     <div class="input-field col s8 offset-s2">
                         <textarea id="omschrijving" name="omschrijving" id="textarea1" cols="30" rows="10" class="materialize-textarea"></textarea>
@@ -155,14 +149,12 @@ require '../checkSession.php';
                     </div>
                 </div>
 
-                
-
                 <button class="btn waves-effect waves-light" type="submit" name="action">Submit
                     <i class="material-icons right">send</i>
                 </button>
 
-            </form>
-        </div>
+    </form>
+    </div>
     </div>
 
     <div class="fixed-action-btn">

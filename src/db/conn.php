@@ -1,8 +1,12 @@
 <?php
-$host = "remotemysql.com";
-$user = "Bq9P4zfMp9";
-$pass = "rBdbks98ib";
-$db = "Bq9P4zfMp9";
+// $host = "remotemysql.com";
+// $user = "Bq9P4zfMp9";
+// $pass = "rBdbks98ib";
+// $db = "Bq9P4zfMp9";
+$host = "localhost";
+$user = "root";
+$pass = "";
+$db = "rs_fa";
 
 try {
     $link = mysqli_connect($host, $user, $pass, $db);

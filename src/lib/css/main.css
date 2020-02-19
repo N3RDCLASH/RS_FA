@@ -45,6 +45,10 @@ body {
     margin-bottom: 0 !important;
 }
 
+#project_informatie {
+    display: none;
+}
+
 table.highlight>tbody>tr:hover {
     background-color: #73b3ad !important;
 }
