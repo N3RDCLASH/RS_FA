@@ -1,5 +1,5 @@
 <?php
-require_once '../db/conn.php';
+require_once '../../db/conn.php';
 
 if (isset($_POST['action'])) {
     $username = mysqli_real_escape_string($link, $_POST['user_name']);
@@ -35,11 +35,11 @@ if (isset($_POST['action'])) {
                             echo "redirect overal_user";
                             break;
                         case 1:
-                            echo "redirect afdeling 1";
+                            echo "redirect administratie";
+                            header('location:../administratie/');
                             break;
                         case 2:
-                            echo "redirect afdeling 2";
-                            header('location:home/home.php');
+                            echo "redirect financiele administratie 2";
                             break;
                     }
                 }

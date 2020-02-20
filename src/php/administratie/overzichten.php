@@ -1,7 +1,7 @@
 <?php
 require_once '../../db/conn.php';
-require_once '../session.php';
-require '../checkSession.php';
+require_once '../scripts/session.php';
+require '../scripts/checkSession.php';
 
 ?>
 
@@ -27,7 +27,7 @@ require '../checkSession.php';
 <body class="-2">
     <ul id="dropdown1" class="dropdown-content">
         <li>
-            <a href="../logout.php">Log Out</a>
+            <a href="../scripts/logout.php">Log Out</a>
         </li>
     </ul>
     <div class="navbar-fixed">
@@ -50,7 +50,7 @@ require '../checkSession.php';
                         <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
                     </div>
                 </li>
-                <li><a href="#!" class="">Dashboard</a></li>
+                <li><a href="home.php" class="">Dashboard</a></li>
                 <li class="teal"><a href="#!">Overzichten</a></li>
                 <li><a href="#!" class="">Rapporten</a></li>
             </ul>
@@ -218,7 +218,7 @@ require '../checkSession.php';
 
     <div id="modal1" class="modal">
         <div class="modal-content">
-            <h4>Modal Header</h4>
+            <h4>Taken Registratie</h4>
             <form action="">
                 <div class="row">
                     <div class="input-field col s12">

@@ -98,7 +98,7 @@ function showTaak(data) {
     data.forEach(taak => {
         taken_lijst.innerHTML +=
             `<li>
-            <div class="collapsible-header" > <i class="material-icons">filter_drama</i>${taak.naam}</div>
+            <div class="collapsible-header" > <i class="material-icons">check</i>${taak.naam}</div>
             <div class="collapsible-body"><span>${taak.omschrijving}</span></div>
     </li > `
         console.log(data)

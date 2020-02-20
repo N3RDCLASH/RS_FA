@@ -12,6 +12,10 @@ body {
     background-color: #f2f4f8;
 }
 
+tr {
+    cursor: pointer;
+}
+
 #add_form {
     display: none;
     padding: 4% 0;
@@ -32,7 +36,9 @@ body {
 #col-right {
     height: 100vh;
 }
-
+#chart_container{
+    margin-top: 3%;
+}
 #project {
     padding-top: 10%;
     padding-bottom: 30%;
