@@ -78,8 +78,21 @@ require '../checkSession.php';
             </div>
         </nav>
     </div>
-
-    <!-- <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a> -->
+    <ul id="slide-out" class="sidenav sidenav-fixed -4 ">
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img src="../../lib/images/office.jpg">
+                </div>
+                <a href="#user"><img class="white-text circle" src="../../lib/images/yuna.jpg"></a>
+                <a href="#name"><span class="white-text name">John Doe</span></a>
+                <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+            </div>
+        </li>
+        <li><a href="#!" class="">First Sidebar Link</a></li>
+        <li><a href="#!" class="">Second Sidebar Link</a></li>
+    </ul>
+    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     <div class="row">
         <div class="col m9 offset-m3">
             <form action="search.php" method="GET">
