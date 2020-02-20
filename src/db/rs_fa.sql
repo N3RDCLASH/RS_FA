@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 20, 2020 at 12:54 AM
+-- Generation Time: Feb 20, 2020 at 03:38 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.7
 
@@ -87,7 +87,7 @@ CREATE TABLE `projecten` (
   `type` int(10) DEFAULT NULL,
   `datum_start` date DEFAULT NULL,
   `datum_eind` date DEFAULT NULL,
-  `status` char(10) DEFAULT NULL
+  `status` char(10) DEFAULT 'open'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -95,7 +95,8 @@ CREATE TABLE `projecten` (
 --
 
 INSERT INTO `projecten` (`project_id`, `naam`, `omschrijving`, `type`, `datum_start`, `datum_eind`, `status`) VALUES
-(3, 'Fundraising', 'Wo mek moni', 1, '2020-02-20', '2020-02-29', 'open');
+(3, 'Fundraising', 'Wo mek moni', 1, '2020-02-20', '2020-02-29', 'open'),
+(4, 'Valentines Day', 'XOXOX', 1, '2020-02-20', '2020-02-26', 'open');
 
 -- --------------------------------------------------------
 
@@ -127,6 +128,14 @@ CREATE TABLE `taak_type` (
   `type_naam` char(40) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `taak_type`
+--
+
+INSERT INTO `taak_type` (`type_id`, `type_naam`) VALUES
+(3, 'uitvoering'),
+(4, 'uitgave');
+
 -- --------------------------------------------------------
 
 --
@@ -142,6 +151,15 @@ CREATE TABLE `taken` (
   `aantal` int(11) DEFAULT NULL,
   `prijs` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `taken`
+--
+
+INSERT INTO `taken` (`taak_id`, `project_id`, `taak_type`, `naam`, `omschrijving`, `aantal`, `prijs`) VALUES
+(1, 3, 4, 'Cupcakes Kopen', 'iem bai de san toh owru mang', 10, 200),
+(2, 4, 3, 'Kaarten schrijven', 'iem skrief den karta ', NULL, NULL),
+(3, 3, 3, 'Tent Opzetten', 'iem set a tenti \r\njwz!', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -161,7 +179,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `user_type`, `user_name`, `user_password`) VALUES
-(4, 2, 'test', '$2y$10$aaTZmQu/QQ3XPQC9o9IMk.U77klzj42FEeA7QhPjJM4o/RFoN3zVW');
+(4, 1, 'test', '$2y$10$aaTZmQu/QQ3XPQC9o9IMk.U77klzj42FEeA7QhPjJM4o/RFoN3zVW');
 
 -- --------------------------------------------------------
 
@@ -274,19 +292,19 @@ ALTER TABLE `deelnemers_type`
 -- AUTO_INCREMENT for table `projecten`
 --
 ALTER TABLE `projecten`
-  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `taak_type`
 --
 ALTER TABLE `taak_type`
-  MODIFY `type_id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `type_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `taken`
 --
 ALTER TABLE `taken`
-  MODIFY `taak_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `taak_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user`
@@ -302,7 +320,8 @@ ALTER TABLE `user`
 -- Constraints for table `deelnemers`
 --
 ALTER TABLE `deelnemers`
-  ADD CONSTRAINT `deelnemers_ibfk_1` FOREIGN KEY (`deelnemers_type`) REFERENCES `deelnemers_type` (`type_id`);
+  ADD CONSTRAINT `deelnemers_ibfk_1` FOREIGN KEY (`deelnemers_type`) REFERENCES `deelnemers_type` (`type_id`),
+  ADD CONSTRAINT `deelnemers_ibfk_2` FOREIGN KEY (`deelnemers_type`) REFERENCES `deelnemers_type` (`type_id`);
 
 --
 -- Constraints for table `deelnemers_per_taak`
