@@ -14,6 +14,7 @@ body {
 
 #add_form {
     display: none;
+    padding: 4% 0;
 }
 
 #besteding_add {
@@ -48,6 +49,24 @@ body {
 #project_informatie {
     display: none;
 }
+
+#project_taken {
+    display: none;
+    margin: 0 50px;
+}
+
+#add_taak {
+    cursor: pointer;
+    font-size: 3rem;
+}
+
+#back_button {
+    cursor: pointer;
+}
+
+/* .sidenav li.active {
+    background-color: #73b3ad;
+} */
 
 table.highlight>tbody>tr:hover {
     background-color: #73b3ad !important;
