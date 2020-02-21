@@ -1,29 +1,12 @@
-<?php 
-$deelnemers_naam=$_POST["deelnemers_naam"];
-$deelnemers_type=$_POST["deelnemers_type"];
-$deelnemers_email=$_POST["deelnemers_email"];
-$deelnemers_adres=$_POST["deelnemers_adres"];
-$deelnemers_telefoonnummer=$_POST["deelnemers_telefoonnummer"];
+<?php
+// include "../../db/conn.php";
 
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db = "rs_fa";
+// $id = $_GET['id'];
 
-try {
-    $link = mysqli_connect($host, $user, $pass, $db);
-} catch (\Throwable $th) {
-    throw $th;
-    echo mysqli_error($link);
-}
+// $query = "SELECT * FROM deelnemers_ where project_id = " . $id;
+// if (!$result = mysqli_query($link, $query)) {
+//     echo mysqli_error($link);
+// }
 
-$query= "INSERT INTO `deelnemers`(`deelnemers_type`, `deelnemers_naam`, `deelnemers_email`, `deelnemers_adres`, `deelnemers_telefoonnummer`) VALUES('$deelnemers_type','$deelnemers_naam','$deelnemers_email','$deelnemers_adres','$deelnemers_telefoonnummer')";
-
-if ($link->query($query) === TRUE) {
-    
-   
-
-    
-    header("location:deelnemers.php");
-} else { die($link->error);
-}
+// if (mysqli_num_rows($result) > 0) {
+//     while ($row = mysqli_fetch_assoc($result)) {

@@ -1,20 +1,21 @@
 M.AutoInit();
-let table = document.getElementById('projects_table')
+let projects_table = document.getElementById('projects_table')
+let deelnemers_table = document.getElementById('deelnemers_table')
 let form = document.getElementById('add_form')
 let row = document.getElementsByClassName('row')[0]
 let info = document.getElementById('project_informatie')
+let add_taak = document.getElementById('add_taak')
 let taken = document.getElementById('project_taken')
 let taken_lijst = document.getElementById('taken_lijst')
 let search = document.getElementById('search_bar')
 let back_button = document.createElement("i")
 back_button.className = 'material-icons small teal-text back'
-back_button.onclick = console.log('test');
 back_button.innerHTML = 'arrow_back';
 back_button.onclick = showTable
 back_button.id = 'back_button'
 row.insertBefore(back_button, row.firstChild)
 let response
-
+let deelnemers = []
 
 $(document).ready(
     function () {
@@ -25,7 +26,8 @@ $(document).ready(
 function showForm() {
     form.style.display = 'block';
     form.classList.toggle('flip-in-ver-right', true)
-    table.style.display = 'none';
+    projects_table.style.display = 'none';
+    deelnemers_table.style.display = 'none';
     search.style.display = 'none';
     back_button.style.setProperty('display', 'inline-block', 'important')
 }
@@ -34,9 +36,11 @@ function showTable() {
     // let table = document.getElementById('projects_table')
     // let form = document.getElementById('add_form')
 
-    table.style.display = 'table'
+    projects_table.style.display = 'table'
+    deelnemers_table.style.display = 'table'
     search.style.display = 'block'
-    table.classList.toggle('flip-in-ver-right', true)
+    projects_table.classList.toggle('flip-in-ver-right', true)
+    deelnemers_table.classList.toggle('flip-in-ver-right', true)
     form.style.display = 'none'
     info.style.display = 'none'
     taken.style.display = 'none'
@@ -53,15 +57,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 return response.json();
             })
                 .then(function (body) {
-                    console.table(body)
+                    // console.table(body)
                     response = body
                     showProject(body)
                 });
+
             fetch(`getTaak.php?id=${id}`).then(function (response) {
                 return response.json();
             })
                 .then(function (body) {
-                    console.table(body)
+                    // console.table(body)
                     response = body
                     showTaak(body)
                 });
@@ -72,7 +77,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function showProject(data) {
     search.style.display = 'none'
-    table.style.display = 'none'
+    projects_table.style.display = 'none'
+    deelnemers_table.style.display = 'none'
     back_button.style.setProperty('display', 'inline-block', 'important')
     info.style.display = 'block'
     taken.style.display = 'block'
@@ -101,10 +107,66 @@ function showTaak(data) {
             <div class="collapsible-header" > <i class="material-icons">check</i>${taak.naam}</div>
             <div class="collapsible-body"><span>${taak.omschrijving}</span></div>
     </li > `
-        console.log(data)
+        // console.log(data)
     })
 }
 
+
+
+
+
+//Taken Form
+document.getElementById('type_taak').addEventListener('change', () => {
+    console.log(document.getElementById('type_taak').value)
+    if (document.getElementById('type_taak').value == 3) {
+        document.getElementById('taak_aantal').setAttribute('disabled', true)
+        document.getElementById('taak_prijs').setAttribute('disabled', true)
+    } else {
+        document.getElementById('taak_aantal').removeAttribute('disabled')
+        document.getElementById('taak_prijs').removeAttribute('disabled')
+    }
+})
+
+add_taak.addEventListener('click', function () {
+    fetch('selectDeelnemers.php').then(res => {
+        return res.json()
+    }).then(body => {
+        // console.log(body)
+        chipData(body)
+        // deelnemers = body
+        // console.log(deelnemers)
+    })
+})
+
+function chipData(data) {
+    var result = data.reduce(function (r, e) {
+        r[e.naam] = null;
+        return r;
+    }, {});
+
+    $('.chips-autocomplete').chips({
+        autocompleteOptions: {
+            data: result,
+            limit: Infinity,
+            minLength: 1
+        }
+    });
+}
+
+//Post Taak data 
+document.getElementById('taken_form').addEventListener('submit', function () {
+    e.preventDefault()
+    // form = FormData(this);
+
+    // options = {
+    //     'method': 'post',
+    //     'body': FormData
+    // }
+    // fetch('createTaak.php', options).then(res => {
+    //     console.log(res)
+    // }).then
+    console.log('test')
+})
 
 
 

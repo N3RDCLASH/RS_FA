@@ -52,7 +52,7 @@ require '../scripts/checkSession.php';
                 </li>
                 <li class="teal"><a href="#!" class="">Dashboard</a></li>
                 <li><a href="overzichten.php">Overzichten</a></li>
-                <li><a href="#!" class="">Rapporten</a></li>
+                <li><a href="deelnemers.php" class="">Deelnemers</a></li>
             </ul>
         </nav>
     </div>

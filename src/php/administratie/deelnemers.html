@@ -1,40 +1,48 @@
-!DOCTYPE <html>
+<html>
 
-<head></head>
+<head>
+
+</head>
 
 <body>
-    <form id="" action="getDeelnemers" method="POST"></form>
-    <h1> Vul gegevens van de nieuwe deelnemer in</h1>
+    <div class="row">
+        <div class="col m8 offset-m2">
+            <form id="" action="createDeelnemer.php" method="POST">
+                <h1> Vul gegevens van de nieuwe deelnemer in</h1>
 
-    <fieldset>
-        <input type="text" name="deelnemers_naam" tabindex="1" size="10" placeholder="Naam" required autofocus>
-    </fieldset>
-
-
-    <fieldset>
-        <label for="deelnemers_type">Type deelnemer</label>
-        <select name="deelnemers_type" id="">
-            <option value="student">Student</option>
-            <option value="docent ">Docent</option>
-            <option value="overige">Overige</option>
-        </select>
-    </fieldset>
-
-    <fieldset>
-        <input type="email" name="deelnemers_email" tabindex="1" size="10" placeholder="email" required>
-    </fieldset>
+                <div class="input-field col s6">
+                    <input type="text" name="deelnemers_naam" tabindex="1" size="10" placeholder="Naam" required
+                        autofocus>
+                </div>
 
 
-    <fieldset>
-        <input type="text" name="deelnemers_adres" tabindex="1" size="10" placeholder="Adres" required>
-    </fieldset>
+                <div class="input-field col s6">
+                    <label for="deelnemers_type">Type deelnemer</label>
+                    <select name="deelnemers_type" id="">
+                        <option value="4">Student</option>
+                        <option value="5 ">Docent</option>
+                        <option value="6">Overige</option>
+                    </select>
+                </div>
+
+                <div class="input-field col s6">
+                    <input type="email" name="deelnemers_email" tabindex="1" size="10" placeholder="email" required>
+                </div>
 
 
-    <fieldset>
-        <input type="number" name="deelnemers_telefoonnummer" tabindex="1" size="10" placeholder="telefoonnummer"
-            required>
-    </fieldset>
-    <input type="submit" value="Opslaan" id="" size="60" name="Opslaan" />
+                <div class="input-field col s6">
+                    <input type="text" name="deelnemers_adres" tabindex="1" size="10" placeholder="Adres" required>
+                </div>
+
+
+                <div class="input-field col s6">
+                    <input type="number" name="deelnemers_telefoonnummer" tabindex="1" size="10"
+                        placeholder="telefoonnummer" required>
+                </div>
+                <input type="submit" value="Opslaan" id="" size="60" name="Opslaan">
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>

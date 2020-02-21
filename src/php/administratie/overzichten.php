@@ -31,10 +31,9 @@ require '../scripts/checkSession.php';
         </li>
     </ul>
     <div class="navbar-fixed">
-
         <nav class="col s8 offset-s4">
             <div class="nav-wrapper teal">
-                <a href="#" class="brand-logo center">Overzicht</a>
+                <a href="#" class="brand-logo center">Overzichten</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Account<i class="material-icons right">arrow_drop_down</i></a></li>
                 </ul>
@@ -52,7 +51,7 @@ require '../scripts/checkSession.php';
                 </li>
                 <li><a href="home.php" class="">Dashboard</a></li>
                 <li class="teal"><a href="#!">Overzichten</a></li>
-                <li><a href="#!" class="">Rapporten</a></li>
+                <li><a href="deelnemers.php" class="">Deelnemers</a></li>
             </ul>
         </nav>
     </div>
@@ -60,18 +59,19 @@ require '../scripts/checkSession.php';
     <!-- <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a> -->
     <div class="row">
         <div class="col m9 offset-m3">
-            <form id="search_bar" action="search.php" method="GET">
-                <div class="input-field">
-                    <input id="search" class="" type="search" required placeholder="      naam van het project of deelnemer" size="30">
-                    <!-- <input id=searchb type="submit" value="Search"> -->
-                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                    <i class="material-icons">close</i>
-                </div>
-            </form>
+            <div class="nav-wrapper" id="search_bar">
+                <form>
+                    <div class="input-field">
+                        <input id="search" type="search" required>
+                        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                        <i class="material-icons">close</i>
+                    </div>
+                </form>
+            </div>
         </div>
         <div class="col  s12 m9 offset-m3">
             <table id="projects_table" class="highlight responsive-table z-depth-3 ">
-                <thead class="-3">
+                <thead class="blue-grey darken-3 white-text">
                     <tr>
                         <th>Naam project</th>
                         <th>Project omschrijving</th>
@@ -105,15 +105,15 @@ require '../scripts/checkSession.php';
                             'datum_eind'} . "</td>";
                         echo "<td>" . $row{
                             'status'} . "</td>";
-
-
                         echo "</tr>";
                     }
+                    include 'deelnemersTable.php';
                 };
 
                 ?>
             </table>
         </div>
+
         <div class="row">
             <div class="col m4 s12 offset-m3 z-depth-3 flip-in-ver-right" id="project_informatie">
                 <h5 class="center">Project Informatie</h5>
@@ -151,12 +151,18 @@ require '../scripts/checkSession.php';
                     </div>
                 </div>
             </div>
-            <div class="col m4 s12 offset-m7 z-depth-3 flip-in-ver-right" id="project_taken">
-                <h5 class="center">Taken</h5>
-                <ul class="collapsible" id='taken_lijst'>
-                </ul>
-                <i class="material-icons right modal-trigger" id="add_taak" href="#modal1">add</i>
+            <div class="col m4 s12 offset-m7 flip-in-ver-right" id="project_taken">
+               
+                <div class="col m12 z-depth-3" id="taken">
+                    <h5 class="center">Taken</h5>
+                    <ul class="collapsible" id='taken_lijst'>
+                    </ul>
+                    <i class="material-icons right modal-trigger" id="add_taak" href="#modal1">add</i>
+                </div>
             </div>
+            <!-- <div class="col m4 s12 offset-m7 z-depth-3 flip-in-ver-right" id="deelnemers">
+
+            </div> -->
         </div>
     </div>
     </div>
@@ -181,7 +187,7 @@ require '../scripts/checkSession.php';
                 </div>
 
                 <div class="input-field col s8 offset-s2">
-                    <select name="type" id="type">
+                    <select name="type" id="type_project">
                         <option value="" disabled selected>Kies het type project.</option>
                         <option class="" value="1">Option 1</option>
                         <option class="" value="2">Option 2</option>
@@ -219,25 +225,28 @@ require '../scripts/checkSession.php';
     <div id="modal1" class="modal">
         <div class="modal-content">
             <h4>Taken Registratie</h4>
-            <form action="">
+            <form id="taken_form" method="POST">
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="taak_naam" type="text" class="validate">
+                        <input id="taak_naam" type="text" class="validate" required>
                         <label for="taak_naam">Naam</label>
                     </div>
                     <div class="input-field col s12">
-                        <textarea id="taak_omschrijving" type="text" class="materialize-textarea validate"></textarea>
+                        <textarea id="taak_omschrijving" type="text" class="materialize-textarea validate" required></textarea>
                         <label for="taak_omschrijving">Omschrijving</label>
                     </div>
                     <div class="input-field col s12">
-                        <select id="type">
-                            <option value="" disabled selected>Kies de verantwoordeljke.</option>
-                            <option class="" value="1">Verantwoordelijke</option>
-                            <!-- <option class="" value="2">Option 2</option>
-                        <option class="" value="3">Option 3</option> -->
+                        <select id="type_taak" name="type">
+                            <option value="" disabled selected>Type Taak</option>
+                            <option class="" value="3">Uitvoering</option>
+                            <option class="" value="4">UItgave</option>
                         </select>
                     </div>
-                    <label class="active">Verantwoordelijke</label>
+                    <div class="input-field col s12">
+                        <div class="chips chips-autocomplete">
+                        </div>
+                        <label class="active">Verantwoordelijke</label>
+                    </div>
                     <div class="input-field col s12">
                         <textarea id="taak_aantal" type="text" class="materialize-textarea validate"></textarea>
                         <label for="taak_aantal">Aantal</label>
@@ -246,11 +255,15 @@ require '../scripts/checkSession.php';
                         <textarea id="taak_prijs" type="text" class="materialize-textarea validate"></textarea>
                         <label for="taak_prijs">Prijs</label>
                     </div>
-
                 </div>
             </form>
             <div class="modal-footer">
-                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                <div class="row">
+                    <button class="btn waves-effect waves-light col m12" type="submit" id="submit_taak" name="opslaan">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
+
+                </div>
             </div>
         </div>
     </div>

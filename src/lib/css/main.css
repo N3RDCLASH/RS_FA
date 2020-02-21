@@ -36,12 +36,32 @@ tr {
 #col-right {
     height: 100vh;
 }
-#chart_container{
+
+#chart_container {
     margin-top: 3%;
 }
+
+#deelnemers {
+    margin-bottom: 5%;
+    padding-bottom: 5%;
+}
+
+#taken {}
+#deelnemers{
+    margin-top: 5%;
+
+}
+#deelnemers_table {
+    margin-top: 5%;
+}
+
 #project {
     padding-top: 10%;
     padding-bottom: 30%;
+}
+
+#search {
+    margin: 3% 0;
 }
 
 #submit {
