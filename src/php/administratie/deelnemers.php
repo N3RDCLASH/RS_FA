@@ -50,7 +50,7 @@ require '../scripts/checkSession.php';
                         <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
                     </div>
                 </li>
-                <li ><a href="#!" class="">Dashboard</a></li>
+                <li><a href="#!" class="">Dashboard</a></li>
                 <li><a href="overzichten.php">Overzichten</a></li>
                 <li class="teal"><a href="deelnemers.php" class="">Deelnemers</a></li>
             </ul>
@@ -66,8 +66,8 @@ require '../scripts/checkSession.php';
                 </div>
 
                 <div class="input-field col m12">
-                    <label for="deelnemers_type">Type deelnemer</label>
                     <select name="deelnemers_type" id="" class="materialize-select">
+                        <option value="" disabled selected>Select de type deelnemer</option>
                         <option value="4">Student</option>
                         <option value="5 ">Docent</option>
                         <option value="6">Overige</option>
@@ -76,16 +76,20 @@ require '../scripts/checkSession.php';
 
                 <div class="input-field col m12">
                     <input type="email" name="deelnemers_email" tabindex="1" size="10" placeholder="email" required>
+                    <label for="deelnemers_email">Email</label>
                 </div>
 
 
                 <div class="input-field col m12">
                     <input type="text" name="deelnemers_adres" tabindex="1" size="10" placeholder="Adres" required>
+                    <label for="deelnemers_adres">Adres</label>
                 </div>
 
 
                 <div class="input-field col m12">
                     <input type="number" name="deelnemers_telefoonnummer" tabindex="1" size="10" placeholder="telefoonnummer" required>
+                    <label for="deelnemers_telefoonnummer">Telefoon Nr.</label>
+
                 </div>
 
                 <button class="btn waves-effect waves-light col m12" type="submit" name="opslaan">Submit

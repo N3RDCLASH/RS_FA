@@ -12,7 +12,7 @@ require '../scripts/checkSession.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Overzicht Fin afdeling</title>
+    <title>Overzicht Administratie</title>
 
     <!-- local resources -->
     <link type="text/css" rel="stylesheet" href="../../lib/materialize/css/materialize.css" media="screen,projection" />
@@ -132,9 +132,8 @@ require '../scripts/checkSession.php';
                 <div class="input-field col s8 offset-s2">
                     <select id="type" disabled>
                         <option value="" disabled selected>Kies het type project.</option>
-                        <option class="" value="1">Option 1</option>
-                        <option class="" value="2">Option 2</option>
-                        <option class="" value="3">Option 3</option>
+                        <option class="" value="0">Evenement</option>
+                        <option class="" value="1">Werkzaamheid</option>
                     </select>
                     <label class="active">Project Type</label>
                 </div>
@@ -152,7 +151,7 @@ require '../scripts/checkSession.php';
                 </div>
             </div>
             <div class="col m4 s12 offset-m7 flip-in-ver-right" id="project_taken">
-               
+
                 <div class="col m12 z-depth-3" id="taken">
                     <h5 class="center">Taken</h5>
                     <ul class="collapsible" id='taken_lijst'>
@@ -189,9 +188,8 @@ require '../scripts/checkSession.php';
                 <div class="input-field col s8 offset-s2">
                     <select name="type" id="type_project">
                         <option value="" disabled selected>Kies het type project.</option>
-                        <option class="" value="1">Option 1</option>
-                        <option class="" value="2">Option 2</option>
-                        <option class="" value="3">Option 3</option>
+                        <option class="" value="0">Evenement</option>
+                        <option class="" value="1">Werkzaamheid</option>
                     </select>
                     <label>Kies Project</label>
                 </div>
