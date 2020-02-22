@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 20, 2020 at 03:38 PM
+-- Generation Time: Feb 23, 2020 at 12:26 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.7
 
@@ -31,11 +31,21 @@ SET time_zone = "+00:00";
 CREATE TABLE `deelnemers` (
   `deelnemers_id` int(11) NOT NULL,
   `deelnemers_type` int(11) DEFAULT NULL,
-  `deelnemers_naam` char(1) DEFAULT NULL,
+  `deelnemers_naam` varchar(30) DEFAULT NULL,
   `deelnemers_email` text DEFAULT NULL,
   `deelnemers_adres` text DEFAULT NULL,
   `deelnemers_telefoonnummer` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `deelnemers`
+--
+
+INSERT INTO `deelnemers` (`deelnemers_id`, `deelnemers_type`, `deelnemers_naam`, `deelnemers_email`, `deelnemers_adres`, `deelnemers_telefoonnummer`) VALUES
+(2, 4, 'Joel Naarendorp', 'joel.naarendorp.natin@gmail.com', 'indiraghandiweg 250', '8921797'),
+(3, 4, 'Sabrina Starke', 'sabrina.starke.natin@gmail.com', 'indiraghandiweg 35', '8875695'),
+(4, 4, 'qwewq', 'wqweqwe@gmqil.com', 'sdas', '456'),
+(5, 4, 'suraj', 'sur@kkkl', 'kkdk', '272738');
 
 -- --------------------------------------------------------
 
@@ -58,6 +68,15 @@ CREATE TABLE `deelnemers_type` (
   `type_id` int(255) NOT NULL,
   `type_naam` char(40) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `deelnemers_type`
+--
+
+INSERT INTO `deelnemers_type` (`type_id`, `type_naam`) VALUES
+(4, 'student'),
+(5, 'docent'),
+(6, 'overige');
 
 -- --------------------------------------------------------
 
@@ -96,7 +115,11 @@ CREATE TABLE `projecten` (
 
 INSERT INTO `projecten` (`project_id`, `naam`, `omschrijving`, `type`, `datum_start`, `datum_eind`, `status`) VALUES
 (3, 'Fundraising', 'Wo mek moni', 1, '2020-02-20', '2020-02-29', 'open'),
-(4, 'Valentines Day', 'XOXOX', 1, '2020-02-20', '2020-02-26', 'open');
+(4, 'Valentines Day', 'XOXOX', 1, '2020-02-20', '2020-02-26', 'open'),
+(5, 'new year', 'idk', 1, '2020-02-25', '2020-02-27', 'open'),
+(6, 'Erf Schoonmaken', 'maak skoon', 0, '2020-02-12', '2020-02-24', 'open'),
+(9, 'test project', 'test', 0, '2020-02-12', '2020-02-02', 'open'),
+(11, 'Cookout', 'eten koken', 0, '2020-02-19', '2020-02-28', 'open');
 
 -- --------------------------------------------------------
 
@@ -179,7 +202,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `user_type`, `user_name`, `user_password`) VALUES
-(4, 1, 'test', '$2y$10$aaTZmQu/QQ3XPQC9o9IMk.U77klzj42FEeA7QhPjJM4o/RFoN3zVW');
+(4, 1, 'test', '$2y$10$aaTZmQu/QQ3XPQC9o9IMk.U77klzj42FEeA7QhPjJM4o/RFoN3zVW'),
+(5, 2, 'test1', '$2y$10$aaTZmQu/QQ3XPQC9o9IMk.U77klzj42FEeA7QhPjJM4o/RFoN3zVW'),
+(6, 0, 'test0', '$2y$10$aaTZmQu/QQ3XPQC9o9IMk.U77klzj42FEeA7QhPjJM4o/RFoN3zVW');
 
 -- --------------------------------------------------------
 
@@ -280,19 +305,19 @@ ALTER TABLE `user_type`
 -- AUTO_INCREMENT for table `deelnemers`
 --
 ALTER TABLE `deelnemers`
-  MODIFY `deelnemers_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `deelnemers_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `deelnemers_type`
 --
 ALTER TABLE `deelnemers_type`
-  MODIFY `type_id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `type_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `projecten`
 --
 ALTER TABLE `projecten`
-  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `taak_type`
@@ -310,7 +335,7 @@ ALTER TABLE `taken`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
