@@ -8,3 +8,4 @@ if(password_verify('test', '$2y$10$AEpKWcWo0fGMPh8CAw4fuO4aRb.K9qORLYxIon2RYnv77
     echo 'sike nigga';
 }
 ?> 
+alert(JSON.stringify(M.Chips.getInstance($('.chips')).chipsData))

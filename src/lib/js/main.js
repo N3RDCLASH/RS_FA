@@ -27,7 +27,7 @@ function showForm() {
     form.style.display = 'block';
     form.classList.toggle('flip-in-ver-right', true)
     projects_table.style.display = 'none';
-    deelnemers_table.style.display = 'none';
+    // deelnemers_table.style.display = 'none';
     search.style.display = 'none';
     back_button.style.setProperty('display', 'inline-block', 'important')
 }
@@ -37,10 +37,10 @@ function showTable() {
     // let form = document.getElementById('add_form')
 
     projects_table.style.display = 'table'
-    deelnemers_table.style.display = 'table'
+    // deelnemers_table.style.display = 'table'
     search.style.display = 'block'
     projects_table.classList.toggle('flip-in-ver-right', true)
-    deelnemers_table.classList.toggle('flip-in-ver-right', true)
+    // deelnemers_table.classList.toggle('flip-in-ver-right', true)
     form.style.display = 'none'
     info.style.display = 'none'
     taken.style.display = 'none'
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
     rows.forEach(row => {
         row.addEventListener("click", () => {
             id = row.dataset.id
-            fetch(`getProject.php?id=${id}`).then(function (response) {
+            fetch(`../requests/get_project.php?id=${id}`).then(function (response) {
                 return response.json();
             })
                 .then(function (body) {
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     showProject(body)
                 });
 
-            fetch(`getTaak.php?id=${id}`).then(function (response) {
+            fetch(`../requests/get_taak.php?id=${id}`).then(function (response) {
                 return response.json();
             })
                 .then(function (body) {
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function showProject(data) {
     search.style.display = 'none'
     projects_table.style.display = 'none'
-    deelnemers_table.style.display = 'none'
+    // deelnemers_table.style.display = 'none'
     back_button.style.setProperty('display', 'inline-block', 'important')
     info.style.display = 'block'
     taken.style.display = 'block'
@@ -128,7 +128,7 @@ document.getElementById('type_taak').addEventListener('change', () => {
 })
 
 add_taak.addEventListener('click', function () {
-    fetch('selectDeelnemers.php').then(res => {
+    fetch('../requests/select_deelnemers.php').then(res => {
         return res.json()
     }).then(body => {
         // console.log(body)
@@ -140,7 +140,7 @@ add_taak.addEventListener('click', function () {
 
 function chipData(data) {
     var result = data.reduce(function (r, e) {
-        r[e.naam] = null;
+        r[e.naam] = '../../lib/images/yuna.jpg';
         return r;
     }, {});
 
@@ -153,19 +153,24 @@ function chipData(data) {
     });
 }
 
+test = {
+    test: 'test'
+}
 //Post Taak data 
-document.getElementById('taken_form').addEventListener('submit', function () {
+document.getElementById('taken_form').addEventListener('submit', function (e) {
     e.preventDefault()
-    // form = FormData(this);
+    tform = document.forms['taken_form']
+    const formdata = new FormData(tform);
 
-    // options = {
-    //     'method': 'post',
-    //     'body': FormData
-    // }
-    // fetch('createTaak.php', options).then(res => {
-    //     console.log(res)
-    // }).then
-    console.log('test')
+    fetch('../requests/create_taak.php', {
+        method: 'POST',
+        body: formdata
+    }).then(res => {
+        return res.text()
+    }).then(data => {
+        console.log(data)
+    })
+    // console.log('test')
 })
 
 

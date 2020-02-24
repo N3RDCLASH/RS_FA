@@ -42,13 +42,8 @@ tr {
 }
 
 #deelnemers {
-    margin-bottom: 5%;
     padding-bottom: 5%;
-}
-
-#taken {}
-#deelnemers{
-    margin-top: 5%;
+    margin-top: 2%;
 
 }
 #deelnemers_table {

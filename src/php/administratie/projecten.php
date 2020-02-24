@@ -30,31 +30,9 @@ require '../scripts/checkSession.php';
             <a href="../scripts/logout.php">Log Out</a>
         </li>
     </ul>
-    <div class="navbar-fixed">
-        <nav class="col s8 offset-s4">
-            <div class="nav-wrapper teal">
-                <a href="#" class="brand-logo center">Overzichten</a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Account<i class="material-icons right">arrow_drop_down</i></a></li>
-                </ul>
-            </div>
-            <ul id="slide-out" class="sidenav sidenav-fixed -4 ">
-                <li>
-                    <div class="user-view">
-                        <div class="background">
-                            <img src="../../lib/images/office.jpg">
-                        </div>
-                        <a href="#user"><img class="white-text circle" src="../../lib/images/yuna.jpg"></a>
-                        <a href="#name"><span class="white-text name">John Doe</span></a>
-                        <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
-                    </div>
-                </li>
-                <li><a href="home.php" class="">Dashboard</a></li>
-                <li class="teal"><a href="#!">Overzichten</a></li>
-                <li><a href="deelnemers.php" class="">Deelnemers</a></li>
-            </ul>
-        </nav>
-    </div>
+    <?php
+    include 'components/navigation.php';
+    ?>
 
     <!-- <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a> -->
     <div class="row">
@@ -70,48 +48,10 @@ require '../scripts/checkSession.php';
             </div>
         </div>
         <div class="col  s12 m9 offset-m3">
-            <table id="projects_table" class="highlight responsive-table z-depth-3 ">
-                <thead class="blue-grey darken-3 white-text">
-                    <tr>
-                        <th>Naam project</th>
-                        <th>Project omschrijving</th>
-                        <th>Soort project</th>
-                        <th>Start Datum </th>
-                        <th>Eind Datum</th>
-                        <th>Status project</th>
+            <?php
+            include 'components/projecten_table.php';
 
-
-                    </tr>
-                </thead>
-
-                <?php
-
-                $query =  mysqli_query($link, "SELECT * FROM projecten");
-
-                if (mysqli_num_rows($query) > 0) {
-                    while ($row = mysqli_fetch_assoc($query)) {
-                        echo "<tr data-id=" . $row{
-                            'project_id'} . ">";
-                        //  echo "<td>"<a href="test.html">Edit</a>"</td>"
-                        echo "<td>" . $row{
-                            'naam'} . "</td>";
-                        echo "<td>" . $row{
-                            'omschrijving'} . "</td>";
-                        echo "<td>" . $row{
-                            'type'} . "</td>";
-                        echo "<td>" . $row{
-                            'datum_start'} . "</td>";
-                        echo "<td>" . $row{
-                            'datum_eind'} . "</td>";
-                        echo "<td>" . $row{
-                            'status'} . "</td>";
-                        echo "</tr>";
-                    }
-                    include 'deelnemersTable.php';
-                };
-
-                ?>
-            </table>
+            ?>
         </div>
 
         <div class="row">
@@ -159,15 +99,12 @@ require '../scripts/checkSession.php';
                     <i class="material-icons right modal-trigger" id="add_taak" href="#modal1">add</i>
                 </div>
             </div>
-            <!-- <div class="col m4 s12 offset-m7 z-depth-3 flip-in-ver-right" id="deelnemers">
-
-            </div> -->
         </div>
     </div>
     </div>
     <div class="row">
-        <form action="createProject.php" method="POST">
-            <div id="add_form" class="col m9 s12 offset-m3 white z-depth-3 ">
+        <form action="../requests/create_project.php" method="POST">
+            <div id="add_form" class="col m7 s12 offset-m4 white z-depth-3 ">
 
                 <h5 class="center ">Project Informatie</h5>
 
@@ -223,18 +160,18 @@ require '../scripts/checkSession.php';
     <div id="modal1" class="modal">
         <div class="modal-content">
             <h4>Taken Registratie</h4>
-            <form id="taken_form" method="POST">
+            <form name="taken_form" id="taken_form">
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="taak_naam" type="text" class="validate" required>
+                        <input id="taak_naam" name="taak_naam" type="text" class="validate" required>
                         <label for="taak_naam">Naam</label>
                     </div>
                     <div class="input-field col s12">
-                        <textarea id="taak_omschrijving" type="text" class="materialize-textarea validate" required></textarea>
+                        <textarea id="taak_omschrijving" name="taak_omschrijving" type="text" class="materialize-textarea validate" required></textarea>
                         <label for="taak_omschrijving">Omschrijving</label>
                     </div>
                     <div class="input-field col s12">
-                        <select id="type_taak" name="type">
+                        <select id="type_taak" name="type_taak">
                             <option value="" disabled selected>Type Taak</option>
                             <option class="" value="3">Uitvoering</option>
                             <option class="" value="4">UItgave</option>
@@ -246,24 +183,23 @@ require '../scripts/checkSession.php';
                         <label class="active">Verantwoordelijke</label>
                     </div>
                     <div class="input-field col s12">
-                        <textarea id="taak_aantal" type="text" class="materialize-textarea validate"></textarea>
+                        <textarea id="taak_aantal" name="taak_aantal" type="text" class="materialize-textarea validate"></textarea>
                         <label for="taak_aantal">Aantal</label>
                     </div>
                     <div class="input-field col s12">
-                        <textarea id="taak_prijs" type="text" class="materialize-textarea validate"></textarea>
+                        <textarea id="taak_prijs" name="taak_prijs" type="text" class="materialize-textarea validate"></textarea>
                         <label for="taak_prijs">Prijs</label>
                     </div>
                 </div>
+                <div class="modal-footer">
+                    <div class="row">
+                        <button class="btn waves-effect waves-light col m12" type="submit" id="submit_taak" name="opslaan">Submit
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>
             </form>
-            <div class="modal-footer">
-                <div class="row">
-                    <button class="btn waves-effect waves-light col m12" type="submit" id="submit_taak" name="opslaan">Submit
-                        <i class="material-icons right">send</i>
-                    </button>
-
-                </div>
-            </div>
         </div>
+    </div>
     </div>
     <!--JavaScript at end of body for optimized loading-->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script> -->

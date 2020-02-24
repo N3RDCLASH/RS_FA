@@ -13,5 +13,5 @@ if (isset($_POST['action'])) {
     if (!mysqli_query($link, $sql)) {
         echo mysqli_error($link);
     };
-    header("location:overzichten.php");
+    header("location:../administratie/overzichten.php");
 }
