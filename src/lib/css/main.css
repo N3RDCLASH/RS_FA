@@ -31,6 +31,7 @@ tr {
 
 #col-left {
     height: 100vh;
+    background-color: #fefefe;
 }
 
 #col-right {
@@ -44,8 +45,9 @@ tr {
 #deelnemers {
     padding-bottom: 5%;
     margin-top: 2%;
-
+    display: none;
 }
+
 #deelnemers_table {
     margin-top: 5%;
 }
@@ -65,6 +67,11 @@ tr {
 
 #wrapper {
     margin-bottom: 0 !important;
+}
+
+#lg_img {
+    display: block;
+    margin: 16% auto;
 }
 
 #project_informatie {

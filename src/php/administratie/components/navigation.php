@@ -13,12 +13,12 @@
                         <img src="../../lib/images/office.jpg">
                     </div>
                     <a href="#user"><img class="white-text circle" src="../../lib/images/yuna.jpg"></a>
-                    <a href="#name"><span class="white-text name"><?php echo $_SESSION['username']; ?></span></a>
+                    <a href="#name"><span class="white-text name"><?php echo $_SESSION['user']; ?></span></a>
                     <a href="#email"><span class="white-text email">test@gmail.com</span></a>
                 </div>
             </li>
             <li><a href="home.php" class="">Dashboard</a></li>
-            <li class=""><a href="#!">Projecten</a></li>
+            <li class=""><a href="projecten.php">Projecten</a></li>
             <li><a href="deelnemers.php" class="">Deelnemers</a></li>
         </ul>
     </nav>

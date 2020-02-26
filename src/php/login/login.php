@@ -23,7 +23,8 @@
 
 <body>
     <div class="row" id="wrapper">
-        <div class="col s12 m8 teal" id="col-left">
+        <div class="col s12 m8" id="col-left">
+            <img src="../../lib/images/fin.jpg" id="lg_img" class="center">
         </div>
         <div class="col s12  m4 blue-grey darken-2" id="col-right">
             <form class="col s10 offset-s1" id="form" action="../scripts/login.php" method="POST">
@@ -42,7 +43,7 @@
                         Remember me
                     </label>
                 </div>
-                <button class="btn waves-effect waves-light col s12" id="submit" type="submit" name="action">Log In
+                <button class="btn waves-effect waves-light col s12 cyan accent-4" id="submit" type="submit" name="action">Log In
                     <i class="material-icons right">send</i>
                 </button>
         </div>

@@ -1,52 +1,43 @@
-M.AutoInit();
-let projects_table = document.getElementById('projects_table')
-let deelnemers_table = document.getElementById('deelnemers_table')
-let form = document.getElementById('add_form')
-let row = document.getElementsByClassName('row')[0]
-let info = document.getElementById('project_informatie')
-let add_taak = document.getElementById('add_taak')
-let taken = document.getElementById('project_taken')
-let taken_lijst = document.getElementById('taken_lijst')
-let search = document.getElementById('search_bar')
-let back_button = document.createElement("i")
-back_button.className = 'material-icons small teal-text back'
-back_button.innerHTML = 'arrow_back';
-back_button.onclick = showTable
-back_button.id = 'back_button'
-row.insertBefore(back_button, row.firstChild)
+
+//do work
+const projects_table = document.getElementById('projects_table')
+const form = document.getElementById('add_form')
+const row = document.getElementsByClassName('row')[0]
+const info = document.getElementById('project_informatie')
+const add_taak = document.getElementById('add_taak')
+const taken = document.getElementById('project_taken')
+const taken_lijst = document.getElementById('taken_lijst')
+const search = document.getElementById('search_bar')
 let response
 let deelnemers = []
-
-$(document).ready(
-    function () {
-        $('.datepicker').datepicker({ format: 'yyyy-mm-dd', container: 'body' });
-    }
-);
+const back_button = document.createElement("i")
+back_button.className = 'material-icons small teal-text back'
+back_button.innerHTML = 'arrow_back';
+back_button.id = 'back_button'
+row.insertBefore(back_button, row.firstChild)
 
 function showForm() {
-    form.style.display = 'block';
+    form.style.display = 'block'
     form.classList.toggle('flip-in-ver-right', true)
-    projects_table.style.display = 'none';
+    projects_table.style.display = 'none'
     // deelnemers_table.style.display = 'none';
-    search.style.display = 'none';
+    search.style.display = 'none'
     back_button.style.setProperty('display', 'inline-block', 'important')
 }
 
 function showTable() {
-    // let table = document.getElementById('projects_table')
-    // let form = document.getElementById('add_form')
+
 
     projects_table.style.display = 'table'
-    // deelnemers_table.style.display = 'table'
     search.style.display = 'block'
     projects_table.classList.toggle('flip-in-ver-right', true)
-    // deelnemers_table.classList.toggle('flip-in-ver-right', true)
     form.style.display = 'none'
     info.style.display = 'none'
     taken.style.display = 'none'
     back_button.style.display = 'none'
     taken_lijst.innerHTML = ''
 }
+back_button.addEventListener('click', showTable)
 
 document.addEventListener("DOMContentLoaded", () => {
     const rows = document.querySelectorAll("tr[data-id]")
@@ -54,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
         row.addEventListener("click", () => {
             id = row.dataset.id
             fetch(`../requests/get_project.php?id=${id}`).then(function (response) {
-                return response.json();
+                return response.json()
             })
                 .then(function (body) {
                     // console.table(body)
@@ -63,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
 
             fetch(`../requests/get_taak.php?id=${id}`).then(function (response) {
-                return response.json();
+                return response.json()
             })
                 .then(function (body) {
                     // console.table(body)
@@ -74,11 +65,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     })
 })
-
 function showProject(data) {
     search.style.display = 'none'
     projects_table.style.display = 'none'
-    // deelnemers_table.style.display = 'none'
     back_button.style.setProperty('display', 'inline-block', 'important')
     info.style.display = 'block'
     taken.style.display = 'block'
@@ -104,15 +93,12 @@ function showTaak(data) {
     data.forEach(taak => {
         taken_lijst.innerHTML +=
             `<li>
-            <div class="collapsible-header" > <i class="material-icons">check</i>${taak.naam}</div>
-            <div class="collapsible-body"><span>${taak.omschrijving}</span></div>
-    </li > `
+                        <div class="collapsible-header" > <i class="material-icons">check</i>${taak.naam}</div>
+                        <div class="collapsible-body"><span>${taak.omschrijving}</span></div>
+                </li > `
         // console.log(data)
     })
 }
-
-
-
 
 
 //Taken Form
@@ -171,13 +157,6 @@ document.getElementById('taken_form').addEventListener('submit', function (e) {
         console.log(data)
     })
     // console.log('test')
+
 })
 
-
-
-// function setCookie(cname, cvalue, exdays) {
-//     var d = new Date();
-//     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-//     var expires = "expires=" + d.toUTCString();
-//     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-// }
