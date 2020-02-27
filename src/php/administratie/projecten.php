@@ -2,7 +2,7 @@
 require_once '../../db/conn.php';
 require_once '../scripts/session.php';
 require '../scripts/checkSession.php';
-
+$_COOKIE['page'] = 'projecten';
 ?>
 
 <!DOCTYPE html>
@@ -178,7 +178,8 @@ require '../scripts/checkSession.php';
                         </select>
                     </div>
                     <div class="input-field col s12">
-                        <div class="chips chips-autocomplete">
+                        <div name="taak_verantwoordelijke" class="chips chips-autocomplete">
+
                         </div>
                         <label class="active">Verantwoordelijke</label>
                     </div>

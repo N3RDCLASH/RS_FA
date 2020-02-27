@@ -2,7 +2,8 @@
 require_once '../../db/conn.php';
 require_once '../scripts/session.php';
 require '../scripts/checkSession.php';
-
+setcookie('page', '', time() + 3600);
+$_COOKIE['page'] = 'home';
 ?>
 
 <!DOCTYPE html>

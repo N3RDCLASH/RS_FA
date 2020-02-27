@@ -114,7 +114,7 @@ document.getElementById('type_taak').addEventListener('change', () => {
 })
 
 add_taak.addEventListener('click', function () {
-    fetch('../requests/select_deelnemers.php').then(res => {
+    fetch('../requests/get_deelnemers.php').then(res => {
         return res.json()
     }).then(body => {
         // console.log(body)
@@ -147,10 +147,11 @@ document.getElementById('taken_form').addEventListener('submit', function (e) {
     e.preventDefault()
     tform = document.forms['taken_form']
     const formdata = new FormData(tform);
-
+    const verantwoordelijk = M.Chips.getInstance($('.chips')).chipsData
+    console.log(verantwoordelijk)
     fetch('../requests/create_taak.php', {
         method: 'POST',
-        body: formdata
+        body:formdata
     }).then(res => {
         return res.text()
     }).then(data => {
@@ -159,4 +160,3 @@ document.getElementById('taken_form').addEventListener('submit', function (e) {
     // console.log('test')
 
 })
-

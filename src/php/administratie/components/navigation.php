@@ -17,9 +17,15 @@
                     <a href="#email"><span class="white-text email">test@gmail.com</span></a>
                 </div>
             </li>
-            <li><a href="home.php" class="">Dashboard</a></li>
-            <li class=""><a href="projecten.php">Projecten</a></li>
-            <li><a href="deelnemers.php" class="">Deelnemers</a></li>
+            <li class="<?php if ($_COOKIE['page'] == 'home') {
+                            echo 'teal';
+                        }; ?>"><a href="home.php" class="">Dashboard</a></li>
+            <li class="<?php if ($_COOKIE['page'] == 'projecten') {
+                            echo 'teal';
+                        }; ?>"><a href="projecten.php">Projecten</a></li>
+            <li class="<?php if ($_COOKIE['page'] == 'deelnemers') {
+                            echo 'teal';
+                        }; ?>"><a href="deelnemers.php" class="">Deelnemers</a></li>
         </ul>
     </nav>
 </div>
