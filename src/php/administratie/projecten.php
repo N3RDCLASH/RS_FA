@@ -50,10 +50,8 @@ $_COOKIE['page'] = 'projecten';
         <div class="col  s12 m9 offset-m3">
             <?php
             include 'components/projecten_table.php';
-
             ?>
         </div>
-
         <div class="row">
             <div class="col m4 s12 offset-m3 z-depth-3 flip-in-ver-right" id="project_informatie">
                 <h5 class="center">Project Informatie</h5>
@@ -178,9 +176,9 @@ $_COOKIE['page'] = 'projecten';
                         </select>
                     </div>
                     <div class="input-field col s12">
-                        <div name="taak_verantwoordelijke" class="chips chips-autocomplete">
-
-                        </div>
+                        <select id="taak_verantwoordelijke" name="taak_verantwoordelijke" multiple>
+                            <option value="" disabled>Selecteer de deelnemers</option>
+                        </select>
                         <label class="active">Verantwoordelijke</label>
                     </div>
                     <div class="input-field col s12">

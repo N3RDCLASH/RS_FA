@@ -118,26 +118,36 @@ add_taak.addEventListener('click', function () {
         return res.json()
     }).then(body => {
         // console.log(body)
-        chipData(body)
-        // deelnemers = body
+        var selectList = document.getElementById("taak_verantwoordelijke");
+        //Create and append the options
+        var instance = M.FormSelect.getInstance(selectList)
+        instance.destroy()
+        for (var i = 0; i < body.length; i++) {
+            var option = document.createElement("option");
+            option.value = body[i].id;
+            option.text = body[i].naam;
+            selectList.appendChild(option);
+            console.log(selectList)
+        }
+        instance = M.FormSelect.init(selectList);
         // console.log(deelnemers)
     })
 })
 
-function chipData(data) {
-    var result = data.reduce(function (r, e) {
-        r[e.naam] = '../../lib/images/yuna.jpg';
-        return r;
-    }, {});
+// function chipData(data) {
+//     var result = data.reduce(function (r, e) {
+//         r[e.naam] = '../../lib/images/yuna.jpg';
+//         return r;
+//     }, {});
 
-    $('.chips-autocomplete').chips({
-        autocompleteOptions: {
-            data: result,
-            limit: Infinity,
-            minLength: 1
-        }
-    });
-}
+//     $('.chips-autocomplete').chips({
+//         autocompleteOptions: {
+//             data: result,
+//             limit: Infinity,
+//             minLength: 1
+//         }
+//     });
+// }
 
 test = {
     test: 'test'
@@ -145,13 +155,13 @@ test = {
 //Post Taak data 
 document.getElementById('taken_form').addEventListener('submit', function (e) {
     e.preventDefault()
+    console.log('teste')
     tform = document.forms['taken_form']
     const formdata = new FormData(tform);
-    const verantwoordelijk = M.Chips.getInstance($('.chips')).chipsData
-    console.log(verantwoordelijk)
+    // console.log(verantwoordelijk)
     fetch('../requests/create_taak.php', {
         method: 'POST',
-        body:formdata
+        body: formdata
     }).then(res => {
         return res.text()
     }).then(data => {
