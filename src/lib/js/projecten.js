@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     rows.forEach(row => {
         row.addEventListener("click", () => {
             id = row.dataset.id
+            setCookie('project_id', id, 1)
             fetch(`../requests/get_project.php?id=${id}`).then(function (response) {
                 return response.json()
             })
@@ -154,12 +155,14 @@ test = {
 }
 //Post Taak data 
 document.getElementById('taken_form').addEventListener('submit', function (e) {
+
     e.preventDefault()
-    console.log('teste')
+    // console.log('test')
     tform = document.forms['taken_form']
     const formdata = new FormData(tform);
     // console.log(verantwoordelijk)
-    fetch('../requests/create_taak.php', {
+    id = getCookie('project_id');
+    fetch(`../requests/create_taak.php?id=${id}`, {
         method: 'POST',
         body: formdata
     }).then(res => {

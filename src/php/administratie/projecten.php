@@ -158,7 +158,7 @@ $_COOKIE['page'] = 'projecten';
     <div id="modal1" class="modal">
         <div class="modal-content">
             <h4>Taken Registratie</h4>
-            <form name="taken_form" id="taken_form">
+            <form action="../requests/create_taak.php" method="post" name="taken_form" id="taken_form">
                 <div class="row">
                     <div class="input-field col s12">
                         <input id="taak_naam" name="taak_naam" type="text" class="validate" required>
@@ -176,7 +176,7 @@ $_COOKIE['page'] = 'projecten';
                         </select>
                     </div>
                     <div class="input-field col s12">
-                        <select id="taak_verantwoordelijke" name="taak_verantwoordelijke" multiple>
+                        <select id="taak_verantwoordelijke" name="taak_verantwoordelijke[]" multiple>
                             <option value="" disabled>Selecteer de deelnemers</option>
                         </select>
                         <label class="active">Verantwoordelijke</label>
@@ -192,7 +192,7 @@ $_COOKIE['page'] = 'projecten';
                 </div>
                 <div class="modal-footer">
                     <div class="row">
-                        <button class="btn waves-effect waves-light col m12" type="submit" id="submit_taak" name="opslaan">Submit
+                        <button class="btn waves-effect waves-light col m12" type="submit" id="submit_taak" value='test' name="opslaan">Submit
                             <i class="material-icons right">send</i>
                         </button>
                     </div>
