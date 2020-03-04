@@ -1,7 +1,7 @@
 <div class="navbar-fixed">
     <nav class="col s8 offset-s4">
         <div class="nav-wrapper teal">
-            <a href="#" class="brand-logo center"></a>
+            <a href="#" class="brand-logo center"><?php echo $_COOKIE['page'] ?></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Account<i class="material-icons right">arrow_drop_down</i></a></li>
             </ul>
@@ -17,13 +17,13 @@
                     <a href="#email"><span class="white-text email">test@gmail.com</span></a>
                 </div>
             </li>
-            <li class="<?php if ($_COOKIE['page'] == 'home') {
+            <li class="<?php if ($_COOKIE['page'] == 'Dashboard') {
                             echo 'teal';
                         }; ?>"><a href="home.php" class="">Dashboard</a></li>
-            <li class="<?php if ($_COOKIE['page'] == 'projecten') {
+            <li class="<?php if ($_COOKIE['page'] == 'Projecten') {
                             echo 'teal';
                         }; ?>"><a href="projecten.php">Projecten</a></li>
-            <li class="<?php if ($_COOKIE['page'] == 'deelnemers') {
+            <li class="<?php if ($_COOKIE['page'] == 'Deelnemers') {
                             echo 'teal';
                         }; ?>"><a href="deelnemers.php" class="">Deelnemers</a></li>
         </ul>

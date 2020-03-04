@@ -92,6 +92,10 @@ tr {
     cursor: pointer;
 }
 
+#main {
+    margin-top: 1.5%;
+}
+
 /* .sidenav li.active {
     background-color: #73b3ad;
 } */

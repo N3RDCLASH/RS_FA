@@ -16,5 +16,7 @@ if (mysqli_num_rows($result) > 0) {
             'id' => $row['deelnemers_id']
         ];
     }
+    mysqli_close($link);
+
     die(json_encode($deelnemers));
 }

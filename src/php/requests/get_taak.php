@@ -37,6 +37,7 @@ if (mysqli_num_rows($result) > 0) {
         ];
         // print_r($taak);
     }
+    mysqli_close($link);
     die(json_encode($taak));
 } else {
     die('geen taak beschikbaaar');

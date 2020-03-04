@@ -3,7 +3,7 @@ require_once '../../db/conn.php';
 require_once '../scripts/session.php';
 require '../scripts/checkSession.php';
 setcookie('page', '', time() + 3600);
-$_COOKIE['page'] = 'home';
+$_COOKIE['page'] = 'Dashboard';
 ?>
 
 <!DOCTYPE html>
@@ -31,32 +31,10 @@ $_COOKIE['page'] = 'home';
             <a href="../scripts/logout.php">Log Out</a>
         </li>
     </ul>
-    <div class="navbar-fixed">
+    <?php
+    include 'components/navigation.php';
 
-        <nav class="col s8 offset-s4">
-            <div class="nav-wrapper teal">
-                <a href="#" class="brand-logo center">Dashboard</a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Account<i class="material-icons right">arrow_drop_down</i></a></li>
-                </ul>
-            </div>
-            <ul id="slide-out" class="sidenav sidenav-fixed  ">
-                <li>
-                    <div class="user-view">
-                        <div class="background">
-                            <img src="../../lib/images/office.jpg">
-                        </div>
-                        <a href="#user"><img class="white-text circle" src="../../lib/images/yuna.jpg"></a>
-                        <a href="#name"><span class="white-text name">John Doe</span></a>
-                        <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
-                    </div>
-                </li>
-                <li class="teal"><a href="#!" class="">Dashboard</a></li>
-                <li><a href="projecten.php">Projecten</a></li>
-                <li><a href="deelnemers.php" class="">Deelnemers</a></li>
-            </ul>
-        </nav>
-    </div>
+    ?>
     <div class="row">
         <div class="col m5 offset-m5 z-depth-3" id="chart_container">
             <div class="chart-container" style="position: relative; height:50vh; width:40vw">

@@ -2,7 +2,7 @@
 //do work
 const projects_table = document.getElementById('projects_table')
 const form = document.getElementById('add_form')
-const row = document.getElementsByClassName('row')[0]
+const row = document.getElementsByClassName('col')[0]
 const info = document.getElementById('project_informatie')
 const add_taak = document.getElementById('add_taak')
 const taken = document.getElementById('project_taken')
@@ -14,7 +14,7 @@ const back_button = document.createElement("i")
 back_button.className = 'material-icons small teal-text back'
 back_button.innerHTML = 'arrow_back';
 back_button.id = 'back_button'
-row.insertBefore(back_button, row.firstChild)
+row.appendChild(back_button)
 
 function showForm() {
     form.style.display = 'block'
@@ -26,8 +26,6 @@ function showForm() {
 }
 
 function showTable() {
-
-
     projects_table.style.display = 'table'
     search.style.display = 'block'
     projects_table.classList.toggle('flip-in-ver-right', true)
@@ -90,6 +88,26 @@ function showProject(data) {
     begin_datum.value = data.datum_start
     eind_datum.value = data.datum_eind
 }
+
+function selectProject(id) {
+    fetch(`../requests/get_project.php?id=${id}`).then(function (response) {
+        return response.json()
+    })
+        .then(function (body) {
+            // console.table(body)
+            response = body
+            showProject(body)
+        });
+
+    fetch(`../requests/get_taak.php?id=${id}`).then(function (response) {
+        return response.json()
+    })
+        .then(function (body) {
+            // console.table(body)
+            response = body
+            showTaak(body)
+        });
+}
 function showTaak(data) {
     data.forEach(taak => {
         taken_lijst.innerHTML +=
@@ -123,6 +141,7 @@ add_taak.addEventListener('click', function () {
         //Create and append the options
         var instance = M.FormSelect.getInstance(selectList)
         instance.destroy()
+        selectList.innerHTML = ''
         for (var i = 0; i < body.length; i++) {
             var option = document.createElement("option");
             option.value = body[i].id;
@@ -155,7 +174,6 @@ test = {
 }
 //Post Taak data 
 document.getElementById('taken_form').addEventListener('submit', function (e) {
-
     e.preventDefault()
     // console.log('test')
     tform = document.forms['taken_form']
@@ -169,6 +187,11 @@ document.getElementById('taken_form').addEventListener('submit', function (e) {
         return res.text()
     }).then(data => {
         console.log(data)
+        let elem = document.getElementById('modal1')
+        var instance = M.Modal.getInstance(elem)
+        instance.close()
+        selectProject(id)
+
     })
     // console.log('test')
 

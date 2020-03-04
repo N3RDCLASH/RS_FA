@@ -25,5 +25,6 @@ if (mysqli_num_rows($result) > 0) {
                 'status'}
         ];
     }
+    mysqli_close($link);
     die(json_encode($project));
 }

@@ -2,7 +2,7 @@
 require_once '../../db/conn.php';
 require_once '../scripts/session.php';
 require '../scripts/checkSession.php';
-$_COOKIE['page'] = 'projecten';
+$_COOKIE['page'] = 'Projecten';
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +52,7 @@ $_COOKIE['page'] = 'projecten';
             include 'components/projecten_table.php';
             ?>
         </div>
-        <div class="row">
+        <div class="row" id="main">
             <div class="col m4 s12 offset-m3 z-depth-3 flip-in-ver-right" id="project_informatie">
                 <h5 class="center">Project Informatie</h5>
                 <div class="row">

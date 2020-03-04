@@ -2,7 +2,7 @@
 require_once '../../db/conn.php';
 require_once '../scripts/session.php';
 require '../scripts/checkSession.php';
-$_COOKIE['page'] = 'deelnemers';
+$_COOKIE['page'] = 'Deelnemers';
 ?>
 
 <!DOCTYPE html>
