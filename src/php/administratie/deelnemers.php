@@ -1,7 +1,7 @@
 <?php
 require_once '../../db/conn.php';
 require_once '../scripts/session.php';
-require '../scripts/checkSession.php';
+require '../scripts/check_session.php';
 $_COOKIE['page'] = 'Deelnemers';
 ?>
 

@@ -1,5 +1,9 @@
 <?php
-// include 'src/php/checkSession.php';
+include '../scripts/session.php';
+if (isset($_SESSION['user'])) {
+    // echo $_SESSION['user'], $_SESSION['type'];
+    header('location:../administratie/home.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
