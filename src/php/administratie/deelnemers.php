@@ -29,7 +29,7 @@ $_COOKIE['page'] = 'Deelnemers';
     include 'components/navigation.php';
     ?>
     <div class="row">
-        <div class="col m9 offset-m3">
+        <div class="col m9 s12 offset-m3">
             <?php
             include 'components/deelnemers_table.php';
             ?>
@@ -37,7 +37,7 @@ $_COOKIE['page'] = 'Deelnemers';
     </div>
     <div class="row">
         <div class="col m7 offset-m4 z-depth-3" id="deelnemers">
-            <form id="" action="../requests/create_deelnemer.php" method="POST">
+            <form id="" action="../requests/create_deelnemer.php" class="white-text" method="POST">
                 <h5 class="center">Deelnemer gegevens</h5>
                 <div class="input-field col m12">
                     <input type="text" name="deelnemers_naam" tabindex="1" size="10" placeholder="Naam" required autofocus>
@@ -70,14 +70,14 @@ $_COOKIE['page'] = 'Deelnemers';
 
                 </div>
 
-                <button class="btn waves-effect waves-light col m12" type="submit" name="opslaan">Submit
+                <button class="green lighten-1 btn waves-effect waves-light col m12" type="submit" name="opslaan">Submit
                     <i class="material-icons right">send</i>
                 </button>
             </form>
         </div>
     </div>
     <div class="fixed-action-btn">
-        <a onclick='showForm()' class="btn-floating btn-large waves-effect waves-light "><i class="material-icons">add</i></a>
+        <a onclick='showForm()' class=" green lighten-1 btn-floating btn-large waves-effect waves-light"><i class="material-icons">add</i></a>
     </div>
 
     <!-- <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a> -->

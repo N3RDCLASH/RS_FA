@@ -8,13 +8,30 @@
     }
 }
 
-body {
-    background-color: #f2f4f8;
-}
-
 tr {
     cursor: pointer;
 }
+
+/* theme colors */
+
+body {
+    background-color: #343a40;
+}
+
+.primary {
+    background-color: #348b4c;
+}
+
+.dark-1 {}
+
+.dark-2 {
+    background-color: #262a2d;
+    ;
+}
+
+.secondary {}
+
+/* end thene */
 
 #add_form {
     display: none;
@@ -27,6 +44,10 @@ tr {
 
 #form {
     margin-top: 40%;
+}
+
+#cards-container {
+    margin-top: 2%;
 }
 
 #col-left {
@@ -100,6 +121,8 @@ tr {
     background-color: #73b3ad;
 } */
 
+/* materialize overwrite */
+
 table.highlight>tbody>tr:hover {
     background-color: #73b3ad !important;
 }
@@ -115,6 +138,10 @@ table.highlight>tbody>tr:hover {
 
 .collection {
     border: none;
+}
+
+.input-field input[type=text]:focus+label {
+    color: #fff;
 }
 
 /* animations */
@@ -265,4 +292,168 @@ table.highlight>tbody>tr:hover {
         transform: rotateY(70deg);
         opacity: 0;
     }
+}
+
+/* Gradients */
+
+.gradient-bloody {
+    background: #f54ea2;
+    background: -webkit-linear-gradient(45deg, #f54ea2, #ff7676)!important;
+    background: linear-gradient(45deg, #f54ea2, #ff7676)!important;
+}
+
+.gradient-scooter {
+    background: #4facfe;
+    background: -webkit-linear-gradient(45deg, #4facfe 0%, #00f2fe 100%)!important;
+    background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%)!important;
+}
+
+.gradient-blooker {
+    background: #fa709a;
+    background: -webkit-linear-gradient(45deg, #fa709a 0%, #fee140 100%)!important;
+    background: linear-gradient(45deg, #fa709a 0%, #fee140 100%)!important;
+}
+
+.gradient-quepal {
+    background: #11998e;
+    background: -webkit-linear-gradient(45deg, #11998e, #38ef7d)!important;
+    background: linear-gradient(45deg, #11998e, #38ef7d)!important;
+}
+
+.gradient-purpink {
+    background: #7f00ff;
+    background: -webkit-linear-gradient(45deg, #7f00ff, #e100ff)!important;
+    background: linear-gradient(45deg, #7f00ff, #e100ff)!important;
+}
+
+.gradient-ibiza {
+    background: #ee0979;
+    background: -webkit-linear-gradient(45deg, #ee0979, #ff6a00)!important;
+    background: linear-gradient(45deg, #ee0979, #ff6a00)!important;
+}
+
+.gradient-deepblue {
+    background: #6a11cb;
+    background: -webkit-linear-gradient(45deg, #6a11cb, #2575fc)!important;
+    background: linear-gradient(45deg, #6a11cb, #2575fc)!important;
+}
+
+.gradient-branding {
+    background: #6a11cb;
+    background: -webkit-linear-gradient(180deg, #2af598, #009efd)!important;
+    background: linear-gradient(180deg, #2af598, #009efd)!important;
+}
+
+.gradient-ohhappiness {
+    background: #00b09b;
+    background: -webkit-linear-gradient(45deg, #00b09b, #96c93d)!important;
+    background: linear-gradient(45deg, #00b09b, #96c93d)!important;
+}
+
+.gradient-dusk {
+    background: #2c3e50;
+    background: -webkit-linear-gradient(45deg, #2c3e50, #fd746c)!important;
+    background: linear-gradient(45deg, #2c3e50, #fd746c)!important;
+}
+
+.gradient-meridian {
+    background: #283c86;
+    background: -webkit-linear-gradient(45deg, #283c86, #45a247)!important;
+    background: linear-gradient(45deg, #283c86, #45a247)!important;
+}
+
+.gradient-violet {
+    background: #4776e6;
+    background: -webkit-linear-gradient(45deg, #4776e6, #8e54e9)!important;
+    background: linear-gradient(45deg, #4776e6, #8e54e9)!important;
+}
+
+.gradient-titanium {
+    background: #283048;
+    background: -webkit-linear-gradient(45deg, #283048, #859398)!important;
+    background: linear-gradient(45deg, #283048, #859398)!important;
+}
+
+.gradient-shifter {
+    background: #bc4e9c;
+    background: -webkit-linear-gradient(45deg, #bc4e9c, #f80759)!important;
+    background: linear-gradient(45deg, #bc4e9c, #f80759)!important;
+}
+
+.gradient-army {
+    background: #414d0b;
+    background: -webkit-linear-gradient(45deg, #414d0b, #727a17)!important;
+    background: linear-gradient(45deg, #414d0b, #727a17)!important;
+}
+
+.gradient-orange {
+    background: #fc4a1a;
+    background: -webkit-linear-gradient(45deg, #fc4a1a, #f7b733)!important;
+    background: linear-gradient(45deg, #fc4a1a, #f7b733)!important;
+}
+
+.gradient-yoda {
+    background: #ff0099;
+    background: -webkit-linear-gradient(45deg, #ff0099, #493240)!important;
+    background: linear-gradient(45deg, #ff0099, #493240)!important;
+}
+
+.gradient-royal {
+    background: #141e30;
+    background: -webkit-linear-gradient(45deg, #141e30, #2c527d)!important;
+    background: linear-gradient(45deg, #141e30, #2c527d)!important;
+}
+
+.gradient-knight {
+    background: #ba8b02;
+    background: -webkit-linear-gradient(45deg, #ba8b02, #181818)!important;
+    background: linear-gradient(45deg, #ba8b02, #181818)!important;
+}
+
+.gradient-forest {
+    background: #000428;
+    background: -webkit-linear-gradient(45deg, #000428, #004e92)!important;
+    background: linear-gradient(45deg, #000428, #004e92)!important;
+}
+
+.gradient-redmist {
+    background: #353434;
+    background: -webkit-linear-gradient(45deg, #353434, #e74c3c)!important;
+    background: linear-gradient(45deg, #353434, #e74c3c)!important;
+}
+
+.gradient-steelgray {
+    background: #1f1c2c;
+    background: -webkit-linear-gradient(45deg, #1f1c2c, #928dab)!important;
+    background: linear-gradient(45deg, #1f1c2c, #928dab)!important;
+}
+
+.gradient-influenza {
+    background: #c04848;
+    background: -webkit-linear-gradient(45deg, #c04848, #480048)!important;
+    background: linear-gradient(45deg, #c04848, #480048)!important;
+}
+
+.gradient-sylvia {
+    background: #ff4b1f;
+    background: -webkit-linear-gradient(45deg, #ff4b1f, #ff9068)!important;
+    background: linear-gradient(45deg, #ff4b1f, #ff9068)!important;
+}
+
+.gradient-jshine {
+    background: #12c2e9;
+    background: -webkit-linear-gradient(45deg, #12c2e9, #c471ed, #f64f59)!important;
+    background: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59)!important;
+}
+
+.gradient-lovekiss {
+    background: #ff0844;
+    background: -webkit-linear-gradient(45deg, #ff0844, #ffb199)!important;
+    background: linear-gradient(45deg, #ff0844 0%, #ffb199 100%)!important;
+}
+
+.gradient-hossein {
+    background: #f7ff00;
+    background: -webkit-linear-gradient(45deg, #f7ff00, #db36a4)!important;
+    background: linear-gradient(45deg, #f7ff00, #db36a4)!important;
 }

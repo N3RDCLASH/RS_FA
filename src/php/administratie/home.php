@@ -35,10 +35,57 @@ $_COOKIE['page'] = 'Dashboard';
     include 'components/navigation.php';
 
     ?>
+    <div class="row" id="cards-container">
+        <div class="col s12 m2 offset-m3">
+            <div class="card gradient-deepblue z-depth-3">
+                <div class="card-content white-text">
+                    <span class="card-title">Card Title</span>
+                    <p>I am a very simple card.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m2">
+            <div class="card gradient-orange z-depth-3">
+                <div class="card-content white-text">
+                    <span class="card-title">Card Title</span>
+                    <p>I am a very simple card.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+        <div class="col s12 m2">
+            <div class="card gradient-ohhappiness z-depth-3">
+                <div class="card-content white-text">
+                    <span class="card-title">Card Title</span>
+                    <p>I am a very simple card.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+        <div class="col s12 m2">
+            <div class="card gradient-ibiza z-depth-3">
+                <div class="card-content white-text">
+                    <span class="card-title">Card Title</span>
+                    <p>I am a very simple card.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     <div class="row">
-        <div class="col m5 offset-m5 z-depth-3" id="chart_container">
-            <div class="chart-container" style="position: relative; height:50vh; width:40vw">
-                <canvas id="myChart"></canvas>
+        <div class="col m3 offset-m4 z-depth-3" id="chart_container">
+            <div class="chart-container" style="position: relative; height:40vh; width:22vw">
+                <canvas id="Chart1"></canvas>
+            </div>
+        </div>
+        <div class="col m3 offset-m1  z-depth-3" id="chart_container">
+            <div class="chart-container" style="position: relative; height:40vh; width:22vw">
+                <canvas id="Chart2"></canvas>
             </div>
         </div>
     </div>
@@ -52,61 +99,32 @@ $_COOKIE['page'] = 'Dashboard';
     <script type="text/javascript" src="../../lib/js/home.js"></script>
     <script src="../../lib/js/node_modules/chart.js/dist/Chart.js"></script>
     <script>
-        const EventTargetPrototype = document.__proto__.__proto__.__proto__.__proto__;
-        const origAddEventListener = EventTargetPrototype.addEventListener;
-        EventTargetPrototype.addEventListener = function addEventListenerWrapper(type, listener) {
-            if (typeof listener !== 'function') throw new Error('bad listener for ' + type);
-            return origAddEventListener.apply(this, arguments);
-        };
-
-        document.addEventListener('DOMContentLoaded', ChartIt)
-
-        function getData() {
-            let xs = []
-            let ys = []
-            fetch('../requests/stats/get_aantal_type_projecten.php')
-                .then(body => {
-                    return body.json()
-                })
-                .then(body => body.forEach(x => {
-                    xs.push(x.type)
-                    ys.push(x.aantal)
-                }))
-                .catch(error => {
-                    console.log(error)
-                })
-            return {
-                xs,
-                ys
-            }
-        }
-
-        // document.addEventListener("DOMContentLoaded", )
+        document.addEventListener("DOMContentLoaded", ChartIt)
 
         async function ChartIt() {
+            let ctx = document.getElementById('Chart1');
             const data = await getData();
-            var ctx = document.getElementById('myChart');
-            console.log(data)
-            const myChart = new Chart(ctx, {
+            console.log(data.xs)
+            const Chart1 = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ["Evenementen", "Werkzaamheden"],
+                    labels: data.xs,
                     datasets: [{
-                        label: '# projecten per type',
-                        // fill: false,
-                        data: data.ys,
+                        label: '# Projecten per Type',
+                        fill: true,
+                        data: await data.ys,
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
                             'rgba(54, 162, 235, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            //     'rgba(255, 206, 86, 1)',
-                            //     'rgba(75, 192, 192, 1)',
-                            //     'rgba(153, 102, 255, 1)',
-                            //     'rgba(255, 159, 64, 1)'
-                        ],
+                        ]
+                        // borderColor: [
+                        //     'rgba(255, 99, 132, 1)',
+                        //     'rgba(54, 162, 235, 1)',
+                        //     'rgba(255, 206, 86, 1)',
+                        //     'rgba(75, 192, 192, 1)',
+                        //     'rgba(153, 102, 255, 1)',
+                        //     'rgba(255, 159, 64, 1)'
+                        // ],
                         // borderWidth: 1
                     }]
                 },
@@ -122,9 +140,21 @@ $_COOKIE['page'] = 'Dashboard';
                     }
                 }
             });
-            // chart.update()
-            chart.canvas.parentNode.style.height = '128px';
-            chart.canvas.parentNode.style.width = '128px';
+        }
+
+        async function getData() {
+            const xs = []
+            const ys = []
+            response = await fetch('../requests/stats/get_aantal_type_projecten.php')
+            data = await response.json();
+            data.forEach(x => {
+                xs.push(x.type.replace(/^\w/, c => c.toUpperCase()))
+                ys.push(x.aantal)
+            })
+            return {
+                xs,
+                ys
+            }
         }
     </script>
 </body>

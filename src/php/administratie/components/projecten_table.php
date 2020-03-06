@@ -1,8 +1,8 @@
 <?php
 include("../../db/conn.php");
 ?>
-<table id="projects_table" class="highlight responsive-table z-depth-3 ">
-    <thead class="blue-grey darken-3 white-text">
+<table id="projects_table" class="highlight responsive-table white-text z-depth-3 ">
+    <thead class="blue-grey darken-3 ">
         <tr>
             <th>Naam project</th>
             <th>Project omschrijving</th>
@@ -36,11 +36,11 @@ include("../../db/conn.php");
                 'datum_eind'} . "</td>";
             if ($row{
                 'status'} == 'open') {
-                echo "<td class='center'><i class='tiny green-text material-icons'>check_circle</i> " . $row{
+                echo "<td class='center'><i class='tiny red-text material-icons'>check_circle</i> " . $row{
                     'status'} . "</td>";
                 echo "</tr>";
             } else {
-                echo "<td class='center'><i class='tiny red-text material-icons'>check_circle</i> " . $row{
+                echo "<td class='center'><i class='tiny green-text material-icons'>check_circle</i> " . $row{
                     'status'} . "</td>";
                 echo "</tr>";
             }

@@ -2,8 +2,8 @@
 include("../../db/conn.php");
 ?>
 
-<table id="deelnemers_table" class="highlight responsive-table z-depth-3 ">
-    <thead class="blue-grey darken-3 white-text">
+<table id="deelnemers_table" class="highlight white-text responsive-table z-depth-3 ">
+    <thead class="blue-grey darken-3 ">
         <tr>
             <th>Naam</th>
             <th>Type deelnemers</th>
