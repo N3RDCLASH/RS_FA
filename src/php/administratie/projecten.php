@@ -152,7 +152,7 @@ $_COOKIE['page'] = 'Projecten';
     </div>
 
     <div class="fixed-action-btn">
-        <a onclick='showForm()' class="btn-floating btn-large waves-effect waves-light -3"><i class="material-icons">add</i></a>
+        <a onclick='showForm()' class="green lighten-1 btn-floating btn-large waves-effect waves-light -3"><i class="material-icons">add</i></a>
     </div>
 
     <div id="modal1" class="modal">

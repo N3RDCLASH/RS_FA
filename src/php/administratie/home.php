@@ -101,6 +101,21 @@ $_COOKIE['page'] = 'Dashboard';
     <script>
         document.addEventListener("DOMContentLoaded", ChartIt)
 
+        async function getData() {
+            const xs = []
+            const ys = []
+            response = await fetch('../requests/stats/get_aantal_type_projecten.php')
+            data = await response.json();
+            data.forEach(x => {
+                xs.push(x.type.replace(/^\w/, c => c.toUpperCase()))
+                ys.push(x.aantal)
+            })
+            return {
+                xs,
+                ys
+            }
+        }
+
         async function ChartIt() {
             let ctx = document.getElementById('Chart1');
             const data = await getData();
@@ -112,20 +127,43 @@ $_COOKIE['page'] = 'Dashboard';
                     datasets: [{
                         label: '# Projecten per Type',
                         fill: true,
-                        data: await data.ys,
+                        data: data.ys,
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
                             'rgba(54, 162, 235, 0.2)'
                         ]
-                        // borderColor: [
-                        //     'rgba(255, 99, 132, 1)',
-                        //     'rgba(54, 162, 235, 1)',
-                        //     'rgba(255, 206, 86, 1)',
-                        //     'rgba(75, 192, 192, 1)',
-                        //     'rgba(153, 102, 255, 1)',
-                        //     'rgba(255, 159, 64, 1)'
-                        // ],
-                        // borderWidth: 1
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    aspectRatio: 1,
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+
+            let ctx2 = document.getElementById('Chart2');
+            const data2 = await getData2();
+            console.log(data.xs)
+            const Chart2 = new Chart(ctx2, {
+                type: 'line',
+                data: {
+                    labels: data2.xs,
+                    datasets: [{
+                        label: '# Aangemaakte Projecten per Datum',
+                        fill: false,
+                        data: data2.ys,
+                        backgroundColor: [
+                            'rgba(54, 162, 235, 0.2)'
+                        ],
+                        borderColor: 
+                            'rgba(255, 99, 132, 1)',                        
+                        borderWidth: 1
                     }]
                 },
                 options: {
@@ -141,14 +179,13 @@ $_COOKIE['page'] = 'Dashboard';
                 }
             });
         }
-
-        async function getData() {
+        async function getData2() {
             const xs = []
             const ys = []
-            response = await fetch('../requests/stats/get_aantal_type_projecten.php')
+            response = await fetch('../requests/stats/get_aantal_projecten_per_datum.php')
             data = await response.json();
             data.forEach(x => {
-                xs.push(x.type.replace(/^\w/, c => c.toUpperCase()))
+                xs.push(x.datum)
                 ys.push(x.aantal)
             })
             return {
