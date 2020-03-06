@@ -28,56 +28,59 @@ $_COOKIE['page'] = 'Deelnemers';
     <?php
     include 'components/navigation.php';
     ?>
-    <div class="row">
-        <div class="col m9 s12 offset-m3">
-            <?php
-            include 'components/deelnemers_table.php';
-            ?>
+    <div id="main">
+
+        <div class="row">
+            <div class="col s12">
+                <?php
+                include 'components/deelnemers_table.php';
+                ?>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col m7 offset-m4 z-depth-3" id="deelnemers">
-            <form id="" action="../requests/create_deelnemer.php" class="white-text" method="POST">
-                <h5 class="center">Deelnemer gegevens</h5>
-                <div class="input-field col m12">
-                    <input type="text" name="deelnemers_naam" tabindex="1" size="10" placeholder="Naam" required autofocus>
-                </div>
+        <div class="row">
+            <div class="col m7 offset-m4 z-depth-3" id="deelnemers">
+                <form id="" action="../requests/create_deelnemer.php" class="white-text" method="POST">
+                    <h5 class="center">Deelnemer gegevens</h5>
+                    <div class="input-field col m12">
+                        <input type="text" name="deelnemers_naam" tabindex="1" size="10" placeholder="Naam" required autofocus>
+                    </div>
 
-                <div class="input-field col m12">
-                    <select name="deelnemers_type" id="" class="materialize-select">
-                        <option value="" disabled selected>Select de type deelnemer</option>
-                        <option value="4">Student</option>
-                        <option value="5 ">Docent</option>
-                        <option value="6">Overige</option>
-                    </select>
-                </div>
+                    <div class="input-field col m12">
+                        <select name="deelnemers_type" id="" class="materialize-select">
+                            <option value="" disabled selected>Select de type deelnemer</option>
+                            <option value="4">Student</option>
+                            <option value="5 ">Docent</option>
+                            <option value="6">Overige</option>
+                        </select>
+                    </div>
 
-                <div class="input-field col m12">
-                    <input type="email" name="deelnemers_email" tabindex="1" size="10" placeholder="email" required>
-                    <label for="deelnemers_email">Email</label>
-                </div>
-
-
-                <div class="input-field col m12">
-                    <input type="text" name="deelnemers_adres" tabindex="1" size="10" placeholder="Adres" required>
-                    <label for="deelnemers_adres">Adres</label>
-                </div>
+                    <div class="input-field col m12">
+                        <input type="email" name="deelnemers_email" tabindex="1" size="10" placeholder="email" required>
+                        <label for="deelnemers_email">Email</label>
+                    </div>
 
 
-                <div class="input-field col m12">
-                    <input type="number" name="deelnemers_telefoonnummer" tabindex="1" size="10" placeholder="telefoonnummer" required>
-                    <label for="deelnemers_telefoonnummer">Telefoon Nr.</label>
+                    <div class="input-field col m12">
+                        <input type="text" name="deelnemers_adres" tabindex="1" size="10" placeholder="Adres" required>
+                        <label for="deelnemers_adres">Adres</label>
+                    </div>
 
-                </div>
 
-                <button class="green lighten-1 btn waves-effect waves-light col m12" type="submit" name="opslaan">Submit
-                    <i class="material-icons right">send</i>
-                </button>
-            </form>
+                    <div class="input-field col m12">
+                        <input type="number" name="deelnemers_telefoonnummer" tabindex="1" size="10" placeholder="telefoonnummer" required>
+                        <label for="deelnemers_telefoonnummer">Telefoon Nr.</label>
+
+                    </div>
+
+                    <button class="green lighten-1 btn waves-effect waves-light col m12" type="submit" name="opslaan">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
+                </form>
+            </div>
         </div>
-    </div>
-    <div class="fixed-action-btn">
-        <a onclick='showForm()' class=" green lighten-1 btn-floating btn-large waves-effect waves-light"><i class="material-icons">add</i></a>
+        <div class="fixed-action-btn">
+            <a onclick='showForm()' class=" green lighten-1 btn-floating btn-large waves-effect waves-light"><i class="material-icons">add</i></a>
+        </div>
     </div>
 
     <!-- <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a> -->

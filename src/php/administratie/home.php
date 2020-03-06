@@ -25,7 +25,7 @@ $_COOKIE['page'] = 'Dashboard';
     <!--Import materialize.css-->
 </head>
 
-<body class="-2">
+<body class="">
     <ul id="dropdown1" class="dropdown-content">
         <li>
             <a href="../scripts/logout.php">Log Out</a>
@@ -35,57 +35,59 @@ $_COOKIE['page'] = 'Dashboard';
     include 'components/navigation.php';
 
     ?>
-    <div class="row" id="cards-container">
-        <div class="col s12 m2 offset-m3">
-            <div class="card gradient-deepblue z-depth-3">
-                <div class="card-content white-text">
-                    <span class="card-title">Card Title</span>
-                    <p>I am a very simple card.
-                    </p>
+    <div id="main">
+        <div class="row" id="cards-container">
+            <div class="col s12 m6 l6 xl3">
+                <div class="card gradient-deepblue z-depth-3">
+                    <div class="card-content white-text">
+                        <span class="card-title">Card Title</span>
+                        <p>I am a very simple card.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l6 xl3">
+                <div class="card gradient-orange z-depth-3">
+                    <div class="card-content white-text">
+                        <span class="card-title">Card Title</span>
+                        <p>I am a very simple card.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col s12 m6 l6 xl3">
+                <div class="card gradient-ohhappiness z-depth-3">
+                    <div class="card-content white-text">
+                        <span class="card-title">Card Title</span>
+                        <p>I am a very simple card.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col s12 m6 l6 xl3">
+                <div class="card gradient-ibiza z-depth-3">
+                    <div class="card-content white-text">
+                        <span class="card-title">Card Title</span>
+                        <p>I am a very simple card.
+                        </p>
+                    </div>
+
                 </div>
             </div>
         </div>
-        <div class="col s12 m2">
-            <div class="card gradient-orange z-depth-3">
-                <div class="card-content white-text">
-                    <span class="card-title">Card Title</span>
-                    <p>I am a very simple card.
-                    </p>
+
+        <div class="row">
+            <div class="col m7 z-depth-3 chart2" id="chart_container">
+                <div class="chart-container" style="position: relative; height:60vh; width:45vw">
+                    <canvas id="Chart2"></canvas>
                 </div>
-
             </div>
-        </div>
-        <div class="col s12 m2">
-            <div class="card gradient-ohhappiness z-depth-3">
-                <div class="card-content white-text">
-                    <span class="card-title">Card Title</span>
-                    <p>I am a very simple card.
-                    </p>
+            <div class="col m4 z-depth-3 chart1" id="chart_container">
+                <div class="chart-container" style="position: relative; height:60vh; width:22vw">
+                    <canvas id="Chart1"></canvas>
                 </div>
-
-            </div>
-        </div>
-        <div class="col s12 m2">
-            <div class="card gradient-ibiza z-depth-3">
-                <div class="card-content white-text">
-                    <span class="card-title">Card Title</span>
-                    <p>I am a very simple card.
-                    </p>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col m3 offset-m4 z-depth-3" id="chart_container">
-            <div class="chart-container" style="position: relative; height:40vh; width:22vw">
-                <canvas id="Chart1"></canvas>
-            </div>
-        </div>
-        <div class="col m3 offset-m1  z-depth-3" id="chart_container">
-            <div class="chart-container" style="position: relative; height:40vh; width:22vw">
-                <canvas id="Chart2"></canvas>
             </div>
         </div>
     </div>
@@ -156,13 +158,12 @@ $_COOKIE['page'] = 'Dashboard';
                     labels: data2.xs,
                     datasets: [{
                         label: '# Aangemaakte Projecten per Datum',
-                        fill: false,
+                        fill: true,
                         data: data2.ys,
                         backgroundColor: [
                             'rgba(54, 162, 235, 0.2)'
                         ],
-                        borderColor: 
-                            'rgba(255, 99, 132, 1)',                        
+                        borderColor: 'rgba(255, 99, 132, 1)',
                         borderWidth: 1
                     }]
                 },

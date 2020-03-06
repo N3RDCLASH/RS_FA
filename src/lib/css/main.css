@@ -22,7 +22,9 @@ body {
     background-color: #348b4c;
 }
 
-.dark-1 {}
+.dark-1 {
+    background-color: #343a40;
+}
 
 .dark-2 {
     background-color: #262a2d;
@@ -32,6 +34,18 @@ body {
 .secondary {}
 
 /* end thene */
+
+/* charts */
+
+.chart1 {
+    margin-left: 4% !important;
+}
+
+.chart2 {
+    margin-left: 2% !important;
+}
+
+/* end charts */
 
 #add_form {
     display: none;
@@ -60,7 +74,7 @@ body {
 }
 
 #chart_container {
-    margin-top: 3%;
+    margin-top: 0.5%;
 }
 
 #deelnemers {
@@ -115,6 +129,7 @@ body {
 
 #main {
     margin-top: 1.5%;
+    padding-left: 250px;
 }
 
 /* .sidenav li.active {
@@ -122,6 +137,12 @@ body {
 } */
 
 /* materialize overwrite */
+
+ul#slide-out.sidenav {
+    margin-top: 64px;
+    height: calc(100% - 64px) !important;
+    width: 250px;
+}
 
 table.highlight>tbody>tr:hover {
     background-color: #618663 !important;
