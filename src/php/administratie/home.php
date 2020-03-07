@@ -33,45 +33,68 @@ $_COOKIE['page'] = 'Dashboard';
     </ul>
     <?php
     include 'components/navigation.php';
-
     ?>
     <div id="main">
         <div class="row" id="cards-container">
             <div class="col s12 m6 l6 xl3">
                 <div class="card gradient-deepblue z-depth-3">
                     <div class="card-content white-text">
-                        <span class="card-title">Card Title</span>
-                        <p>I am a very simple card.
-                        </p>
+                        <div class="row">
+                            <div class="col s7 m7">
+                                <i class="material-icons background-round mt-5">assignment</i>
+                                <p>Projecten</p>
+                            </div>
+                            <div class="col s5 m5 right-align">
+                                <h3 class="mb-0 white-text"> <?php include('../requests/stats/get_aantal_projecten.php'); ?></h3>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
             <div class="col s12 m6 l6 xl3">
                 <div class="card gradient-orange z-depth-3">
                     <div class="card-content white-text">
-                        <span class="card-title">Card Title</span>
-                        <p>I am a very simple card.
-                        </p>
+                        <div class="row">
+                            <div class="col s7 m7">
+                                <i class="material-icons background-round mt-5">person</i>
+                                <p>Deelnemers</p>
+                            </div>
+                            <div class="col s5 m5 right-align">
+                                <h3 class="mb-0 white-text"> <?php include('../requests/stats/get_aantal_deelnemers.php'); ?></h3>
+                            </div>
+                        </div>
                     </div>
-
                 </div>
             </div>
             <div class="col s12 m6 l6 xl3">
                 <div class="card gradient-ohhappiness z-depth-3">
                     <div class="card-content white-text">
-                        <span class="card-title">Card Title</span>
-                        <p>I am a very simple card.
-                        </p>
-                    </div>
+                        <div class="row">
+                            <div class="col s7 m7">
+                                <i class="material-icons background-round mt-5">person</i>
+                                <p>Deelnemers</p>
+                            </div>
+                            <div class="col s5 m5 right-align">
+                                <h3 class="mb-0 white-text"> <?php include('../requests/stats/get_aantal_deelnemers.php'); ?></h3>
+                            </div>
+                        </div>
 
+                    </div>
                 </div>
             </div>
             <div class="col s12 m6 l6 xl3">
                 <div class="card gradient-ibiza z-depth-3">
                     <div class="card-content white-text">
-                        <span class="card-title">Card Title</span>
-                        <p>I am a very simple card.
-                        </p>
+                        <div class="row">
+                            <div class="col s7 m7">
+                                <i class="material-icons background-round mt-5">person</i>
+                                <p>Deelnemers</p>
+                            </div>
+                            <div class="col s5 m5 right-align">
+                                <h3 class="mb-0 white-text"> <?php include('../requests/stats/get_aantal_deelnemers.php'); ?></h3>
+                            </div>
+                        </div>
                     </div>
 
                 </div>

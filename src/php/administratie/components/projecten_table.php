@@ -17,19 +17,19 @@ include("../../db/conn.php");
 
     <?php
 
-    $query =  mysqli_query($link, "SELECT * FROM projecten");
+    $query =  mysqli_query($link, "SELECT `project_id`,`naam`,`omschrijving`,`type`,`datum_start`,`datum_eind`,`status`,project_type.type_name FROM `projecten` INNER JOIN project_type ON projecten.type = project_type.type_id");
 
     if (mysqli_num_rows($query) > 0) {
         while ($row = mysqli_fetch_assoc($query)) {
             echo "<tr data-id=" . $row{
-                'project_id'} . ">";
+                'project_id'}. ">";
             // echo "<td><a href='test.html'>Edit</a></td>";
             echo "<td>" . $row{
                 'naam'} . "</td>";
             echo "<td>" . $row{
                 'omschrijving'} . "</td>";
             echo "<td>" . $row{
-                'type'} . "</td>";
+                'type_name'} . "</td>";
             echo "<td>" . $row{
                 'datum_start'} . "</td>";
             echo "<td>" . $row{

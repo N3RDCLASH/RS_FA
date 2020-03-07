@@ -7,7 +7,13 @@
         height: 80vh!important;
     }
 }
+@media only screen and (max-width: 990px) {
+    #main {
+        padding-left: 0 !important;
+}
 
+
+}
 tr {
     cursor: pointer;
 }
@@ -46,6 +52,16 @@ body {
 }
 
 /* end charts */
+
+.background-round {
+    padding: 15px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, .18);
+}
+
+.mt-5 {
+    margin-top: 5% !important;
+}
 
 #add_form {
     display: none;

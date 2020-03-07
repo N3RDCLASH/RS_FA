@@ -16,7 +16,7 @@ include("../../db/conn.php");
     </thead>
 
     <?php
-    $query =  mysqli_query($link, "SELECT * FROM deelnemers");
+    $query =  mysqli_query($link, "SELECT deelnemers_naam,deelnemers_type.type_naam,deelnemers_adres,deelnemers_email,deelnemers_telefoonnummer FROM deelnemers INNER JOIN deelnemers_type ON deelnemers.deelnemers_type = deelnemers_type.type_id ");
 
     if (mysqli_num_rows($query) > 0) {
         while ($row = mysqli_fetch_assoc($query)) {
@@ -24,7 +24,7 @@ include("../../db/conn.php");
             echo "<td>" . $row{
                 'deelnemers_naam'} . "</td>";
             echo "<td>" . $row{
-                'deelnemers_type'} . "</td>";
+                'type_naam'} . "</td>";
             echo "<td>" . $row{
                 'deelnemers_email'} . "</td>";
             echo "<td>" . $row{

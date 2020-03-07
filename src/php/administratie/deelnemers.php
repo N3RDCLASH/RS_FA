@@ -38,7 +38,7 @@ $_COOKIE['page'] = 'Deelnemers';
             </div>
         </div>
         <div class="row">
-            <div class="col m7 offset-m4 z-depth-3" id="deelnemers">
+            <div class="col m7 offset-m3 z-depth-3" id="deelnemers">
                 <form id="" action="../requests/create_deelnemer.php" class="white-text" method="POST">
                     <h5 class="center">Deelnemer gegevens</h5>
                     <div class="input-field col m12">
