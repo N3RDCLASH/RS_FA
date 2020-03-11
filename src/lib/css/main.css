@@ -7,13 +7,13 @@
         height: 80vh!important;
     }
 }
+
 @media only screen and (max-width: 990px) {
     #main {
         padding-left: 0 !important;
+    }
 }
 
-
-}
 tr {
     cursor: pointer;
 }
@@ -39,7 +39,7 @@ body {
 
 .secondary {}
 
-/* end thene */
+/*-------------end theme-----------*/
 
 /* charts */
 
@@ -126,11 +126,11 @@ body {
 }
 
 #project_informatie {
-    display: none;
+    /* display: none; */
 }
 
 #project_taken {
-    display: none;
+    /* display: none; */
     margin: 0 50px;
 }
 
@@ -147,10 +147,6 @@ body {
     margin-top: 1.5%;
     padding-left: 250px;
 }
-
-/* .sidenav li.active {
-    background-color: #73b3ad;
-} */
 
 /* materialize overwrite */
 
@@ -169,16 +165,22 @@ table.highlight>tbody>tr:hover {
 }
 
 .back {
-    margin-left: 23%;
+    margin-left: 20%;
     display: none!important;
 }
 
 .collection {
     border: none;
 }
-
-.input:not([type]):disabled, input:not([type])[readonly="readonly"], input[type="text"]:not(.browser-default):disabled, input[type="text"]:not(.browser-default)[readonly="readonly"], input[type="password"]:not(.browser-default):disabled, input[type="password"]:not(.browser-default)[readonly="readonly"], input[type="email"]:not(.browser-default):disabled, input[type="email"]:not(.browser-default)[readonly="readonly"], input[type="url"]:not(.browser-default):disabled, input[type="url"]:not(.browser-default)[readonly="readonly"], input[type="time"]:not(.browser-default):disabled, input[type="time"]:not(.browser-default)[readonly="readonly"], input[type="date"]:not(.browser-default):disabled, input[type="date"]:not(.browser-default)[readonly="readonly"], input[type="datetime"]:not(.browser-default):disabled, input[type="datetime"]:not(.browser-default)[readonly="readonly"], input[type="datetime-local"]:not(.browser-default):disabled, input[type="datetime-local"]:not(.browser-default)[readonly="readonly"], input[type="tel"]:not(.browser-default):disabled, input[type="tel"]:not(.browser-default)[readonly="readonly"], input[type="number"]:not(.browser-default):disabled, input[type="number"]:not(.browser-default)[readonly="readonly"], input[type="search"]:not(.browser-default):disabled, input[type="search"]:not(.browser-default)[readonly="readonly"], textarea.materialize-textarea:disabled, textarea.materialize-textarea[readonly="readonly"] {
+/* 
+input[type="text"], .input:not([type]):disabled, input:not([type])[readonly="readonly"], input[type="text"]:not(.browser-default):disabled, input[type="text"]:not(.browser-default)[readonly="readonly"], input[type="password"]:not(.browser-default):disabled, input[type="password"]:not(.browser-default)[readonly="readonly"], input[type="email"]:not(.browser-default):disabled, input[type="email"]:not(.browser-default)[readonly="readonly"], input[type="url"]:not(.browser-default):disabled, input[type="url"]:not(.browser-default)[readonly="readonly"], input[type="time"]:not(.browser-default):disabled, input[type="time"]:not(.browser-default)[readonly="readonly"], input[type="date"]:not(.browser-default):disabled, input[type="date"]:not(.browser-default)[readonly="readonly"], input[type="datetime"]:not(.browser-default):disabled, input[type="datetime"]:not(.browser-default)[readonly="readonly"], input[type="datetime-local"]:not(.browser-default):disabled, input[type="datetime-local"]:not(.browser-default)[readonly="readonly"], input[type="tel"]:not(.browser-default):disabled, input[type="tel"]:not(.browser-default)[readonly="readonly"], input[type="number"]:not(.browser-default):disabled, input[type="number"]:not(.browser-default)[readonly="readonly"], input[type="search"]:not(.browser-default):disabled, input[type="search"]:not(.browser-default)[readonly="readonly"], textarea.materialize-textarea:disabled, textarea.materialize-textarea[readonly="readonly"] {
     color: white !important;
+} */
+
+.btn-tiny {
+    height: 22.4px;
+    line-height: 21.4px;
+    font-size: 13px;
 }
 
 /* animations */

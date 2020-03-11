@@ -20,6 +20,7 @@ if ($stmt) {
                 ];
             }
             mysqli_stmt_close($stmt);
+            mysqli_close($link);
             die(json_encode($result));
         } else {
             mysqli_error($link);

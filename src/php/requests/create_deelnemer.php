@@ -11,7 +11,7 @@ if (isset($_POST['opslaan'])) {
 
     if (mysqli_query($link, $query) === TRUE) {
         mysqli_close($link);
-        header("location:overzichten.php");
+        header("location:../overzichten.php");
     } else {
         die($link->error);
     }

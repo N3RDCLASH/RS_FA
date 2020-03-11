@@ -46,7 +46,7 @@ $_COOKIE['page'] = 'Deelnemers';
                     </div>
 
                     <div class="input-field col m12">
-                        <select name="deelnemers_type" id="" class="materialize-select">
+                        <select name="deelnemers_type" id="deelnemers_type" class="materialize-select">
                             <option value="" disabled selected>Select de type deelnemer</option>
                             <option value="4">Student</option>
                             <option value="5 ">Docent</option>
@@ -89,8 +89,8 @@ $_COOKIE['page'] = 'Deelnemers';
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script> -->
     <script src="../../lib/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../../lib/materialize/js/materialize.min.js"></script>
-    <script type="text/javascript" src="../../lib/js/app.js"></script>
-    <script type="text/javascript" src="../../lib/js/deelnemers.js"></script>
+    <script type="text/javascript" src="../../lib/js/administratie/app.js"></script>
+    <script type="text/javascript" src="../../lib/js/administratie/deelnemers.js"></script>
 </body>
 
 </html>

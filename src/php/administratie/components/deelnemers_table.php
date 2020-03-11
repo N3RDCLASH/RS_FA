@@ -10,6 +10,7 @@ include("../../db/conn.php");
             <th>Email adres</th>
             <th>Adres</th>
             <th>Telefoonnummer </th>
+            <th>See More</th>
 
 
         </tr>
@@ -31,7 +32,8 @@ include("../../db/conn.php");
                 'deelnemers_adres'} . "</td>";
             echo "<td>" . $row{
                 'deelnemers_telefoonnummer'} . "</td>";
-
+            echo "<td><a class='amber waves-effect waves-light btn btn-tiny' href=''>view</a></td>";
+            echo "</tr>";
             echo "</tr>";
         }
     };

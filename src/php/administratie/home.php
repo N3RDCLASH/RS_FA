@@ -2,6 +2,7 @@
 require_once '../../db/conn.php';
 require_once '../scripts/session.php';
 require '../scripts/check_session.php';
+include('../requests/stats/get_aantal_projecten_per_status.php');
 setcookie('page', '', time() + 3600);
 $_COOKIE['page'] = 'Dashboard';
 ?>
@@ -57,11 +58,11 @@ $_COOKIE['page'] = 'Dashboard';
                     <div class="card-content white-text">
                         <div class="row">
                             <div class="col s7 m7">
-                                <i class="material-icons background-round mt-5">person</i>
-                                <p>Deelnemers</p>
+                                <i class="material-icons background-round mt-5">assignment</i>
+                                <p><?php echo ucfirst($result[1]['status']); ?></p>
                             </div>
                             <div class="col s5 m5 right-align">
-                                <h3 class="mb-0 white-text"> <?php include('../requests/stats/get_aantal_deelnemers.php'); ?></h3>
+                                <h3 class="mb-0 white-text"> <?php echo $result[1]['aantal']; ?></h3>
                             </div>
                         </div>
                     </div>
@@ -72,11 +73,11 @@ $_COOKIE['page'] = 'Dashboard';
                     <div class="card-content white-text">
                         <div class="row">
                             <div class="col s7 m7">
-                                <i class="material-icons background-round mt-5">person</i>
-                                <p>Deelnemers</p>
+                                <i class="material-icons background-round mt-5">assignment</i>
+                                <p><?php echo ucfirst($result[0]['status']); ?></p>
                             </div>
                             <div class="col s5 m5 right-align">
-                                <h3 class="mb-0 white-text"> <?php include('../requests/stats/get_aantal_deelnemers.php'); ?></h3>
+                                <h3 class="mb-0 white-text"> <?php echo $result[0]['aantal']; ?></h3>
                             </div>
                         </div>
 
@@ -120,7 +121,7 @@ $_COOKIE['page'] = 'Dashboard';
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script> -->
     <script src="../../lib/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../../lib/materialize/js/materialize.min.js"></script>
-    <script type="text/javascript" src="../../lib/js/app.js"></script>
+    <script type="text/javascript" src="../../lib/js/administratie/app.js"></script>
     <script type="text/javascript" src="../../lib/js/home.js"></script>
     <script src="../../lib/js/node_modules/chart.js/dist/Chart.js"></script>
     <script>

@@ -5,11 +5,12 @@ back_button.id = 'back_button'
 back_button.onclick = showTable
 const deelnemer_form = document.getElementById('deelnemers')
 const deelnemers_table = document.getElementById('deelnemers_table')
-const row = document.getElementsByClassName('row')[0]
- row.insertBefore(back_button, row.firstChild) 
+const row = document.getElementsByClassName('col')[0]
+row.appendChild(back_button)
 
 
 function showForm() {
+    instance = M.FormSelect.init(document.getElementById('deelnemers_type'))
     deelnemer_form.style.display = 'block';
     deelnemer_form.classList.toggle('flip-in-ver-right', true)
     deelnemers_table.style.display = 'none';
