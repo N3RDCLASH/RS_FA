@@ -6,6 +6,26 @@
     #col-right {
         height: 80vh!important;
     }
+    #project_taken {
+        /* display: none; */
+        margin: 1% 0!important;
+    }
+    .back {
+        margin-left: 0!important;
+    }
+    .chart-container {
+        width: 90vw!important;
+    }
+    .chart1 {
+        margin-left: 2% !important;
+        margin-top: 4%!important;
+    }
+    .chart2 {
+        margin-left: 2% !important;
+    }
+    nav .brand-logo {
+        font-size: 1.8rem;
+    }
 }
 
 @media only screen and (max-width: 990px) {
@@ -44,11 +64,11 @@ body {
 /* charts */
 
 .chart1 {
-    margin-left: 4% !important;
+    margin-left: 4%;
 }
 
 .chart2 {
-    margin-left: 2% !important;
+    margin-left: 2%;
 }
 
 /* end charts */
@@ -131,7 +151,7 @@ body {
 
 #project_taken {
     /* display: none; */
-    margin: 0 50px;
+    margin: 0 3%;
 }
 
 #add_taak {
@@ -172,6 +192,11 @@ table.highlight>tbody>tr:hover {
 .collection {
     border: none;
 }
+
+.sidenav-overlay {
+    z-index: 996!important;
+}
+
 /* 
 input[type="text"], .input:not([type]):disabled, input:not([type])[readonly="readonly"], input[type="text"]:not(.browser-default):disabled, input[type="text"]:not(.browser-default)[readonly="readonly"], input[type="password"]:not(.browser-default):disabled, input[type="password"]:not(.browser-default)[readonly="readonly"], input[type="email"]:not(.browser-default):disabled, input[type="email"]:not(.browser-default)[readonly="readonly"], input[type="url"]:not(.browser-default):disabled, input[type="url"]:not(.browser-default)[readonly="readonly"], input[type="time"]:not(.browser-default):disabled, input[type="time"]:not(.browser-default)[readonly="readonly"], input[type="date"]:not(.browser-default):disabled, input[type="date"]:not(.browser-default)[readonly="readonly"], input[type="datetime"]:not(.browser-default):disabled, input[type="datetime"]:not(.browser-default)[readonly="readonly"], input[type="datetime-local"]:not(.browser-default):disabled, input[type="datetime-local"]:not(.browser-default)[readonly="readonly"], input[type="tel"]:not(.browser-default):disabled, input[type="tel"]:not(.browser-default)[readonly="readonly"], input[type="number"]:not(.browser-default):disabled, input[type="number"]:not(.browser-default)[readonly="readonly"], input[type="search"]:not(.browser-default):disabled, input[type="search"]:not(.browser-default)[readonly="readonly"], textarea.materialize-textarea:disabled, textarea.materialize-textarea[readonly="readonly"] {
     color: white !important;

@@ -53,7 +53,7 @@ $_COOKIE['page'] = 'Dashboard';
                     </div>
                 </div>
             </div>
-            <div class="col s12 m6 l6 xl3">
+            <div class="col s6 m6 l6 xl3">
                 <div class="card gradient-orange z-depth-3">
                     <div class="card-content white-text">
                         <div class="row">
@@ -68,7 +68,7 @@ $_COOKIE['page'] = 'Dashboard';
                     </div>
                 </div>
             </div>
-            <div class="col s12 m6 l6 xl3">
+            <div class="col s6 m6 l6 xl3">
                 <div class="card gradient-ohhappiness z-depth-3">
                     <div class="card-content white-text">
                         <div class="row">
@@ -122,7 +122,7 @@ $_COOKIE['page'] = 'Dashboard';
     <script src="../../lib/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../../lib/materialize/js/materialize.min.js"></script>
     <script type="text/javascript" src="../../lib/js/administratie/app.js"></script>
-    <script type="text/javascript" src="../../lib/js/home.js"></script>
+    <script type="text/javascript" src="../../lib/js/administratie/home.js"></script>
     <script src="../../lib/js/node_modules/chart.js/dist/Chart.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", ChartIt)

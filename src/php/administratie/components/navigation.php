@@ -1,11 +1,17 @@
 <div class="navbar-fixed">
     <nav class="col s8 offset-s4">
         <div class="nav-wrapper primary">
+            <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <a href="#" class="brand-logo center"><?php echo $_COOKIE['page'] ?></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Account<i class="material-icons right">arrow_drop_down</i></a></li>
             </ul>
         </div>
+        <ul id="dropdown1" class="dropdown-content">
+            <li>
+                <a href="../scripts/logout.php">Log Out</a>
+            </li>
+        </ul>
         <ul id="slide-out" class="sidenav dark-2 sidenav-fixed -4 ">
             <li>
                 <div class="user-view">

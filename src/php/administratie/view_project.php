@@ -48,7 +48,7 @@ if (empty($_GET['id'] == true)) {
 
             <!-- Project Informatie Display -->
 
-            <div class="col m5 s12 offset-m1 z-depth-3 flip-in-ver-right white" id="project_informatie" data-id="<?php echo $_GET['id'] ?>">
+            <div class="col m5 s10 offset-m1 offset-s1 z-depth-3 flip-in-ver-right white" id="project_informatie" data-id="<?php echo $_GET['id'] ?>">
                 <h5 class="center">Project Informatie</h5>
                 <div class="row">
                     <div class="input-field col s8 offset-s2">
@@ -83,9 +83,9 @@ if (empty($_GET['id'] == true)) {
                     </div>
                 </div>
             </div>
-            <div class="col m4 s12 offset-m7 flip-in-ver-right" id="project_taken">
+            <div class="col m4 s12 flip-in-ver-right" id="project_taken">
 
-                <div class="col m12 z-depth-3 white" id="taken">
+                <div class="col s12 m12 z-depth-3 white" id="taken">
                     <h5 class="center">Taken</h5>
                     <ul class="collapsible" id='taken_lijst'>
                     </ul>

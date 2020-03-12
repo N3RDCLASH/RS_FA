@@ -25,16 +25,10 @@ $_COOKIE['page'] = 'Projecten';
 </head>
 
 <body class="">
-    <ul id="dropdown1" class="dropdown-content">
-        <li>
-            <a href="../scripts/logout.php">Log Out</a>
-        </li>
-    </ul>
     <?php
     include 'components/navigation.php';
     ?>
 
-    <!-- <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a> -->
     <div id="main">
         <div class="row">
             <!-- <div class="col m9 offset-m3">
@@ -57,55 +51,9 @@ $_COOKIE['page'] = 'Projecten';
                 ?>
             </div>
         </div>
-        <!-- <div class="row">
-            <div class="col m5 s12 offset-m1 z-depth-3 flip-in-ver-right" id="project_informatie">
-                <h5 class="center">Project Informatie</h5>
-                <div class="row">
-                    <div class="input-field col s8 offset-s2">
-                        <input placeholder="naam" id="naam" name="naam" type="text" class="validate" disabled>
-                        <label for="naam" class="active">Naam</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s8 offset-s2">
-                        <textarea id="omschrijving" name="omschrijving" id="textarea1" cols="30" rows="10" class="materialize-textarea" disabled></textarea>
-                        <label for="omschrijving" class="active">Omschrijving</label>
-                    </div>
-                </div>
-                <div class="input-field col s8 offset-s2">
-                    <select id="type" disabled>
-                        <option value="" disabled selected>Kies het type project.</option>
-                        <option class="" value="0">Evenement</option>
-                        <option class="" value="1">Werkzaamheid</option>
-                    </select>
-                    <label class="active">Project Type</label>
-                </div>
-                <div class="row">
-                    <div class="input-field col s8 offset-s2">
-                        <input id="begin_datum" name="begin_datum" type="text" class="validate  datepicker " disabled>
-                        <label for="begin_datum" class="active">Begin Datum</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s8 offset-s2">
-                        <input id="eind_datum" name="eind_datum" type="text" class="validate datepicker" disabled>
-                        <label for="eind_datum" class="active">Eind Datum</label>
-                    </div>
-                </div>
-            </div>
-            <div class="col m4 s12 offset-m7 flip-in-ver-right" id="project_taken">
-
-                <div class="col m12 z-depth-3" id="taken">
-                    <h5 class="center">Taken</h5>
-                    <ul class="collapsible" id='taken_lijst'>
-                    </ul>
-                    <i class="material-icons right modal-trigger" id="add_taak" href="#modal1">add</i>
-                </div>
-            </div>
-        </div> -->
         <div class="row">
             <form action="../requests/create_project.php" method="POST">
-                <div id="add_form" class="col m6 s12 offset-m3 white z-depth-3 ">
+                <div id="add_form" class="col m6 s10 offset-s1 offset-m3 white z-depth-3 flip-in-ver-right ">
 
                     <h5 class="center ">Project Informatie</h5>
 
@@ -146,7 +94,7 @@ $_COOKIE['page'] = 'Projecten';
                         </div>
                     </div>
 
-                    <button class="btn waves-effect waves-light col m8 s12 offset-m2 " type="submit" name="action">Submit
+                    <button class="btn waves-effect waves-light col m8 s10 offset-s1 offset-m2 " type="submit" name="action">Submit
                         <i class="material-icons right">send</i>
                     </button>
 
