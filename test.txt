@@ -1,0 +1,20 @@
+
+<?php
+
+// echo password_hash("test", PASSWORD_BCRYPT); 
+if(password_verify('test', '$2y$10$AEpKWcWo0fGMPh8CAw4fuO4aRb.K9qORLYxIon2RYnv774ejIGmAC')){
+    echo 'lol';
+}else{
+    echo 'sike nigga';
+}
+?> 
+alert(JSON.stringify(M.Chips.getInstance($('.chips')).chipsData))
+
+$stmt = mysqli_stmt_init($link)
+if ($stmt) {
+    if (mysqli_stmt_prepare($stmt, $query)){
+
+    }
+}else {
+    mysqli_error($link);
+}
