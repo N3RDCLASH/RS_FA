@@ -1,8 +1,7 @@
 <?php
 include '../scripts/session.php';
 if (isset($_SESSION['user'])) {
-    // echo $_SESSION['user'], $_SESSION['type'];
-    header('location:../administratie/home.php');
+    header('location:../../index.php');
 }
 ?>
 <!DOCTYPE html>
