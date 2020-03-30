@@ -24,9 +24,9 @@ include("../../db/conn.php");
                 'user_id'} . "</td>";
             echo "<td>" . $row{
                 'user_name'} . "</td>";
-            echo "<td>" . $row{
-                'type_name'} . "</td>";
-            echo "<td><a class='amber waves-effect waves-light btn btn-tiny' href=''>view</a></td>";
+            echo "<td>" . ucwords($row{
+                'type_name'}) . "</td>";
+            echo "<td><a class='amber waves-effect waves-light btn btn-tiny' href='view_gebruiker.php?id=" . $row['user_id'] . "'>view</a></td>";
             echo "</tr>";
             echo "</tr>";
         }

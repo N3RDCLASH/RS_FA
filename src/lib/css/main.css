@@ -122,9 +122,11 @@ body {
 #deelnemers_table {
     margin-top: 5%;
 }
-#deelnemer_chips{
+
+#deelnemer_chips {
     margin-top: 5%;
 }
+
 #gebruikers {
     padding-bottom: 5%;
     margin-top: 2%;
@@ -134,9 +136,15 @@ body {
 #gebruikers_table {
     margin-top: 5%;
 }
-#deelnemer_chips{
+
+#gebruiker_informatie {
+    padding-bottom: 1%;
+}
+
+#deelnemer_chips {
     margin-top: 5%;
 }
+
 #project {
     padding-top: 10%;
     padding-bottom: 30%;

@@ -13,7 +13,7 @@ if (isset($_POST['opslaan'])) {
         $query = "INSERT INTO `user`(`user_type`, `user_name`, `user_password`) VALUES('$gebruikers_type','$gebruikers_naam','$gebruikers_password')";
         if (mysqli_query($link, $query) === TRUE) {
             mysqli_close($link);
-            header("location:./gebruikers.php");
+            header("location:../beheerder/gebruikers.php");
         } else {
             die($link->error);
         }
