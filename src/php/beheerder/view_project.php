@@ -50,6 +50,8 @@ if (empty($_GET['id'] == true)) {
 
             <div class="col m5 s10 offset-m1 offset-s1 z-depth-3 flip-in-ver-right white" id="project_informatie" data-id="<?php echo $_GET['id'] ?>">
                 <h5 class="center">Project Informatie</h5>
+                <i class="right primary-text material-icons tooltipped" data-position="right" data-tooltip="Edit Project" id="edit">edit</i>
+
                 <div class="row">
                     <div class="input-field col s8 offset-s2">
                         <input placeholder="naam" id="naam" name="naam" type="text" class="validate" disabled>

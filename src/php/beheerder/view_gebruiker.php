@@ -39,7 +39,10 @@ if (empty($_GET['id'] == true)) {
     <div id="main">
         <div class="row">
             <div class="col m4 s12 offset-m1 z-depth-3 flip-in-ver-right dark-2" id="gebruiker_informatie" data-id="<?php echo $_GET['id'] ?>">
+
                 <h5 class="center white-text">Gebruiker</h5>
+                <i class="right primary-text material-icons tooltipped" data-position="right" data-tooltip="Edit Gebruiker" id="edit">edit</i>
+
                 <div class="row">
                     <div class="input-field col m12 s12 ">
                         <input placeholder="naam" id="naam" name="naam" type="text" class="validate" disabled>
@@ -67,9 +70,9 @@ if (empty($_GET['id'] == true)) {
                 </div>
                 <div class="input-field col m12 s12">
                     <input type="password" id="password2" name="gebruikers_password2" tabindex="1" size="10" placeholder="Re-enter Password" disabled required>
-                    <label for="gebruiker_password2">Password</label>
+                    <label for="gebruiker_password2">Retype Password</label>
                 </div>
-                <button class="btn waves-effect primary waves-light col m8 s10 offset-s1 offset-m2 " type="button" name="action">Update
+                <button id="submit" disabled class="btn waves-effect primary waves-light col m8 s10 offset-s1 offset-m2 " type="button" name="action">Update
                     <i class="material-icons right">send</i>
                 </button>
             </div>

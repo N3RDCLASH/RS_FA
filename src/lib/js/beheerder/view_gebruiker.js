@@ -1,9 +1,11 @@
 const back_button = document.createElement("i")
 const row = document.getElementsByClassName('col')[0]
+const gebruiker_informatie = document.getElementById('gebruiker_informatie')
 back_button.className = 'material-icons small white-text back'
 back_button.innerHTML = 'arrow_back';
 back_button.id = 'back_button'
 row.appendChild(back_button)
+let type = document.getElementById("type")
 
 
 let x = document.getElementsByTagName('input')
@@ -18,7 +20,9 @@ for (const el of y) {
     el.classList.add("white-text")
 }
 
-let gebruiker_id = document.getElementById('gebruiker_informatie').dataset.id
+
+
+let gebruiker_id = gebruiker_informatie.dataset.id
 
 document.addEventListener("DOMContentLoaded", async function () {
     naam = document.getElementById('naam')
@@ -49,3 +53,21 @@ document.addEventListener("DOMContentLoaded", async function () {
     path = "/html/body/div[2]/div/div[1]/div[2]/div/input"
     document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.classList.add('white-text')
 })
+document.getElementById('edit').addEventListener('click', () => {
+    for (let e of gebruiker_informatie.getElementsByTagName('input')) {
+        e.removeAttribute('disabled')
+    }
+
+    type.removeAttribute('disabled')
+    document.getElementById("submit").removeAttribute('disabled')
+    refreshInput(type)
+
+})
+
+
+function refreshInput(el) {
+    let instance = M.FormSelect.getInstance(el)
+    instance.destroy()
+    el.classList.add('white-text')
+    M.FormSelect.init(el)
+}

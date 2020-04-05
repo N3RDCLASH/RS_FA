@@ -48,6 +48,10 @@ body {
     background-color: #348b4c;
 }
 
+.primary-text {
+    color: #348b4c;
+}
+
 .dark-1 {
     background-color: #343a40;
 }
@@ -88,12 +92,13 @@ body {
     padding: 4% 0;
 }
 
-#besteding_add {
-    float: right;
+#add_taak {
+    cursor: pointer;
+    font-size: 3rem;
 }
 
-#form {
-    margin-top: 40%;
+#besteding_add {
+    float: right;
 }
 
 #cards-container {
@@ -127,6 +132,14 @@ body {
     margin-top: 5%;
 }
 
+#edit {
+    cursor: pointer;
+}
+
+#form {
+    margin-top: 40%;
+}
+
 #gebruikers {
     padding-bottom: 5%;
     margin-top: 2%;
@@ -150,6 +163,15 @@ body {
     padding-bottom: 30%;
 }
 
+#project_informatie {
+    /* display: none; */
+}
+
+#project_taken {
+    /* display: none; */
+    margin: 0 3%;
+}
+
 #search {
     margin: 3% 0;
 }
@@ -165,20 +187,6 @@ body {
 #lg_img {
     display: block;
     margin: 16% auto;
-}
-
-#project_informatie {
-    /* display: none; */
-}
-
-#project_taken {
-    /* display: none; */
-    margin: 0 3%;
-}
-
-#add_taak {
-    cursor: pointer;
-    font-size: 3rem;
 }
 
 #back_button {

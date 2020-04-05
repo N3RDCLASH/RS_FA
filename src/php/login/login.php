@@ -37,7 +37,7 @@ if (isset($_SESSION['user'])) {
                 </div>
                 <div class="input-field col s12">
                     <input placeholder="Enter Password" id="password" name="password" type="password" class="validate white-text" required>
-                    <label for="password">Last Name</label>
+                    <label for="password">Password</label>
                 </div>
                 <div class="switch">
                     <label>
