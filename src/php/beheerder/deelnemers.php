@@ -30,7 +30,7 @@ $_COOKIE['page'] = 'Deelnemers';
     ?>
     <div id="main">
         <div class="row">
-            <div class="col s12">
+            <div class="col s12 table_container">
                 <?php
                 include 'components/deelnemers_table.php';
                 ?>

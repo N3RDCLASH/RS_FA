@@ -9,6 +9,9 @@
         </div>
         <ul id="dropdown1" class="dropdown-content">
             <li>
+                <a href="#">Profile</a>
+            </li>
+            <li>
                 <a href="../scripts/logout.php">Log Out</a>
             </li>
         </ul>

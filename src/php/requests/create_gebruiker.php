@@ -9,8 +9,8 @@ if (isset($_POST['opslaan'])) {
     if ($gebruikers_password1 == $gebruikers_password2) {
         echo $gebruikers_password1, $gebruikers_password2;
         // die();
-        $gebruiker_password = password_hash($gebruikers_password1, PASSWORD_BCRYPT);
-        $query = "INSERT INTO `user`(`user_type`, `user_name`, `user_password`) VALUES('$gebruikers_type','$gebruikers_naam','$gebruiker_password')";
+        $gebruikers_password = password_hash($gebruikers_password1, PASSWORD_BCRYPT);
+        $query = "INSERT INTO `user`(`user_type`, `user_name`, `user_password`) VALUES('$gebruikers_type','$gebruikers_naam','$gebruikers_password')";
         if (mysqli_query($link, $query) === TRUE) {
             mysqli_close($link);
             header("location:../beheerder/gebruikers.php");

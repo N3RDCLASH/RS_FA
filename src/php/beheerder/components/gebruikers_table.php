@@ -7,7 +7,7 @@ include("../../db/conn.php");
         <tr>
             <th>ID</th>
             <th>Gebruikernaamm</th>
-            <th>Type Gebruikers</th>
+            <th>Type</th>
             <th>See More</th>
 
 
@@ -26,7 +26,7 @@ include("../../db/conn.php");
                 'user_name'} . "</td>";
             echo "<td>" . ucwords($row{
                 'type_name'}) . "</td>";
-            echo "<td><a class='amber waves-effect waves-light btn btn-tiny' href='view_gebruiker.php?id=" . $row['user_id'] . "'>view</a></td>";
+            echo "<td><a class='amber waves-effect waves-light btn btn-tiny' href='view_gebruiker.php?id=" . $row['user_id'] . "'><i class='material-icons'>chevron_right</i></a></td>";
             echo "</tr>";
             echo "</tr>";
         }

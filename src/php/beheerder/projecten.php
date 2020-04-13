@@ -45,7 +45,7 @@ $_COOKIE['page'] = 'Projecten';
         </div>
 
         <div class="row">
-            <div class="col s12">
+            <div class="col s12 table_container">
                 <?php
                 include 'components/projecten_table.php';
                 ?>

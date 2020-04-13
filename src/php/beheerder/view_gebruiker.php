@@ -39,48 +39,54 @@ if (empty($_GET['id'] == true)) {
     <div id="main">
         <div class="row">
             <div class="col m4 s12 offset-m1 z-depth-3 flip-in-ver-right dark-2" id="gebruiker_informatie" data-id="<?php echo $_GET['id'] ?>">
+                <form action="../requests/update_gebruiker.php?id=<?php echo $_GET['id'] ?>" method="post">
+                    <h5 class="center white-text">Gebruiker</h5>
+                    <i class="right primary-text material-icons tooltipped" data-position="right" data-tooltip="Edit Gebruiker" id="edit">edit</i>
 
-                <h5 class="center white-text">Gebruiker</h5>
-                <i class="right primary-text material-icons tooltipped" data-position="right" data-tooltip="Edit Gebruiker" id="edit">edit</i>
-
-                <div class="row">
-                    <div class="input-field col m12 s12 ">
-                        <input placeholder="naam" id="naam" name="naam" type="text" class="validate" disabled>
-                        <label for="naam" class="active">Naam</label>
+                    <div class="row">
+                        <div class="input-field col m12 s12 ">
+                            <input placeholder="naam" id="naam" name="gebruiker_naam" type="text" class="validate" disabled>
+                            <label for="naam" class="active">Naam</label>
+                        </div>
                     </div>
-                </div>
-                <!-- <div class="row">
+                    <!-- <div class="row">
                     <div class="input-field col s8 ">
                         <textarea id="omschrijving" name="omschrijving" id="textarea1" cols="30" rows="10" class="materialize-textarea" disabled></textarea>
                         <label for="omschrijving" class="active">Omschrijving</label>
                     </div>
                 </div> -->
-                <div class="input-field col m12 s12 white-text">
-                    <select id="type" class="white-text" disabled>
-                        <option value="" disabled selected>Kies het type project.</option>
-                        <option class="" value="0">Beheerder</option>
-                        <option class="" value="1">Administratie</option>
-                        <option class="" value="2">Financiele Adminstratie</option>
-                    </select>
-                    <label class="active">Project Type</label>
-                </div>
-                <div class="input-field col m12 s12">
-                    <input type="password" id="password1" name="gebruikers_password1" tabindex="1" size="10" placeholder="Enter Password" disabled required>
-                    <label for="gebruiker_password1">Password</label>
-                </div>
-                <div class="input-field col m12 s12">
-                    <input type="password" id="password2" name="gebruikers_password2" tabindex="1" size="10" placeholder="Re-enter Password" disabled required>
-                    <label for="gebruiker_password2">Retype Password</label>
-                </div>
-                <button id="submit" disabled class="btn waves-effect primary waves-light col m8 s10 offset-s1 offset-m2 " type="button" name="action">Update
-                    <i class="material-icons right">send</i>
-                </button>
+                    <div class="input-field col m12 s12 white-text">
+                        <select id="type" name="gebruiker_type" class="white-text" disabled>
+                            <option value="" disabled selected>Kies het type gebruiker.</option>
+                            <option class="" value="0">Beheerder</option>
+                            <option class="" value="1">Administratie</option>
+                            <option class="" value="2">Financiele Adminstratie</option>
+                        </select>
+                        <label class="active">Project Type</label>
+                    </div>
+
+                    <label>
+                        <input type="checkbox" id="change_pass" name="change_pass" disabled>
+                        <span>Change Password</span>
+                    </label>
+                    <div class="input-field col m12 s12" id="gebruikers_password1_container">
+                        <input type="password" id="password1" name="gebruikers_password1" tabindex="1" size="10" placeholder="Enter Password" disabled required>
+                        <label for="gebruiker_password1">Password</label>
+                    </div>
+                    <div class="input-field col m12 s12" id="gebruikers_password_container">
+                        <input type="password" id="password2" name="gebruikers_password2" tabindex="1" size="10" placeholder="Re-enter Password" disabled required>
+                        <label for="gebruiker_password2">Retype Password</label>
+                    </div>
+                    <button id="submit" disabled class="btn waves-effect primary waves-light col m8 s10 offset-s1 offset-m2 " type="submit" name="opslaan">Update
+                        <i class="material-icons right">send</i>
+                    </button>
             </div>
             <div class="col m6 dark-2 z-depth-3 chart2">
                 <div class="chart-container" style="position: relative; height:50vh; width:40vw">
                     <canvas id="Chart2"></canvas>
                 </div>
             </div>
+            </form>
         </div>
         <script src="../../lib/js/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="../../lib/materialize/js/materialize.js"></script>

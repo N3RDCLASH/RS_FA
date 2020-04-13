@@ -1,5 +1,5 @@
 const back_button = document.createElement("i")
-back_button.className = 'material-icons small teal-text back'
+back_button.className = 'material-icons small white-text back'
 back_button.innerHTML = 'arrow_back';
 back_button.id = 'back_button'
 back_button.onclick = showTable
@@ -36,7 +36,6 @@ function showForm() {
 
 function showTable() {
     gebruikers_table.style.display = 'table'
-    // search.style.display = 'block'
     gebruikers_table.classList.toggle('flip-in-ver-right', true)
     gebruikers_form.style.display = 'none'
     back_button.style.display = 'none'
