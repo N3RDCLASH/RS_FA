@@ -16,6 +16,7 @@ back_button.addEventListener('click', () => { window.location = 'gebruikers.php'
 back_button.style.setProperty('display', 'inline-block', 'important')
 
 
+// color all labesls & inputs white
 for (const el of inputs) {
     el.classList.add("white-text")
 }
@@ -53,11 +54,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     refreshSelect(type)
 
 
-    // path1 = "/html/body/div[2]/div/div[1]/div[2]/div/input"
-    // if (document.evaluate(path1, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.classList.add('white-text') == null) {
     document.evaluate(path2, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.classList.add('white-text')
-    // }
-
 
 })
 
@@ -107,8 +104,7 @@ function refreshSelect(el) {
 gebruiker_informatie.childNodes[1].addEventListener('submit', function (e) {
     console.log('help' + e)
     if (change_pass.checked) {
-        if (document.getElementsByName('gebruikers_password1')[0].value == document.getElementsByName('gebruikers_password2')[0].value) {
-            // gebruikers_form.childNodes[1].submit()
+        if (password1.value == password2.value) {
         } else {
             e.preventDefault()
             console.log('fail')
@@ -120,7 +116,7 @@ gebruiker_informatie.childNodes[1].addEventListener('submit', function (e) {
 })
 
 //check if change_pass is checked
-change_pass.addEventListener('click.', () => {
+change_pass.addEventListener('click', () => {
     if (change_pass.checked) {
         password1.parentNode.style.display = 'block'
         password2.parentNode.style.display = 'block'
