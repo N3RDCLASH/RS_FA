@@ -5,13 +5,13 @@ include("../../db/conn.php");
 <table id="deelnemers_table" class="highlight white-text responsive-table z-depth-3 ">
     <thead class="blue-grey darken-3 ">
         <tr>
-            <th>ID</th>
-            <th>Naam</th>
-            <th>Type</th>
-            <th>Email</th>
-            <th>Adres</th>
-            <th>Telefoonnummer </th>
-            <th>See More</th>
+            <th class='center'>ID</th>
+            <th class='center'> Naam</th>
+            <th class='center'>Type</th>
+            <th class='center'>Email</th>
+            <th class='center'>Adres</th>
+            <th class='center'>Telefoonnummer </th>
+            <th class='center'>See More</th>
 
 
         </tr>
@@ -23,19 +23,19 @@ include("../../db/conn.php");
     if (mysqli_num_rows($query) > 0) {
         while ($row = mysqli_fetch_assoc($query)) {
             echo "<tr>";
-            echo "<td>" . $row{
+            echo "<td class='center'>" . $row{
                 'deelnemers_id'} . "</td>";
-            echo "<td>" . $row{
+            echo "<td class='center'>" . $row{
                 'deelnemers_naam'} . "</td>";
-            echo "<td>" . $row{
+            echo "<td class='center'>" . $row{
                 'type_naam'} . "</td>";
-            echo "<td>" . $row{
+            echo "<td class='center'>" . $row{
                 'deelnemers_email'} . "</td>";
-            echo "<td>" . $row{
+            echo "<td class='center'>" . $row{
                 'deelnemers_adres'} . "</td>";
-            echo "<td>" . $row{
+            echo "<td class='center'>" . $row{
                 'deelnemers_telefoonnummer'} . "</td>";
-            echo "<td><a class='amber waves-effect waves-light btn btn-tiny' href=''><i class='material-icons'>chevron_right</i></a></td>";
+            echo "<td class='center'><a class='amber waves-effect waves-light btn btn-tiny' href=''><i class='material-icons'>chevron_right</i></a></td>";
             echo "</tr>";
             echo "</tr>";
         }

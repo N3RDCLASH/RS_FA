@@ -61,18 +61,36 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 })
 
+let editable = false
+
 // edit gebruiker
 document.getElementById('edit').addEventListener('click', () => {
-    for (let e of gebruiker_informatie.getElementsByTagName('input')) {
-        if (e.type === "password") {
+    editable = !editable
+    console.log(editable)
+    if (editable == true) {
 
-        } else {
-            e.removeAttribute('disabled')
+        for (let e of gebruiker_informatie.getElementsByTagName('input')) {
+            if (e.type === "password") {
+
+            } else {
+                e.removeAttribute('disabled')
+            }
         }
+        type.removeAttribute('disabled')
+        document.getElementById("submit").removeAttribute('disabled')
+        refreshSelect(type)
+    } else if (editable == false) {
+        if (change_pass.checked) {
+            change_pass.click()
+            console.log('test')
+        }
+        for (let e of gebruiker_informatie.getElementsByTagName('input')) {
+            e.setAttribute('disabled', true)
+        }
+        type.setAttribute('disabled', true)
+        document.getElementById("submit").setAttribute('disabled', true)
     }
-    type.removeAttribute('disabled')
-    document.getElementById("submit").removeAttribute('disabled')
-    refreshSelect(type)
+
 
 })
 
@@ -102,7 +120,7 @@ gebruiker_informatie.childNodes[1].addEventListener('submit', function (e) {
 })
 
 //check if change_pass is checked
-change_pass.addEventListener('click', () => {
+change_pass.addEventListener('click.', () => {
     if (change_pass.checked) {
         password1.parentNode.style.display = 'block'
         password2.parentNode.style.display = 'block'

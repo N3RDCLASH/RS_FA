@@ -109,7 +109,7 @@ $_COOKIE['page'] = 'Dashboard';
                 </div>
             </div>
             <div class="col m4 z-depth-3 chart1 chart1-sm" id="chart_container">
-                <div class="chart-container" style="position: relative; height:60vh; width:22vw">
+                <div class="chart-container" style="position: relative; height:60vh; width:23vw">
                     <canvas id="Chart1"></canvas>
                 </div>
             </div>
