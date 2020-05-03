@@ -14,4 +14,3 @@ try {
     throw $th;
     echo mysqli_error($link);
 }
-?>

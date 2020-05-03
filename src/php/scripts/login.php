@@ -41,6 +41,7 @@ if (isset($_POST['action'])) {
                             break;
                         case '2':
                             echo "redirect financiele administratie 2";
+                            header ('location:../financieel/');
                             break;
                     }
                 } else {
