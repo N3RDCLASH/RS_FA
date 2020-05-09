@@ -2,6 +2,7 @@ const add_taak = document.getElementById('add_taak')
 const back_button = document.createElement("i")
 const row = document.getElementsByClassName('col')[0]
 const taken_lijst = document.getElementById('taken_lijst')
+const type = document.getElementById("type")
 back_button.className = 'material-icons small white-text back'
 back_button.innerHTML = 'arrow_back';
 back_button.id = 'back_button'
@@ -12,6 +13,28 @@ back_button.style.setProperty('display', 'inline-block', 'important')
 
 let project_id = document.getElementById('project_informatie').dataset.id
 document.addEventListener('DOMContentLoaded', selectProject(project_id))
+
+const inputs = document.getElementsByTagName('input')
+const labels = document.getElementsByTagName('label')
+// color all labesls & inputs white
+
+
+
+for (const el of document.getElementsByTagName('textarea')) {
+    el.classList.add("white-text")
+}
+
+for (const el of inputs) {
+    el.classList.add("white-text")
+}
+
+for (const el of labels) {
+    el.classList.add("white-text")
+}
+
+
+
+
 
 function selectProject(id) {
     fetch(`../requests/get_project.php?id=${id}`).then(function (response) {
@@ -56,7 +79,6 @@ async function selectTaken() {
 function showProject(data) {
     naam = document.getElementById('naam')
     omschrijving = document.getElementById('omschrijving')
-    type = document.getElementById('type')
     begin_datum = document.getElementById('begin_datum')
     eind_datum = document.getElementById('eind_datum')
 
@@ -73,18 +95,48 @@ function showProject(data) {
     eind_datum.value = data.datum_eind
 }
 
+let editable = false
+// 
+document.getElementById('edit').addEventListener('click', () => {
+    editable = !editable
+    console.log(editable)
+    if (editable == true) {
+        for (let e of project_informatie.getElementsByTagName('input')) {
+            e.removeAttribute('disabled')
+        }
+
+        type.removeAttribute('disabled')
+        document.getElementById("submit").removeAttribute('disabled')
+        refreshSelect(type)
+    } else if (editable == false) {
+        if (change_pass.checked) {
+            change_pass.click()
+            console.log('test')
+        }
+        for (let e of project_informatie.getElementsByTagName('input')) {
+            e.setAttribute('disabled', true)
+        }
+        type.setAttribute('disabled', true)
+        document.getElementById("submit").setAttribute('disabled', true)
+    }
+})
+
+
+function refreshSelect(el) {
+    let instance = M.FormSelect.getInstance(el)
+    instance.destroy()
+    el.classList.add('white-text')
+    M.FormSelect.init(el)
+    document.evaluate(path2, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.classList.add('white-text')
+}
 // Display Taak Data
 async function showTaak() {
     const data = await selectTaken();
-
-    // window.alert(JSON.stringify(data))
-
-
     data.forEach((taak, i) => {
         taken_lijst.innerHTML +=
             `<li>
-        <div class="collapsible-header" > <i class="material-icons">check</i>${taak.naam}</div>
-        <div class="collapsible-body">
+        <div class="collapsible-header dark-1 white-text" > <i class="material-icons">check</i>${taak.naam}</div>
+        <div class="collapsible-body dark-2 white-text">
         <span>
         ${taak.omschrijving}
         <div class='deelnemer_chips' >

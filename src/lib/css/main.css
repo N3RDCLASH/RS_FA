@@ -107,6 +107,7 @@ body {
 
 #cards-container {
     margin-top: 2%;
+    padding: 0 10px;
 }
 
 #col-left {
@@ -182,6 +183,7 @@ body {
 
 #submit {
     margin-top: 5%;
+    margin-bottom: 4%;
 }
 
 #wrapper {
@@ -242,6 +244,18 @@ input[type="text"], .input:not([type]):disabled, input:not([type])[readonly="rea
     font-size: 13px;
 }
 
+.collapsible-header {
+    border-bottom: 1px solid #484f56!important;
+}
+
+.collapsible {
+    border-top: 1px solid #484f56!important;
+    border-right: 1px solid #484f56!important;
+    border-left: 1px solid #484f56!important;
+    margin: 0.5rem 0 1rem 0;
+}
+
+s
 /* animations */
 
 /* ----------------------------------------------

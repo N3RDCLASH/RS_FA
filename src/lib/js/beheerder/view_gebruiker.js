@@ -1,8 +1,8 @@
 const back_button = document.createElement("i")
 const change_pass = document.getElementById('change_pass')
-const gebruiker_informatie = document.getElementById('gebruiker_informatie')
+const project_informatie = document.getElementById('gebruiker_informatie')
 
-const gebruiker_id = gebruiker_informatie.dataset.id
+const gebruiker_id = project_informatie.dataset.id
 const inputs = document.getElementsByTagName('input')
 const path2 = "/html/body/div[2]/div/div[1]/form/div[2]/div/input"
 const row = document.getElementsByClassName('col')[0]
@@ -21,9 +21,9 @@ for (const el of inputs) {
     el.classList.add("white-text")
 }
 
-let y = document.getElementsByTagName('label')
+const labels = document.getElementsByTagName('label')
 
-for (const el of y) {
+for (const el of labels) {
     el.classList.add("white-text")
 }
 
@@ -66,7 +66,7 @@ document.getElementById('edit').addEventListener('click', () => {
     console.log(editable)
     if (editable == true) {
 
-        for (let e of gebruiker_informatie.getElementsByTagName('input')) {
+        for (let e of project_informatie.getElementsByTagName('input')) {
             if (e.type === "password") {
 
             } else {
@@ -81,7 +81,7 @@ document.getElementById('edit').addEventListener('click', () => {
             change_pass.click()
             console.log('test')
         }
-        for (let e of gebruiker_informatie.getElementsByTagName('input')) {
+        for (let e of project_informatie.getElementsByTagName('input')) {
             e.setAttribute('disabled', true)
         }
         type.setAttribute('disabled', true)
@@ -101,7 +101,7 @@ function refreshSelect(el) {
 }
 
 //Check if passwords match
-gebruiker_informatie.childNodes[1].addEventListener('submit', function (e) {
+project_informatie.childNodes[1].addEventListener('submit', function (e) {
     console.log('help' + e)
     if (change_pass.checked) {
         if (password1.value == password2.value) {
@@ -111,8 +111,8 @@ gebruiker_informatie.childNodes[1].addEventListener('submit', function (e) {
             M.toast({ html: 'Passwords do not match!' })
 
         }
-    } else {
     }
+
 })
 
 //check if change_pass is checked
