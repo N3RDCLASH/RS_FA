@@ -49,6 +49,7 @@ function selectProject(id) {
 
     // selectDeelnemers(id);
 }
+
 async function selectTaken() {
     const taken = []
 
@@ -88,9 +89,21 @@ function showProject(data) {
         label.classList.add('active')
     }
     )
+    typeValue = []
+
+    function findType(id) {
+        return id == data.type
+    }
+
+    for (let x of type.options) {
+        typeValue.push(x.value)
+    }
+
+    type.options[typeValue.findIndex(findType)].setAttribute('selected', true)
+    type.options[typeValue.findIndex(findType)].classList.add('white-text')
+    refreshSelect(type)
     naam.value = data.naam
     omschrijving.value = data.omschrijving
-    type.value = data.type
     begin_datum.value = data.datum_start
     eind_datum.value = data.datum_eind
 }
@@ -104,19 +117,16 @@ document.getElementById('edit').addEventListener('click', () => {
         for (let e of project_informatie.getElementsByTagName('input')) {
             e.removeAttribute('disabled')
         }
-
+        document.getElementById("omschrijving").removeAttribute("disabled")
         type.removeAttribute('disabled')
         document.getElementById("submit").removeAttribute('disabled')
         refreshSelect(type)
     } else if (editable == false) {
-        if (change_pass.checked) {
-            change_pass.click()
-            console.log('test')
-        }
         for (let e of project_informatie.getElementsByTagName('input')) {
             e.setAttribute('disabled', true)
         }
         type.setAttribute('disabled', true)
+        document.getElementById("omschrijving").setAttribute("disabled", true)
         document.getElementById("submit").setAttribute('disabled', true)
     }
 })
@@ -127,8 +137,10 @@ function refreshSelect(el) {
     instance.destroy()
     el.classList.add('white-text')
     M.FormSelect.init(el)
-    document.evaluate(path2, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.classList.add('white-text')
+    document.getElementsByClassName("select-dropdown dropdown-trigger")[0].classList.add("white-text")
 }
+
+
 // Display Taak Data
 async function showTaak() {
     const data = await selectTaken();
@@ -176,7 +188,7 @@ add_taak.addEventListener('click', function () {
             option.value = body[i].id;
             option.text = body[i].naam;
             selectList.appendChild(option);
-            console.log(selectList)
+            console.log(electList)
         }
         instance = M.FormSelect.init(selectList);
         // console.log(deelnemers)

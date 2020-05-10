@@ -49,7 +49,7 @@ if (empty($_GET['id'] == true)) {
             <!-- Project Informatie Display -->
 
             <div class="col m5 s10 offset-m1 offset-s1 z-depth-3 flip-in-ver-right dark-2" id="project_informatie" data-id="<?php echo $_GET['id'] ?>">
-                <form>
+                <form id="projecten_form" action="../requests/update_project.php?id=<?php echo $_GET['id'] ?>" method="post">
                     <h5 class="center white-text">Project Informatie</h5>
                     <i class="right primary-text material-icons tooltipped" data-position="right" data-tooltip="Edit Project" id="edit">edit</i>
 
@@ -61,12 +61,12 @@ if (empty($_GET['id'] == true)) {
                     </div>
                     <div class="row">
                         <div class="input-field col s8 offset-s2">
-                            <textarea id="omschrijving" name="omschrijving" id="textarea1" cols="30" rows="10" class="materialize-textarea" disabled></textarea>
+                            <textarea id="omschrijving" name="omschrijving" form="projecten_form" id="textarea1" cols="30" rows="10" class="materialize-textarea" disabled></textarea>
                             <label for="omschrijving" class="active">Omschrijving</label>
                         </div>
                     </div>
                     <div class="input-field col s8 offset-s2">
-                        <select id="type" disabled>
+                        <select id="type" name="type" disabled>
                             <option value="" disabled selected>Kies het type project.</option>
                             <option class="" value="0">Evenement</option>
                             <option class="" value="1">Werkzaamheid</option>
