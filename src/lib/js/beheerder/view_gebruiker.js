@@ -39,14 +39,15 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     data = await fetch(`../requests/get_gebruiker.php?id=${gebruiker_id}`).then(res => res.json())
     naam.value = data.naam
+
+    // Select correct input value 
     typeValue = []
+    for (let x of type.options) {
+        typeValue.push(x.value)
+    }
 
     function findType(id) {
         return id == data.type
-    }
-
-    for (let x of type.options) {
-        typeValue.push(x.value)
     }
 
     type.options[typeValue.findIndex(findType)].setAttribute('selected', true)

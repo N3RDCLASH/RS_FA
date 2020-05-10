@@ -104,7 +104,7 @@ if (empty($_GET['id'] == true)) {
     </div>
 
     <!-- Taak Registratie Modal -->
-    <div id="modal1" class="modal">
+    <div id="modal1" class="modal dark-2">
         <div class="modal-content">
             <h4 class="white-text">Taken Registratie</h4>
             <form action="../requests/create_taak.php" method="post" name="taken_form" id="taken_form">
@@ -138,7 +138,7 @@ if (empty($_GET['id'] == true)) {
                         <label for="taak_prijs">Prijs</label>
                     </div>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer dark-2">
                     <div class="row">
                         <button class="btn waves-effect waves-light col m12" type="submit" id="submit_taak" value='test' name="opslaan">Submit
                             <i class="material-icons right">send</i>

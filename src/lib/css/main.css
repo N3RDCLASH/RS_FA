@@ -57,7 +57,7 @@ body {
 }
 
 .dark-2 {
-    background-color: #262a2d;
+    background-color: #262a2d !important;
     ;
 }
 
