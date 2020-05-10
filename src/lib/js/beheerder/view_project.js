@@ -3,6 +3,7 @@ const back_button = document.createElement("i")
 const row = document.getElementsByClassName('col')[0]
 const taken_lijst = document.getElementById('taken_lijst')
 const type = document.getElementById("type")
+const edit = document.getElementById('edit')
 back_button.className = 'material-icons small white-text back'
 back_button.innerHTML = 'arrow_back';
 back_button.id = 'back_button'
@@ -16,10 +17,9 @@ document.addEventListener('DOMContentLoaded', selectProject(project_id))
 
 const inputs = document.getElementsByTagName('input')
 const labels = document.getElementsByTagName('label')
+
+
 // color all labesls & inputs white
-
-
-
 for (const el of document.getElementsByTagName('textarea')) {
     el.classList.add("white-text")
 }
@@ -77,12 +77,17 @@ async function selectTaken() {
 // console.log(taken)
 
 // Display Project Data 
-function showProject(data) {
+async function showProject(data) {
     naam = document.getElementById('naam')
     omschrijving = document.getElementById('omschrijving')
     begin_datum = document.getElementById('begin_datum')
     eind_datum = document.getElementById('eind_datum')
+    project_status = await fetch(`../requests/get_status.php?id=${project_id}`).then(res => res.json())
 
+    if (project_status.status == "closed") {
+        edit.classList.replace("primary-text", "grey-text")
+        edit.removeEventListener("click", editFields)
+    }
 
     const labels = document.querySelectorAll("label")
     labels.forEach(label => {
@@ -102,15 +107,21 @@ function showProject(data) {
     type.options[typeValue.findIndex(findType)].setAttribute('selected', true)
     type.options[typeValue.findIndex(findType)].classList.add('white-text')
     refreshSelect(type)
+
+
+    //value assignment
     naam.value = data.naam
     omschrijving.value = data.omschrijving
     begin_datum.value = data.datum_start
     eind_datum.value = data.datum_eind
 }
 
+
 let editable = false
 // 
-document.getElementById('edit').addEventListener('click', () => {
+edit.addEventListener('click', editFields)
+
+async function editFields() {
     editable = !editable
     console.log(editable)
     if (editable == true) {
@@ -129,7 +140,8 @@ document.getElementById('edit').addEventListener('click', () => {
         document.getElementById("omschrijving").setAttribute("disabled", true)
         document.getElementById("submit").setAttribute('disabled', true)
     }
-})
+
+}
 
 
 function refreshSelect(el) {
@@ -165,7 +177,9 @@ async function showTaak() {
         // instance = M.Chips.getInstance(document.getElementById('chips'))
         console.log(instance)
         for (const deelnemer of taak.deelnemers[0]) {
-            instance.innerHTML += `<div class="chip">${deelnemer}</div>`
+            if (deelnemer.length > 1) {
+                instance.innerHTML += `<div class="chip">${deelnemer}</div>`
+            }
 
         }
     })

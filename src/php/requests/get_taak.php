@@ -11,13 +11,6 @@ if (!$result = mysqli_query($link, $query)) {
 
 if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
-        //         $taak = [
-        //             'el' => '<li>
-        //     <div class="collapsible-header"><i class="material-icons">filter_drama</i>' . $row['naam'] . '</div>
-        //     <div class="collapsible-body"><span>' . $row['omschrijving'] . '.</span></div>
-        // </li>'
-        //         ];     
-
 
         $taak[] = [
             'taak_id' => $row['taak_id'],
@@ -32,10 +25,7 @@ if (mysqli_num_rows($result) > 0) {
                 'aantal'},
             "prijs" => $row{
                 'prijs'},
-            // "status" => $row{
-            //     'status'}
         ];
-        // print_r($taak);
     }
     mysqli_close($link);
     die(json_encode($taak));
