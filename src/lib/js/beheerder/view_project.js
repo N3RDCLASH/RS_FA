@@ -33,9 +33,6 @@ for (const el of labels) {
 }
 
 
-
-
-
 function selectProject(id) {
     fetch(`../requests/get_project.php?id=${id}`).then(function (response) {
         return response.json()
@@ -53,7 +50,7 @@ function selectProject(id) {
 async function selectTaken() {
     const taken = []
 
-    response = await fetch(`../requests/get_taak.php?id=${project_id}`)
+    response = await fetch(`../requests/get_taak_all.php?id=${project_id}`)
     const data = await response.json()
 
     for (const x of data) {
@@ -63,6 +60,7 @@ async function selectTaken() {
         ss.push(deelnemers)
 
         taken.push({
+            'id': x.taak_id,
             'naam': x.naam,
             'omschrijving': x.omschrijving,
             'deelnemers': ss
@@ -153,9 +151,14 @@ function refreshSelect(el) {
 }
 
 
+
+
+
 // Display Taak Data
 async function showTaak() {
     const data = await selectTaken();
+    // console.log(data)
+    taken_lijst.innerHTML = ''
     data.forEach((taak, i) => {
         taken_lijst.innerHTML +=
             `<li>
@@ -168,6 +171,9 @@ async function showTaak() {
         <br>
         </div
         </span >
+        <br>
+    
+        <a class="waves-effect waves-light btn btn-tiny right amber" href="view_taak.php?id=${taak.id}">View</a>
         </div >
         </li > `
         // window.alert(JSON.stringify(taak.deelnemers.length))
@@ -182,6 +188,7 @@ async function showTaak() {
             }
 
         }
+
     })
 }
 
@@ -202,7 +209,7 @@ add_taak.addEventListener('click', function () {
             option.value = body[i].id;
             option.text = body[i].naam;
             selectList.appendChild(option);
-            console.log(electList)
+            console.log(selectList)
         }
         instance = M.FormSelect.init(selectList);
         // console.log(deelnemers)

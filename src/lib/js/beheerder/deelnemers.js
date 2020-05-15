@@ -1,5 +1,5 @@
 const back_button = document.createElement("i")
-back_button.className = 'material-icons small teal-text back'
+back_button.className = 'material-icons small white-text back'
 back_button.innerHTML = 'arrow_back';
 back_button.id = 'back_button'
 back_button.onclick = showTable
@@ -10,6 +10,11 @@ row.appendChild(back_button)
 
 
 function showForm() {
+    for (let x of document.getElementsByTagName("input")) {
+        x.classList.add("white-text")
+        console.log
+            (x)
+    }
     instance = M.FormSelect.init(document.getElementById('deelnemers_type'))
     deelnemer_form.style.display = 'block';
     deelnemer_form.classList.toggle('flip-in-ver-right', true)

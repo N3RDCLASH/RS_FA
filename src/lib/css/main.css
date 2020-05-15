@@ -53,7 +53,7 @@ body {
 }
 
 .dark-1 {
-    background-color: #343a40;
+    background-color: #343a40 !important;
 }
 
 .dark-2 {
@@ -142,7 +142,7 @@ body {
 }
 
 #form {
-    margin-top: 40%;
+    margin-top: 20%;
 }
 
 #gebruikers {
@@ -161,6 +161,10 @@ body {
 
 #deelnemer_chips {
     margin-top: 5%;
+}
+
+#logo {
+    width: 60px;
 }
 
 #project {
@@ -185,6 +189,8 @@ body {
     margin-top: 5%;
     margin-bottom: 4%;
 }
+
+#taak_informatie {}
 
 #wrapper {
     margin-bottom: 0 !important;
@@ -255,7 +261,10 @@ input[type="text"], .input:not([type]):disabled, input:not([type])[readonly="rea
     margin: 0.5rem 0 1rem 0;
 }
 
-s
+.taak_margin {
+    margin: 0 2%!important;
+}
+
 /* animations */
 
 /* ----------------------------------------------

@@ -88,8 +88,7 @@ $_COOKIE['page'] = 'Deelnemers';
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script> -->
     <script src="../../lib/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../../lib/materialize/js/materialize.js"></script>
-    <script type="text/javascript" src="../../lib/js/administratie/app.js"></script>
-    <script type="text/javascript" src="../../lib/js/administratie/deelnemers.js"></script>
+    <script type="text/javascript" src="../../lib/js/beheerder/deelnemers.js"></script>
 </body>
 
 </html>

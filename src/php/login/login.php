@@ -29,7 +29,9 @@ if (isset($_SESSION['user'])) {
         <div class="col s12 m8" id="col-left">
             <img src="../../lib/images/fin.jpg" id="lg_img" class="center">
         </div>
-        <div class="col s12  m4 blue-grey darken-2" id="col-right">
+        <div class="col s12 m4 blue-grey darken-2" id="col-right">
+            <!-- <!-- <img src="../../lib/images/logo.png" id="logo" class="center"> -->
+            <h1 class="white-text center">Log In</h1> -->
             <form class="col s10 offset-s1" id="form" action="../scripts/login.php" method="POST">
                 <div class="input-field col s12">
                     <input placeholder="Enter Username" id="user_name" name="user_name" type="text" class="validate white-text" required>

@@ -53,9 +53,9 @@ $_COOKIE['page'] = 'Projecten';
         </div>
         <div class="row">
             <form action="../requests/create_project.php" method="POST">
-                <div id="add_form" class="col m6 s10 offset-s1 offset-m3 white z-depth-3 flip-in-ver-right ">
+                <div id="add_form" class="col m6 s10 offset-s1 offset-m3 white z-depth-3 flip-in-ver-right dark-2 ">
 
-                    <h5 class="center ">Project Informatie</h5>
+                    <h5 class="center white-text">Project Informatie</h5>
 
                     <div class="row">
                         <div class="input-field col s8 offset-s2">
@@ -94,7 +94,7 @@ $_COOKIE['page'] = 'Projecten';
                         </div>
                     </div>
 
-                    <button class="btn waves-effect waves-light col m8 s10 offset-s1 offset-m2 " type="submit" name="action">Submit
+                    <button class="btn primary waves-effect waves-light col m8 s10 offset-s1 offset-m2 " type="submit" name="action">Submit
                         <i class="material-icons right">send</i>
                     </button>
 
@@ -110,8 +110,8 @@ $_COOKIE['page'] = 'Projecten';
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script> -->
     <script src="../../lib/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../../lib/materialize/js/materialize.min.js"></script>
-    <script type="text/javascript" src="../../lib/js/administratie/app.js"></script>
-    <script type="text/javascript" src="../../lib/js/administratie/projecten.js"></script>
+    <script type="text/javascript" src="../../lib/js/beheerder/app.js"></script>
+    <script type="text/javascript" src="../../lib/js/beheerder/projecten.js"></script>
 
 </body>
 

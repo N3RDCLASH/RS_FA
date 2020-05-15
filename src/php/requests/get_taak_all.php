@@ -10,7 +10,7 @@ if (!$result = mysqli_query($link, $query)) {
 }
 
 if (mysqli_num_rows($result) > 0) {
-    while ($row = mysqli_fetch_assoc($result)) { 
+    while ($row = mysqli_fetch_assoc($result)) {
         $taak[] = [
             'taak_id' => $row['taak_id'],
             'project_id' => $row['project_id'],
@@ -32,11 +32,11 @@ if (mysqli_num_rows($result) > 0) {
     mysqli_close($link);
     die(json_encode($taak));
 } else {
-    die('geen taak beschikbaaar');
+    die(json_encode('geen taak beschikbaaar'));
 }
 
 $query = "SELECT `deelnemers_id` FROM `deelnemers_per_taak` WHERE `taak_id` = " . $id;
-$y=[];
+$y = [];
 
 if (!$result = mysqli_query($link, $query)) {
     echo mysqli_error($link);

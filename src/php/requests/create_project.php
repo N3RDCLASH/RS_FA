@@ -14,5 +14,5 @@ if (isset($_POST['action'])) {
         echo mysqli_error($link);
     };
     mysqli_close($link);
-    header("location:../administratie/projecten.php");
+    header("location:../beheerder/projecten.php");
 }

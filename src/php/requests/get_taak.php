@@ -4,7 +4,7 @@ include "../../db/conn.php";
 $id = $_GET['id'];
 // $taak[] = [];
 
-$query = "SELECT * FROM taken where project_id =" . $id;
+$query = "SELECT * FROM taken where taak_id =" . $id;
 if (!$result = mysqli_query($link, $query)) {
     echo mysqli_error($link);
 }
@@ -30,5 +30,5 @@ if (mysqli_num_rows($result) > 0) {
     mysqli_close($link);
     die(json_encode($taak));
 } else {
-    die('geen taak beschikbaaar');
+    die(json_encode('geen taak beschikbaaar'));
 }

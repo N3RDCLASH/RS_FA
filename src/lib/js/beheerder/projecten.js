@@ -16,6 +16,12 @@ back_button.innerHTML = 'arrow_back';
 back_button.id = 'back_button'
 row.appendChild(back_button)
 
+
+for (const x of document.getElementsByTagName("input")) {
+    x.classList.add("white-text")
+}
+
+
 function showForm() {
     form.style.display = 'block'
     form.classList.toggle('flip-in-ver-right', true)
@@ -84,4 +90,4 @@ back_button.addEventListener('click', showTable)
 test = {
     test: 'test'
 }
-//Post Taak data 
+//Post Taak data
