@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 17, 2020 at 05:28 PM
+-- Generation Time: Apr 12, 2020 at 03:59 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.7
 
@@ -21,18 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `rs_fa`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `bestedingen`
---
-
-CREATE TABLE `bestedingen` (
-  `besteding_id` int(11) NOT NULL,
-  `taak_id` int(11) NOT NULL,
-  `materialen` varchar(1000) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -59,8 +47,7 @@ INSERT INTO `deelnemers` (`deelnemers_id`, `deelnemers_type`, `deelnemers_naam`,
 (3, 4, 'Sabrina Starke', 'sabrina.starke.natin@gmail.com', 'indiraghandiweg 35', '8875695', '2020-03-05 21:27:17'),
 (4, 4, 'qwewq', 'wqweqwe@gmqil.com', 'sdas', '456', '2020-03-05 21:27:17'),
 (5, 4, 'suraj', 'sur@kkkl', 'kkdk', '272738', '2020-03-05 21:27:17'),
-(7, 5, 'Sardha Raghosingh', 's.raghosing.natin@gmail.com', 'indiraghandiweg 398', '8923456', '2020-03-10 03:33:06'),
-(8, 5, 'Irwin Noordwijk', 'Irwin.Noorwijk.natin@gmail.com', 'vergeetmijnietstraat 13', '8923353', '2020-05-14 03:17:25');
+(7, 5, 'Sardha Raghosingh', 's.raghosing.natin@gmail.com', 'indiraghandiweg 398', '8923456', '2020-03-10 03:33:06');
 
 -- --------------------------------------------------------
 
@@ -88,8 +75,6 @@ INSERT INTO `deelnemers_per_taak` (`deelnemers_id`, `taak_id`) VALUES
 (2, 19),
 (2, 21),
 (2, 22),
-(2, 24),
-(2, 31),
 (3, 10),
 (3, 11),
 (3, 12),
@@ -98,26 +83,11 @@ INSERT INTO `deelnemers_per_taak` (`deelnemers_id`, `taak_id`) VALUES
 (3, 19),
 (3, 20),
 (3, 22),
-(3, 23),
-(3, 24),
-(3, 31),
-(3, 32),
-(3, 33),
-(3, 34),
-(4, 31),
-(4, 33),
 (5, 12),
 (5, 13),
 (5, 15),
 (5, 19),
-(5, 23),
-(5, 24),
-(5, 31),
-(5, 32),
-(5, 33),
-(5, 34),
-(7, 17),
-(7, 31);
+(7, 17);
 
 -- --------------------------------------------------------
 
@@ -165,7 +135,6 @@ CREATE TABLE `projecten` (
   `naam` char(40) DEFAULT NULL,
   `omschrijving` text DEFAULT NULL,
   `type` int(10) DEFAULT NULL,
-  `richting_id` int(10) DEFAULT NULL,
   `datum_start` date DEFAULT NULL,
   `datum_eind` date DEFAULT NULL,
   `status` char(10) DEFAULT 'open',
@@ -176,20 +145,17 @@ CREATE TABLE `projecten` (
 -- Dumping data for table `projecten`
 --
 
-INSERT INTO `projecten` (`project_id`, `naam`, `omschrijving`, `type`, `richting_id`, `datum_start`, `datum_eind`, `status`, `CreatedOn`) VALUES
-(3, 'Fundraising', 'Wo mek moni', 1, 0, '2020-02-20', '2020-02-29', 'open', '2020-03-24 21:27:03'),
-(4, 'Valentines Day', 'XOXOX', 0, 0, '2020-02-20', '2020-02-26', 'open', '2020-03-10 21:27:03'),
-(5, 'new year', 'idk', 1, 0, '2020-02-25', '2020-02-27', 'open', '2020-03-14 21:27:03'),
-(6, 'Erf Schoonmaken', 'maak skoon mi boi ', 1, 0, '2020-02-12', '2020-02-24', 'open', '2020-03-05 21:27:03'),
-(9, 'test project', 'test', 0, 0, '2020-02-12', '2020-02-02', 'closed', '2020-03-05 21:27:03'),
-(11, 'Cookout', 'eten koken', 0, 0, '2020-02-19', '2020-02-28', 'open', '2020-03-24 21:27:03'),
-(12, 'test project 2', 'tjieng tori', 0, 0, '2020-02-25', '2020-02-27', 'open', '2020-03-05 21:27:03'),
-(13, 'test project 2', 'ss', 0, 0, '2020-02-25', '2020-02-26', 'open', '2020-03-11 21:27:03'),
-(14, 'New Project', 'Some project', 1, 0, '2020-03-26', '2020-03-30', 'open', '2020-03-02 03:23:47'),
-(15, 'fff', 'fff', 0, 0, '2020-03-19', '2020-03-28', 'open', '2020-03-06 18:13:28'),
-(16, 'Marktonderzoek Enterprise Architecture', 'De EA Onderzoeken', 1, 0, '2020-05-14', '2020-05-31', 'open', '2020-05-14 02:21:10'),
-(17, 'Opzetten Online School', 'Het opzetten van een online school', 1, 0, '2020-05-15', '2020-06-07', 'open', '2020-05-14 02:25:03'),
-(18, 'Uitbreiden Infrastructuur', 'Het uitbreiden van de ict infrastructuur ', 1, 0, '2020-05-20', '2020-06-11', 'open', '2020-05-14 03:14:48');
+INSERT INTO `projecten` (`project_id`, `naam`, `omschrijving`, `type`, `datum_start`, `datum_eind`, `status`, `CreatedOn`) VALUES
+(3, 'Fundraising', 'Wo mek moni', 1, '2020-02-20', '2020-02-29', 'open', '2020-03-24 21:27:03'),
+(4, 'Valentines Day', 'XOXOX', 1, '2020-02-20', '2020-02-26', 'open', '2020-03-10 21:27:03'),
+(5, 'new year', 'idk', 1, '2020-02-25', '2020-02-27', 'open', '2020-03-14 21:27:03'),
+(6, 'Erf Schoonmaken', 'maak skoon', 0, '2020-02-12', '2020-02-24', 'open', '2020-03-05 21:27:03'),
+(9, 'test project', 'test', 0, '2020-02-12', '2020-02-02', 'closed', '2020-03-05 21:27:03'),
+(11, 'Cookout', 'eten koken', 0, '2020-02-19', '2020-02-28', 'open', '2020-03-24 21:27:03'),
+(12, 'test project 2', 'tjieng tori', 0, '2020-02-25', '2020-02-27', 'open', '2020-03-05 21:27:03'),
+(13, 'test project 2', 'ss', 0, '2020-02-25', '2020-02-26', 'open', '2020-03-11 21:27:03'),
+(14, 'New Project', 'Some project', 1, '2020-03-26', '2020-03-30', 'open', '2020-03-02 03:23:47'),
+(15, 'fff', 'fff', 0, '2020-03-19', '2020-03-28', 'open', '2020-03-06 18:13:28');
 
 -- --------------------------------------------------------
 
@@ -209,17 +175,6 @@ CREATE TABLE `project_type` (
 INSERT INTO `project_type` (`type_id`, `type_name`) VALUES
 (0, 'evenement'),
 (1, 'werkzaamheid');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `richting`
---
-
-CREATE TABLE `richting` (
-  `richting_id` int(11) NOT NULL,
-  `richting_naam` char(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -281,19 +236,7 @@ INSERT INTO `taken` (`taak_id`, `project_id`, `taak_type`, `naam`, `omschrijving
 (19, 13, 3, 'sdasd', 'asdas', NULL, NULL),
 (20, 12, 3, 'ss', 'ss', NULL, NULL),
 (21, 14, 4, 'kiwi', 'fruit', 1, 0),
-(22, 14, 3, 'pineapple', 'fruit', NULL, NULL),
-(23, 6, 4, 'Hark Kopen', 'xd', 4, 40),
-(24, 11, 3, 'houfhpsiof', 'KNEDPGSDOPGN', NULL, NULL),
-(25, 12, 3, 'manana', 'ssdads', NULL, NULL),
-(26, 3, 3, 'dfgere', 'tetetet ', NULL, NULL),
-(27, 3, 3, 'dfdf', 'dfsdf', NULL, NULL),
-(28, 3, 3, 'dasdasfd', 'dfgasdfd', NULL, NULL),
-(29, 3, 3, 'dasdasfddf32', 'dfgasdfd32', NULL, NULL),
-(30, 3, 3, 'ShivX', 'dfgasdfd32PR()N', NULL, NULL),
-(31, 3, 4, 'houfhpsiof', 'wewe', 0, 0),
-(32, 17, 3, 'Marktonderzoek doen', 'Onderzoeken mbv van een SWOT-analyse', NULL, NULL),
-(33, 15, 3, 'degpg-gj', 'sdsad', NULL, NULL),
-(34, 18, 3, 'Uitschrijven implementatie plan', 'Het uitschrijven van de stappen die ondernomen moeten worden', NULL, NULL);
+(22, 14, 3, 'pineapple', 'fruit', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -320,8 +263,7 @@ INSERT INTO `user` (`user_id`, `user_type`, `user_name`, `user_password`) VALUES
 (8, 2, 'Sardha Raghosing', '$2y$10$oEqEbMhfDrk/O9vKEIY9VOzDsFlzOcTUuLywIShn193oG2.kOMLuG'),
 (9, 1, 'Sabrina Starke', '$2y$10$/eMY3lZDniTPqkflgTLcj.xMm/aQA/JZXKB.0PYxh/64geHLLmhc6'),
 (10, 0, 'Joel Naarendorp', '$2y$10$oEqEbMhfDrk/O9vKEIY9VOzDsFlzOcTUuLywIShn193oG2.kOMLuG'),
-(11, 0, 'test', '$2y$10$oEqEbMhfDrk/O9vKEIY9VOzDsFlzOcTUuLywIShn193oG2.kOMLuG'),
-(12, 1, 'Administrator', '$2y$10$P7UBbz2YCAmPRjMce3oGfeIST29u1hWraJhvwXFud7ImgRlEhTzce');
+(11, 0, 'test', '$2y$10$oEqEbMhfDrk/O9vKEIY9VOzDsFlzOcTUuLywIShn193oG2.kOMLuG');
 
 -- --------------------------------------------------------
 
@@ -346,13 +288,6 @@ INSERT INTO `user_type` (`type_id`, `type_name`) VALUES
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `bestedingen`
---
-ALTER TABLE `bestedingen`
-  ADD PRIMARY KEY (`besteding_id`),
-  ADD KEY `taak_id` (`taak_id`);
 
 --
 -- Indexes for table `deelnemers`
@@ -386,20 +321,13 @@ ALTER TABLE `kwitantie`
 --
 ALTER TABLE `projecten`
   ADD PRIMARY KEY (`project_id`),
-  ADD KEY `type` (`type`),
-  ADD KEY `richting_id` (`richting_id`);
+  ADD KEY `type` (`type`);
 
 --
 -- Indexes for table `project_type`
 --
 ALTER TABLE `project_type`
   ADD PRIMARY KEY (`type_id`);
-
---
--- Indexes for table `richting`
---
-ALTER TABLE `richting`
-  ADD PRIMARY KEY (`richting_id`);
 
 --
 -- Indexes for table `taak_type`
@@ -436,7 +364,7 @@ ALTER TABLE `user_type`
 -- AUTO_INCREMENT for table `deelnemers`
 --
 ALTER TABLE `deelnemers`
-  MODIFY `deelnemers_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `deelnemers_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `deelnemers_type`
@@ -448,13 +376,7 @@ ALTER TABLE `deelnemers_type`
 -- AUTO_INCREMENT for table `projecten`
 --
 ALTER TABLE `projecten`
-  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
-
---
--- AUTO_INCREMENT for table `richting`
---
-ALTER TABLE `richting`
-  MODIFY `richting_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `taak_type`
@@ -466,23 +388,17 @@ ALTER TABLE `taak_type`
 -- AUTO_INCREMENT for table `taken`
 --
 ALTER TABLE `taken`
-  MODIFY `taak_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `taak_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `bestedingen`
---
-ALTER TABLE `bestedingen`
-  ADD CONSTRAINT `taak_id` FOREIGN KEY (`taak_id`) REFERENCES `taken` (`taak_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `deelnemers`
@@ -508,14 +424,7 @@ ALTER TABLE `kwitantie`
 -- Constraints for table `projecten`
 --
 ALTER TABLE `projecten`
-  ADD CONSTRAINT `projecten_ibfk_1` FOREIGN KEY (`type`) REFERENCES `project_type` (`type_id`),
-  ADD CONSTRAINT `projecten_ibfk_2` FOREIGN KEY (`type`) REFERENCES `project_type` (`type_id`);
-
---
--- Constraints for table `richting`
---
-ALTER TABLE `richting`
-  ADD CONSTRAINT `richting_ibfk_1` FOREIGN KEY (`richting_id`) REFERENCES `projecten` (`richting_id`);
+  ADD CONSTRAINT `projecten_ibfk_1` FOREIGN KEY (`type`) REFERENCES `project_type` (`type_id`);
 
 --
 -- Constraints for table `taken`
