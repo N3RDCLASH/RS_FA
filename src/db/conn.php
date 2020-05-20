@@ -6,7 +6,7 @@
 $host = "localhost";
 $user = "root";
 $pass = "";
-$db = "rs_fa";
+$db = "rs_test_2";
 
 try {
     $link = mysqli_connect($host, $user, $pass, $db);

@@ -90,7 +90,7 @@ if (empty($_GET['id'] == true)) {
                     </button>
                 </form>
             </div>
-            <div class="col m4 s12 flip-in-ver-right" id="project_taken">
+            <div class="col m4 s10 offset-s1 offset-m1 flip-in-ver-right" id="project_taken">
 
                 <div class="col s12 m12 z-depth-3 dark-2" id="taken">
                     <h5 class="center white-text">Taken</h5>
@@ -140,7 +140,7 @@ if (empty($_GET['id'] == true)) {
                 </div>
                 <div class="modal-footer dark-2">
                     <div class="row">
-                        <button class="btn waves-effect waves-light col m12" type="submit" id="submit_taak" value='test' name="opslaan">Submit
+                        <button class="btn waves-effect waves-light col m12 primary" type="submit" id="submit_taak" value='test' name="opslaan">Submit
                             <i class="material-icons right">send</i>
                         </button>
                     </div>

@@ -38,13 +38,9 @@ include("../../db/conn.php");
                 'datum_start'} . "</td>";
             echo "<td class='center'>" . $row{
                 'datum_eind'} . "</td>";
-            if ($row{
-                'status'} == 'open') {
-                echo "<td class='center'><i class='tiny center red-text material-icons'>check_circle</i></td>";
-                // echo "</tr>";
-            } else {
-                echo "<td class='center'><i class='tiny center green-text material-icons'>check_circle</i></td>";
-            }
+            echo "<td class='center'><i class='tiny " . (($row{
+                'status'} == 'open') ? "red-text" : "green-text") . " center  material-icons'>check_circle</i></td>";
+            // echo "</tr>";
             echo "<td class='center'><a class='amber waves-effect waves-light btn btn-tiny' href='view_project.php?id=" . $row['project_id'] . "'><i class='material-icons'>chevron_right</i></a></td>";
             echo "</tr>";
         }

@@ -8,7 +8,8 @@
     }
     #project_taken {
         /* display: none; */
-        margin: 1% 0!important;
+        margin-top: 3%;
+        padding: 0;
     }
     .back {
         margin-left: 0!important;
@@ -68,7 +69,7 @@ body {
 /* charts */
 
 .row>.chart1 {
-    margin-left: 4%!important;
+    margin-left: 2%!important;
 }
 
 .row>.chart2 {
@@ -174,11 +175,6 @@ body {
 
 #project_informatie {
     /* display: none; */
-}
-
-#project_taken {
-    /* display: none; */
-    margin: 0 3%;
 }
 
 #search {

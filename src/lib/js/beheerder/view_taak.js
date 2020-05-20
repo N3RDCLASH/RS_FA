@@ -38,13 +38,13 @@ function displayDeelnemers(data) {
         if (deelnemer.length <= 1) {
             document.getElementById("deelnemers_collection").innerHTML +=
                 `<li class="collection-item dark-1">
-            Geen deelnemers gevonden
+            Geen deelnemers gevonden.
         </li>`
             break
         } else {
             document.getElementById("deelnemers_collection").innerHTML +=
                 `<li class="collection-item dark-1">
-            <div>${deelnemer}<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div>
+            <div>${deelnemer}<a href="#!" class="secondary-content"><i class="material-icons amber-text">send</i></a></div>
         </li>`
         }
     }

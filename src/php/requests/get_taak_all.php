@@ -17,13 +17,7 @@ if (mysqli_num_rows($result) > 0) {
             "naam" => $row{
                 'naam'},
             "omschrijving" => $row{
-                'omschrijving'},
-            "type" => $row{
-                'taak_type'},
-            "aantal" => $row{
-                'aantal'},
-            "prijs" => $row{
-                'prijs'},
+                'omschrijving'}
             // "status" => $row{
             //     'status'}
         ];

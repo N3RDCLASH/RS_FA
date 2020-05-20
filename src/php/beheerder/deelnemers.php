@@ -82,9 +82,8 @@ $_COOKIE['page'] = 'Deelnemers';
         </div>
     </div>
 
-    <!-- <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a> -->
 
-    <!--JavaScript at end of body for optimized loading-->
+    <w!--JavaScript at end of body for optimized loading-->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script> -->
     <script src="../../lib/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../../lib/materialize/js/materialize.js"></script>

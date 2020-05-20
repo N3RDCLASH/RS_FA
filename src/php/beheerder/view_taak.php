@@ -45,7 +45,7 @@ if (empty($_GET['id'] == true)) {
 
     <div id="main">
         <div class="row">
-            <div class="col m6 s12 dark-2 taak_margin">
+            <div class="col m5 offset-m1 s12 dark-2 z-depth-3 flip-in-ver-right">
                 <h5 class=" white-text center">Taak Informatie</h5>
                 <form action="" method="post" name="taken_form" id="taken_form">
                     <div class="row">
@@ -83,19 +83,44 @@ if (empty($_GET['id'] == true)) {
             </div>
 
         </div>
-        <div class="col m5 s12 dark-2 right taak_margin">
+        <div class="col m4 offset-m1 s12 dark-2 z-depth-3 flip-in-ver-right">
             <h5 class=" white-text center">Deelnemers</h5>
             <ul id="deelnemers_collection" class="collection with-header white-text">
-                <!-- <li class="collection-header dark-2">
-                    <h4>Verantwoordelijke</h4>
-                </li> -->
+                <li class="collection-header dark-2">
+                    <h6>Verantwoordelijken</h6>
+                </li>
 
             </ul>
 
         </div>
     </div>
-    <div class="row"></div>
+    <div class="row">
+        <div class="col m10 s12 offset-m1 flip-in-ver-right">
+            <table id="bestedingen_table" class=" white-text responsive-table z-depth-3 ">
+                <thead class="blue-grey darken-3 ">
+                    <tr>
+                        <th class='center'>ID</th>
+                        <th class='center'>Naam</th>
+                        <th class='center'>Type</th>
+                        <th class='center'>Aantal</th>
+                        <th class='center'>Prijs</th>
+                        <th class='center'>Kwitantie</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td class="center">s</td>
+                    <td class="center">ss</td>
+                    <td class="center">sss</td>
+                    <td class="center">ssss</td>
+                    <td class="center">sssss</td>
+                    <td class="center"><a href="#" class="white-text"><i class="material-icons tiny amber-text">attach_file</i></a></td>
+                </tr>
+
+            </table>
+        </div>
     </div>
+    </div>
+    <?php include 'components/besteding_modal.php'; ?>
     <script src="../../lib/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../../lib/materialize/js/materialize.min.js"></script>
     <script type="text/javascript" src="../../lib/js/beheerder/app.js"></script>
