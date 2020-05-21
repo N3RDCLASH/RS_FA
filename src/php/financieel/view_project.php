@@ -4,7 +4,7 @@ require_once '../scripts/session.php';
 require '../scripts/check_session.php';
 $_COOKIE['page'] = 'Project Overview';
 
-if (empty($_GET['id'] == true)) {
+if (empty($_GET['id']) == true) {
     header('location:projecten.php');
 } else {
     if (is_numeric($_GET['id']) == false) {
@@ -128,9 +128,16 @@ if (empty($_GET['id'] == true)) {
                     </div>
                     <div class="input-field col s12">
                         <textarea id="taak_prijs" name="taak_prijs" type="text" class="materialize-textarea validate"></textarea>
-                        <label for="taak_prijs">Prijs</label>
+                        <label for="taak_prijs">Geschatte Prijs</label>
                     </div>
-                </div>
+
+                    <!-- <div class="input-field col s12">
+                        <textarea id="taak_prijs" name="werkelijke_prijs" type="text" class="materialize-textarea validate"></textarea>
+                        <label for="taak_prijs">Werkelijk Prijs</label>
+                    </div>
+                </div> -->
+
+
                 <div class="modal-footer">
                     <div class="row">
                         <button class="btn waves-effect waves-light col m12" type="submit" id="submit_taak" value='test' name="opslaan">Submit

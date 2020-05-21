@@ -4,7 +4,7 @@ require_once '../scripts/session.php';
 require '../scripts/check_session.php';
 $_COOKIE['page'] = 'Taak Overview';
 
-if (empty($_GET['id'] == true)) {
+if (empty($_GET['id']) == true) {
     header('location:projecten.php');
 } else {
     if (is_numeric($_GET['id']) == false) {
@@ -60,8 +60,8 @@ if (empty($_GET['id'] == true)) {
                         <div class="input-field col s10 offset-s1">
                             <select id="type_taak" name="type_taak" disabled>
                                 <option value="" disabled selected>Type Taak</option>
-                                <option class="" value="3">Uitvoering</option>
-                                <option class="" value="4">UItgave</option>
+                                <option class="" value="3">Dienst</option>
+                                <option class="" value="4">Materiaal</option>
                             </select>
                         </div>
                         <div class="input-field col s10 offset-s1">
@@ -70,16 +70,19 @@ if (empty($_GET['id'] == true)) {
                         </div>
                         <div class="input-field col s10 offset-s1">
                             <textarea id="taak_prijs" name="taak_prijs" type="text" class="materialize-textarea validate" disabled></textarea>
-                            <label class="white-text active" for="taak_prijs">Prijs</label>
+                            <label class="white-text active" for="taak_prijs">Geschatte prijs</label>
                         </div>
                     </div>
+
                     <div class="modal-footer dark-2">
                         <div class="row">
-                            <button class="btn waves-effect waves-light col s10 offset-s1 primary" type="submit" id="submit_taak" value='test' name="opslaan" disabled>Submit
+                            <button class="btn waves-effect waves-light col s10 offset-s1 primary" type="submit" id="submit_taak" value='test' name="opslaan" enabled>Submit
                                 <i class="material-icons right">send</i>
                             </button>
                         </div>
                 </form>
+               
+
             </div>
 
         </div>

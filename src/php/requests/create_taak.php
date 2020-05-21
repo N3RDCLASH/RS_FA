@@ -16,7 +16,8 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 
 
 
-    $query = "INSERT INTO `taken`(`project_id`, `taak_type`, `naam`, `omschrijving`, `aantal`, `prijs`) VALUES (?,?,?,?,?,?)";
+    $query = "INSERT INTO `taken`(`project_id`, `taak_type`, `naam`, `omschrijving`, `aantal`, `prijs`) 
+    VALUES ('$project_id','$type','$naam','$omschrijving','$aantal','$prijs')";
     $query2 = "INSERT INTO `deelnemers_per_taak`(`deelnemers_id`, `taak_id`) VALUES (?,?)";
 
     // var_dump($_POST);
