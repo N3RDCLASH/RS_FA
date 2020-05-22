@@ -31,29 +31,4 @@ function showTable() {
     back_button.style.display = 'none'
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    const rows = document.querySelectorAll("tr[data-id]")
-    rows.forEach(row => {
-        row.addEventListener("click", () => {
-            id = row.dataset.id
-            fetch(`../requests/get_deelnemer.php?id=${id}`).then(function (response) {
-                return response.json();
-            })
-                .then(function (body) {
-                    // console.table(body)
-                    response = body
-                    showProject(body)
-                });
 
-            fetch(`../requests/get_taak.php?id=${id}`).then(function (response) {
-                return response.json();
-            })
-                .then(function (body) {
-                    // console.table(body)
-                    response = body
-                    showTaak(body)
-                });
-
-        });
-    })
-})

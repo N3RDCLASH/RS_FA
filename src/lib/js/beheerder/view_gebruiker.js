@@ -103,9 +103,10 @@ function refreshSelect(el) {
 
 //Check if passwords match
 project_informatie.childNodes[1].addEventListener('submit', function (e) {
-    console.log('help' + e)
+    // console.log('help' + e)
     if (change_pass.checked) {
         if (password1.value == password2.value) {
+            confirm("Are you sure you want to update this password?") ? console.log("not canceled") : e.preventDefault()
         } else {
             e.preventDefault()
             console.log('fail')

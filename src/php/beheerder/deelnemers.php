@@ -39,7 +39,7 @@ $_COOKIE['page'] = 'Deelnemers';
         <div class="row">
             <div class="col m7 offset-m3 z-depth-3" id="deelnemers">
                 <form id="" action="../requests/create_deelnemer.php" class="white-text" method="POST">
-                    <h5 class="center">Deelnemer gegevens</h5>
+                    <h5 class="center white-text">Deelnemer gegevens</h5>
                     <div class="input-field col m12 s12">
                         <input type="text" name="deelnemers_naam" tabindex="1" size="10" placeholder="Naam" required autofocus>
                     </div>
@@ -84,10 +84,10 @@ $_COOKIE['page'] = 'Deelnemers';
 
 
     <w!--JavaScript at end of body for optimized loading-->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script> -->
-    <script src="../../lib/js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="../../lib/materialize/js/materialize.js"></script>
-    <script type="text/javascript" src="../../lib/js/beheerder/deelnemers.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script> -->
+        <script src="../../lib/js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="../../lib/materialize/js/materialize.js"></script>
+        <script type="text/javascript" src="../../lib/js/beheerder/deelnemers.js"></script>
 </body>
 
 </html>
