@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 21 mei 2020 om 17:31
+-- Gegenereerd op: 23 mei 2020 om 19:34
 -- Serverversie: 10.4.11-MariaDB
 -- PHP-versie: 7.4.4
 
@@ -30,8 +30,19 @@ SET time_zone = "+00:00";
 CREATE TABLE `bestedingen` (
   `besteding_id` int(11) NOT NULL,
   `taak_id` int(11) NOT NULL,
-  `type_id` int(11) NOT NULL
+  `type_id` int(11) NOT NULL,
+  `naam` varchar(50) DEFAULT NULL,
+  `type` int(11) DEFAULT NULL,
+  `aantal` int(11) DEFAULT NULL,
+  `prijs` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `bestedingen`
+--
+
+INSERT INTO `bestedingen` (`besteding_id`, `taak_id`, `type_id`, `naam`, `type`, `aantal`, `prijs`) VALUES
+(1, 1, 4, 'bak', 12, 12, 25);
 
 -- --------------------------------------------------------
 
@@ -189,7 +200,11 @@ INSERT INTO `projecten` (`project_id`, `naam`, `omschrijving`, `type`, `richting
 (16, 'Marktonderzoek Enterprise Architecture', 'De EA Onderzoeken', 1, NULL, '2020-05-14', '2020-05-31', 'open', '2020-05-14 02:21:10'),
 (17, 'Opzetten Online School', 'Het opzetten van een online school', 1, NULL, '2020-05-15', '2020-06-07', 'open', '2020-05-14 02:25:03'),
 (18, 'Uitbreiden Infrastructuur', 'Het uitbreiden van de ict infrastructuur ', 1, NULL, '2020-05-20', '2020-06-11', 'open', '2020-05-14 03:14:48'),
-(19, 'zoom', 'flash', 1, NULL, '2020-05-21', '2020-05-30', 'open', '2020-05-21 00:23:51');
+(19, 'zoom', 'flash', 1, NULL, '2020-05-21', '2020-05-30', 'open', '2020-05-21 00:23:51'),
+(20, 'zoom', '1234', 1, NULL, '2020-05-25', '2020-05-29', 'open', '2020-05-21 20:35:32'),
+(21, 'dfg', 'hjk', 1, NULL, '2020-05-26', '2020-05-30', 'open', '2020-05-21 22:07:58'),
+(22, 'qwrr123', '567', 1, NULL, '2020-05-25', '2020-05-28', 'open', '2020-05-22 00:26:00'),
+(23, 'kl', 'klm', 1, NULL, '2020-05-27', '2020-05-31', 'open', '2020-05-22 12:43:33');
 
 -- --------------------------------------------------------
 
@@ -255,14 +270,14 @@ CREATE TABLE `taken` (
   `geschatteprijs` int(11) DEFAULT NULL,
   `datum_start` date DEFAULT NULL,
   `datum_eind` date DEFAULT NULL,
-  `type_id` int(11) DEFAULT NULL
+  `taak_type` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `taken`
 --
 
-INSERT INTO `taken` (`taak_id`, `project_id`, `naam`, `omschrijving`, `aantal`, `geschatteprijs`, `datum_start`, `datum_eind`, `type_id`) VALUES
+INSERT INTO `taken` (`taak_id`, `project_id`, `naam`, `omschrijving`, `aantal`, `geschatteprijs`, `datum_start`, `datum_eind`, `taak_type`) VALUES
 (1, 3, 'Cupcakes Kopen', 'iem bai de san toh owru mang', 10, 200, NULL, NULL, NULL),
 (2, 4, 'Kaarten schrijven', 'iem skrief den karta ', NULL, NULL, NULL, NULL, NULL),
 (3, 3, 'Tent Opzetten', 'iem set a tenti \r\njwz!', NULL, NULL, NULL, NULL, NULL),
@@ -417,7 +432,7 @@ ALTER TABLE `taak_type`
 ALTER TABLE `taken`
   ADD PRIMARY KEY (`taak_id`,`project_id`),
   ADD KEY `project_id` (`project_id`),
-  ADD KEY `type_id` (`type_id`);
+  ADD KEY `taak_type` (`taak_type`);
 
 --
 -- Indexen voor tabel `user`
@@ -452,7 +467,7 @@ ALTER TABLE `deelnemers_type`
 -- AUTO_INCREMENT voor een tabel `projecten`
 --
 ALTER TABLE `projecten`
-  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT voor een tabel `richting`
@@ -523,7 +538,7 @@ ALTER TABLE `projecten`
 --
 ALTER TABLE `taken`
   ADD CONSTRAINT `taken_ibfk_1` FOREIGN KEY (`project_id`) REFERENCES `projecten` (`project_id`),
-  ADD CONSTRAINT `taken_ibfk_2` FOREIGN KEY (`type_id`) REFERENCES `taak_type` (`type_id`);
+  ADD CONSTRAINT `taken_ibfk_2` FOREIGN KEY (`taak_type`) REFERENCES `taak_type` (`type_id`);
 
 --
 -- Beperkingen voor tabel `user`
