@@ -64,7 +64,7 @@ include("../../db/conn.php");
                     'deelnemers_adres'} . "</td>";
                 echo "<td class='center'>" . $row{
                     'deelnemers_telefoonnummer'} . "</td>";
-                echo "<td class='center'><a class='amber waves-effect waves-light btn btn-tiny' href=''><i class='material-icons'>chevron_right</i></a></td>";
+                echo "<td class='center'><a class='amber waves-effect waves-light btn btn-tiny' href='view_deelnemer.php?id=" . $row['deelnemers_id'] . "'><i class='material-icons'>chevron_right</i></a></td>";
                 echo "</tr>";
                 echo "</tr>";
             }
