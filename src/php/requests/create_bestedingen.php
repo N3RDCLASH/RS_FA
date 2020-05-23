@@ -3,11 +3,11 @@
 include "../../db/conn.php";
 $id = $_GET["id"];
 //error_reporting (E_ALL ^ E_NOTICE ^ E_WARNING);
-if (isset($_POST['opslaan'])) {
-    $naam = $_POST["naam"];
-    $type = $_POST["type"];
-    $aantal = $_POST["aantal"];
-    $prijs = $_POST["prijs"];
+if (isset($_POST['save'])) {
+    $naam = $_POST["besteding_naam"];
+    $type = $_POST["besteding_type"];
+    $aantal=$_POST["besteding_aantal"];
+    $prijs=$_POST["besteding_prijs"];
 
     $sql = "INSERT INTO `bestedingen` (`naam`,`type`,`aantal`,`prijs`) VALUES ('$naam','$type','$aantal','$prijs')";
 
