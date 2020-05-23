@@ -1,15 +1,13 @@
-
-
 <div id="modal1" class="modal dark-2">
     <div class="modal-content">
-     <!-- form voor het maken van bestedingen -->   
-        <form action="../requests/create_bestedingen.php" method="POST">
+        <!-- form voor het maken van bestedingen -->
+        <form action="../requests/create_bestedingen.php?id=<?php echo $_GET['id']; ?>" method="POST">
             <div class="row">
                 <div class="input-field col s10 offset-s1">
                     <input id="besteding_naam" name="besteding_naam" type="text" class="validate" required>
                     <label class="white-text active" for="naam">Naam</label>
                 </div>
-               
+
                 <div class="input-field col s10 offset-s1">
                     <select id="besteding_type" name="besteding_type">
                         <option value="" selected disabled>Type Besteding</option>
@@ -31,13 +29,13 @@
                 </button>
             </div>
             <div>
-            
+
             </div>
         </form>
 
-            </div>
     </div>
-   
+</div>
+
 </div>
 
 <div class="fixed-action-btn">

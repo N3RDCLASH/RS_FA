@@ -41,7 +41,7 @@ if (empty($_GET['id'] == true)) {
             <div class="col m4 s12 offset-m1 z-depth-3 flip-in-ver-right dark-2" id="deelnemer_informatie" data-id="<?php echo $_GET['id'] ?>">
                 <form action="../requests/update_deelnemer.php?id=<?php echo $_GET['id'] ?>" method="post">
                     <h5 class="center white-text">Deelnemer gegevens</h5>
-                    <i class="right primary-text material-icons tooltipped" data-position="right" data-tooltip="Edit Gebruiker" id="edit">edit</i>
+                    <i class="right primary-text material-icons tooltipped" data-position="right" data-tooltip="Edit Deelnemer" id="edit">edit</i>
                     <div class="input-field col m12 s12">
                         <input type="text" id="deelnemers_naam" name="deelnemers_naam" tabindex="1" size="10" placeholder="Naam" required autofocus disabled>
                     </div>
