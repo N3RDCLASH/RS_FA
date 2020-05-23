@@ -40,7 +40,7 @@ include("../../db/conn.php");
         <?php
 
 
-        $query =  mysqli_query($link, "SELECT `besteding_id`,`naam`,`type`,`aantal`,`prijs` FROM `bestedingen` INNER JOIN taak_type ON bestedingen.type_id = taak_type.type_id");
+        $query =  mysqli_query($link, "SELECT `besteding_id`,`naam`,`type`,`aantal`,`prijs` FROM `bestedingen`"); 
 
         if (mysqli_num_rows($query) > 0) {
             while ($row = mysqli_fetch_assoc($query)) {

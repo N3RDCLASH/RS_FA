@@ -9,11 +9,11 @@
                 </div>
 
                 <div class="input-field col s10 offset-s1">
-                    <select id="besteding_type" name="besteding_type">
-                        <option value="" selected disabled>Type Besteding</option>
-                        <option class="" value="3">Uitvoering</option>
-                        <option class="" value="4">UItgave</option>
-                    </select>
+                <select id="besteding_type" name="besteding_type">
+                            <option value="" disabled selected>Type besteding</option>
+                            <option class="" value="3">Dienst</option>
+                            <option class="" value="4">Materiaal</option>
+                        </select>
                 </div>
                 <div class="input-field col s10 offset-s1">
                     <textarea id="besteding_aantal" name="besteding_aantal" type="text" class="materialize-textarea validate"></textarea>
