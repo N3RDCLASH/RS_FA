@@ -40,52 +40,7 @@ function showTable() {
 }
 back_button.addEventListener('click', showTable)
 
-// document.addEventListener("DOMContentLoaded", () => {
-//     const rows = document.querySelectorAll("tr[data-id]")
-//     rows.forEach(row => {
-//         row.addEventListener("click", () => {
-//             id = row.dataset.id
-//             setCookie('project_id', id, 1)
-//             fetch(`../requests/get_project.php?id=${id}`).then(function (response) {
-//                 return response.json()
-//             })
-//                 .then(function (body) {
-//                     // console.table(body)
-//                     response = body
-//                     showProject(body)
-//                 });
 
-//             fetch(`../requests/get_taak.php?id=${id}`).then(function (response) {
-//                 return response.json()
-//             })
-//                 .then(function (body) {
-//                     // console.table(body)
-//                     response = body
-//                     showTaak(body)
-//                 });
-
-//         });
-//     })
-// })
-
-
-//Taken Form
-
-
-// function chipData(data) {
-//     var result = data.reduce(function (r, e) {
-//         r[e.naam] = '../../lib/images/yuna.jpg';
-//         return r;
-//     }, {});
-
-//     $('.chips-autocomplete').chips({
-//         autocompleteOptions: {
-//             data: result,
-//             limit: Infinity,
-//             minLength: 1
-//         }
-//     });
-// }
 
 test = {
     test: 'test'

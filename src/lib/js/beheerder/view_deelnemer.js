@@ -1,8 +1,8 @@
 const back_button = document.createElement("i")
 const edit = document.getElementById('edit')
-const deelnemer_informatie = document.getElementById("deelnemer_informatie")
+const taak_informatie = document.getElementById("deelnemer_informatie")
 const row = document.getElementsByClassName('col')[0]
-const type = document.getElementById("deelnemers_type")
+const type = document.getElementById("type_taak")
 back_button.className = 'material-icons small white-text back'
 back_button.innerHTML = 'arrow_back';
 back_button.id = 'back_button'
@@ -32,7 +32,7 @@ async function editFields() {
     editable = !editable
     console.log(editable)
     if (editable == true) {
-        for (let e of deelnemer_informatie.getElementsByTagName('input')) {
+        for (let e of taak_informatie.getElementsByTagName('input')) {
             e.removeAttribute('disabled')
         }
         type.removeAttribute('disabled')
@@ -40,7 +40,7 @@ async function editFields() {
         refreshSelect(type)
         updateUI()
     } else if (editable == false) {
-        for (let e of deelnemer_informatie.getElementsByTagName('input')) {
+        for (let e of taak_informatie.getElementsByTagName('input')) {
             e.setAttribute('disabled', true)
         }
         type.setAttribute('disabled', true)

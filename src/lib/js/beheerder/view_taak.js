@@ -1,10 +1,13 @@
 const back_button = document.createElement("i")
 const row = document.getElementsByClassName('col')[0]
 const edit = document.getElementById('edit')
+const taak_informatie = document.getElementById("taken_form")
+const type = document.getElementById("type_taak")
 back_button.className = 'material-icons small white-text back'
 back_button.innerHTML = 'arrow_back';
 back_button.id = 'back_button'
 row.appendChild(back_button)
+let editable = false
 
 back_button.addEventListener('click', () => { window.location = `view_project.php?id=${taak[0].project_id}` })
 back_button.style.setProperty('display', 'inline-block', 'important')
@@ -12,6 +15,8 @@ back_button.style.setProperty('display', 'inline-block', 'important')
 // id's
 let taak
 taak_id = document.getElementsByTagName('body')[0].dataset.id
+
+document.getElementById('edit').addEventListener('click', () => editFields())
 
 document.addEventListener("DOMContentLoaded", async function () {
     updateUI()
@@ -39,7 +44,7 @@ function displayDeelnemers(data) {
             document.getElementById("deelnemers_collection").innerHTML +=
                 `<li class="collection-item dark-1">
             Geen deelnemers gevonden.
-        </li>`
+            </li>`
             break
         } else {
             document.getElementById("deelnemers_collection").innerHTML +=
@@ -47,6 +52,32 @@ function displayDeelnemers(data) {
             <div>${deelnemer}<a href="#!" class="secondary-content"><i class="material-icons amber-text">send</i></a></div>
         </li>`
         }
+    }
+}
+
+async function editFields() {
+    editable = !editable
+    console.log(editable)
+    if (editable == true) {
+        for (let e of taak_informatie.getElementsByTagName('input')) {
+            e.removeAttribute('disabled')
+        }
+        for (let e of taak_informatie.getElementsByTagName('select')) {
+            e.removeAttribute('disabled')
+        }
+        for (let e of taak_informatie.getElementsByTagName('textarea')) {
+            e.removeAttribute('disabled')
+        }
+        type.removeAttribute('disabled')
+        document.getElementById("submit_taak").removeAttribute('disabled')
+        refreshSelect(type)
+        updateUI()
+    } else if (editable == false) {
+        for (let e of taak_informatie.getElementsByTagName('input')) {
+            e.setAttribute('disabled', true)
+        }
+        type.setAttribute('disabled', true)
+        document.getElementById("submit_taak").setAttribute('disabled', true)
     }
 }
 
