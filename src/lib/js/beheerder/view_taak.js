@@ -76,9 +76,22 @@ async function editFields() {
         for (let e of taak_informatie.getElementsByTagName('input')) {
             e.setAttribute('disabled', true)
         }
+        for (let e of taak_informatie.getElementsByTagName('select')) {
+            e.setAttribute('disabled', true)
+        }
+        for (let e of taak_informatie.getElementsByTagName('textarea')) {
+            e.setAttribute('disabled', true)
+        }
         type.setAttribute('disabled', true)
         document.getElementById("submit_taak").setAttribute('disabled', true)
     }
+}
+
+function refreshSelect(el) {
+    let instance = M.FormSelect.getInstance(el)
+    instance.destroy()
+    el.classList.add('white-text')
+    M.FormSelect.init(el)
 }
 
 function updateUI() {
