@@ -32,7 +32,6 @@ function displayTaak(data) {
     document.getElementById("taak_naam").value = data.naam
     document.getElementById("taak_omschrijving").value = data.omschrijving
     document.getElementById("type_taak").value = data
-    document.getElementById("taak_aantal").value = data.aantal
     document.getElementById("taak_prijs").value = data.prijs
 }
 
@@ -70,6 +69,7 @@ async function editFields() {
         }
         type.removeAttribute('disabled')
         document.getElementById("submit_taak").removeAttribute('disabled')
+        selectType(taak, type)
         refreshSelect(type)
         updateUI()
     } else if (editable == false) {
@@ -94,6 +94,7 @@ function refreshSelect(el) {
     M.FormSelect.init(el)
 }
 
+
 function updateUI() {
     for (let element of document.getElementsByTagName("input")) { element.classList.add("white-text") }
     for (let element of document.getElementsByTagName("textarea")) { element.classList.add("white-text") }
@@ -102,4 +103,14 @@ function updateUI() {
         element.classList.add("white-text")
         element.classList.add("active")
     }
+}
+
+/**
+ * @param {object} data //
+ * @param {HTMLElement} element // HTML select element
+ */
+function selectType(data, element) {
+    typeValue = new Array(element.options)
+    type.options[typeValue.findIndex(id => id == data.type)].setAttribute('selected', true)
+    type.options[typeValue.findIndex(id => id == data.type)].classList.add('white-text')
 }

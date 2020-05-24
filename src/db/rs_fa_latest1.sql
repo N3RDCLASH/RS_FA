@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 23 mei 2020 om 19:34
--- Serverversie: 10.4.11-MariaDB
--- PHP-versie: 7.4.4
+-- Generation Time: May 24, 2020 at 07:47 PM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.3.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -24,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `bestedingen`
+-- Table structure for table `bestedingen`
 --
 
 CREATE TABLE `bestedingen` (
@@ -38,16 +39,17 @@ CREATE TABLE `bestedingen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Gegevens worden geëxporteerd voor tabel `bestedingen`
+-- Dumping data for table `bestedingen`
 --
 
 INSERT INTO `bestedingen` (`besteding_id`, `taak_id`, `type_id`, `naam`, `type`, `aantal`, `prijs`) VALUES
+(0, 13, 0, 'fgdfdf', 3, 2323, 323),
 (1, 1, 4, 'bak', 12, 12, 25);
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `deelnemers`
+-- Table structure for table `deelnemers`
 --
 
 CREATE TABLE `deelnemers` (
@@ -61,7 +63,7 @@ CREATE TABLE `deelnemers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Gegevens worden geëxporteerd voor tabel `deelnemers`
+-- Dumping data for table `deelnemers`
 --
 
 INSERT INTO `deelnemers` (`deelnemers_id`, `deelnemers_type`, `deelnemers_naam`, `deelnemers_email`, `deelnemers_adres`, `deelnemers_telefoonnummer`, `richting_id`) VALUES
@@ -75,7 +77,7 @@ INSERT INTO `deelnemers` (`deelnemers_id`, `deelnemers_type`, `deelnemers_naam`,
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `deelnemers_per_taak`
+-- Table structure for table `deelnemers_per_taak`
 --
 
 CREATE TABLE `deelnemers_per_taak` (
@@ -84,7 +86,7 @@ CREATE TABLE `deelnemers_per_taak` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Gegevens worden geëxporteerd voor tabel `deelnemers_per_taak`
+-- Dumping data for table `deelnemers_per_taak`
 --
 
 INSERT INTO `deelnemers_per_taak` (`deelnemers_id`, `taak_id`) VALUES
@@ -114,8 +116,12 @@ INSERT INTO `deelnemers_per_taak` (`deelnemers_id`, `taak_id`) VALUES
 (3, 32),
 (3, 33),
 (3, 34),
+(3, 35),
+(3, 36),
 (4, 31),
 (4, 33),
+(4, 35),
+(4, 36),
 (5, 12),
 (5, 13),
 (5, 15),
@@ -126,13 +132,15 @@ INSERT INTO `deelnemers_per_taak` (`deelnemers_id`, `taak_id`) VALUES
 (5, 32),
 (5, 33),
 (5, 34),
+(5, 35),
+(5, 36),
 (7, 17),
 (7, 31);
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `deelnemers_type`
+-- Table structure for table `deelnemers_type`
 --
 
 CREATE TABLE `deelnemers_type` (
@@ -141,7 +149,7 @@ CREATE TABLE `deelnemers_type` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Gegevens worden geëxporteerd voor tabel `deelnemers_type`
+-- Dumping data for table `deelnemers_type`
 --
 
 INSERT INTO `deelnemers_type` (`type_id`, `type_naam`) VALUES
@@ -152,7 +160,7 @@ INSERT INTO `deelnemers_type` (`type_id`, `type_naam`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `kwitantie`
+-- Table structure for table `kwitantie`
 --
 
 CREATE TABLE `kwitantie` (
@@ -167,7 +175,7 @@ CREATE TABLE `kwitantie` (
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `projecten`
+-- Table structure for table `projecten`
 --
 
 CREATE TABLE `projecten` (
@@ -183,7 +191,7 @@ CREATE TABLE `projecten` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Gegevens worden geëxporteerd voor tabel `projecten`
+-- Dumping data for table `projecten`
 --
 
 INSERT INTO `projecten` (`project_id`, `naam`, `omschrijving`, `type`, `richting_id`, `datum_start`, `datum_eind`, `status`, `CreatedOn`) VALUES
@@ -209,7 +217,7 @@ INSERT INTO `projecten` (`project_id`, `naam`, `omschrijving`, `type`, `richting
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `project_type`
+-- Table structure for table `project_type`
 --
 
 CREATE TABLE `project_type` (
@@ -218,7 +226,7 @@ CREATE TABLE `project_type` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Gegevens worden geëxporteerd voor tabel `project_type`
+-- Dumping data for table `project_type`
 --
 
 INSERT INTO `project_type` (`type_id`, `type_name`) VALUES
@@ -228,7 +236,7 @@ INSERT INTO `project_type` (`type_id`, `type_name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `richting`
+-- Table structure for table `richting`
 --
 
 CREATE TABLE `richting` (
@@ -239,7 +247,7 @@ CREATE TABLE `richting` (
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `taak_type`
+-- Table structure for table `taak_type`
 --
 
 CREATE TABLE `taak_type` (
@@ -248,7 +256,7 @@ CREATE TABLE `taak_type` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Gegevens worden geëxporteerd voor tabel `taak_type`
+-- Dumping data for table `taak_type`
 --
 
 INSERT INTO `taak_type` (`type_id`, `type_naam`) VALUES
@@ -258,7 +266,7 @@ INSERT INTO `taak_type` (`type_id`, `type_naam`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `taken`
+-- Table structure for table `taken`
 --
 
 CREATE TABLE `taken` (
@@ -274,7 +282,7 @@ CREATE TABLE `taken` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Gegevens worden geëxporteerd voor tabel `taken`
+-- Dumping data for table `taken`
 --
 
 INSERT INTO `taken` (`taak_id`, `project_id`, `naam`, `omschrijving`, `aantal`, `geschatteprijs`, `datum_start`, `datum_eind`, `taak_type`) VALUES
@@ -310,12 +318,14 @@ INSERT INTO `taken` (`taak_id`, `project_id`, `naam`, `omschrijving`, `aantal`, 
 (31, 3, 'houfhpsiof', 'wewe', 0, 0, NULL, NULL, NULL),
 (32, 17, 'Marktonderzoek doen', 'Onderzoeken mbv van een SWOT-analyse', NULL, NULL, NULL, NULL, NULL),
 (33, 15, 'degpg-gj', 'sdsad', NULL, NULL, NULL, NULL, NULL),
-(34, 18, 'Uitschrijven implementatie plan', 'Het uitschrijven van de stappen die ondernomen moeten worden', NULL, NULL, NULL, NULL, NULL);
+(34, 18, 'Uitschrijven implementatie plan', 'Het uitschrijven van de stappen die ondernomen moeten worden', NULL, NULL, NULL, NULL, NULL),
+(35, 3, 'dhfiwjfjk', 'hjgjeg;jl', 0, 0, NULL, NULL, 3),
+(36, 3, 'houfhpsiofougogo[ih', 'nipo[', 0, 0, NULL, NULL, 3);
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -326,7 +336,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Gegevens worden geëxporteerd voor tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`user_id`, `user_type`, `user_name`, `user_password`) VALUES
@@ -343,7 +353,7 @@ INSERT INTO `user` (`user_id`, `user_type`, `user_name`, `user_password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `user_type`
+-- Table structure for table `user_type`
 --
 
 CREATE TABLE `user_type` (
@@ -352,7 +362,7 @@ CREATE TABLE `user_type` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Gegevens worden geëxporteerd voor tabel `user_type`
+-- Dumping data for table `user_type`
 --
 
 INSERT INTO `user_type` (`type_id`, `type_name`) VALUES
@@ -361,11 +371,11 @@ INSERT INTO `user_type` (`type_id`, `type_name`) VALUES
 (2, 'financiele administratie');
 
 --
--- Indexen voor geëxporteerde tabellen
+-- Indexes for dumped tables
 --
 
 --
--- Indexen voor tabel `bestedingen`
+-- Indexes for table `bestedingen`
 --
 ALTER TABLE `bestedingen`
   ADD PRIMARY KEY (`besteding_id`),
@@ -373,7 +383,7 @@ ALTER TABLE `bestedingen`
   ADD KEY `type_id` (`type_id`);
 
 --
--- Indexen voor tabel `deelnemers`
+-- Indexes for table `deelnemers`
 --
 ALTER TABLE `deelnemers`
   ADD PRIMARY KEY (`deelnemers_id`),
@@ -381,27 +391,27 @@ ALTER TABLE `deelnemers`
   ADD KEY `richitng_id` (`richting_id`);
 
 --
--- Indexen voor tabel `deelnemers_per_taak`
+-- Indexes for table `deelnemers_per_taak`
 --
 ALTER TABLE `deelnemers_per_taak`
   ADD PRIMARY KEY (`deelnemers_id`,`taak_id`),
   ADD KEY `taak_id` (`taak_id`);
 
 --
--- Indexen voor tabel `deelnemers_type`
+-- Indexes for table `deelnemers_type`
 --
 ALTER TABLE `deelnemers_type`
   ADD PRIMARY KEY (`type_id`);
 
 --
--- Indexen voor tabel `kwitantie`
+-- Indexes for table `kwitantie`
 --
 ALTER TABLE `kwitantie`
   ADD PRIMARY KEY (`kwitantie_id`,`bestedingen_id`),
   ADD KEY `taak_id` (`bestedingen_id`);
 
 --
--- Indexen voor tabel `projecten`
+-- Indexes for table `projecten`
 --
 ALTER TABLE `projecten`
   ADD PRIMARY KEY (`project_id`),
@@ -409,25 +419,25 @@ ALTER TABLE `projecten`
   ADD KEY `richting_id` (`richting_id`);
 
 --
--- Indexen voor tabel `project_type`
+-- Indexes for table `project_type`
 --
 ALTER TABLE `project_type`
   ADD PRIMARY KEY (`type_id`);
 
 --
--- Indexen voor tabel `richting`
+-- Indexes for table `richting`
 --
 ALTER TABLE `richting`
   ADD PRIMARY KEY (`richting_id`);
 
 --
--- Indexen voor tabel `taak_type`
+-- Indexes for table `taak_type`
 --
 ALTER TABLE `taak_type`
   ADD PRIMARY KEY (`type_id`);
 
 --
--- Indexen voor tabel `taken`
+-- Indexes for table `taken`
 --
 ALTER TABLE `taken`
   ADD PRIMARY KEY (`taak_id`,`project_id`),
@@ -435,77 +445,76 @@ ALTER TABLE `taken`
   ADD KEY `taak_type` (`taak_type`);
 
 --
--- Indexen voor tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`user_id`),
   ADD KEY `user_type` (`user_type`);
 
 --
--- Indexen voor tabel `user_type`
+-- Indexes for table `user_type`
 --
 ALTER TABLE `user_type`
   ADD PRIMARY KEY (`type_id`);
 
 --
--- AUTO_INCREMENT voor geëxporteerde tabellen
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT voor een tabel `deelnemers`
+-- AUTO_INCREMENT for table `deelnemers`
 --
 ALTER TABLE `deelnemers`
   MODIFY `deelnemers_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT voor een tabel `deelnemers_type`
+-- AUTO_INCREMENT for table `deelnemers_type`
 --
 ALTER TABLE `deelnemers_type`
   MODIFY `type_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT voor een tabel `projecten`
+-- AUTO_INCREMENT for table `projecten`
 --
 ALTER TABLE `projecten`
   MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
--- AUTO_INCREMENT voor een tabel `richting`
+-- AUTO_INCREMENT for table `richting`
 --
 ALTER TABLE `richting`
   MODIFY `richting_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT voor een tabel `taak_type`
+-- AUTO_INCREMENT for table `taak_type`
 --
 ALTER TABLE `taak_type`
   MODIFY `type_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT voor een tabel `taken`
+-- AUTO_INCREMENT for table `taken`
 --
 ALTER TABLE `taken`
-  MODIFY `taak_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `taak_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
--- AUTO_INCREMENT voor een tabel `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- Beperkingen voor geëxporteerde tabellen
+-- Constraints for dumped tables
 --
 
 --
--- Beperkingen voor tabel `bestedingen`
+-- Constraints for table `bestedingen`
 --
 ALTER TABLE `bestedingen`
-  ADD CONSTRAINT `taak_id` FOREIGN KEY (`taak_id`) REFERENCES `taken` (`taak_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `type_id` FOREIGN KEY (`type_id`) REFERENCES `taak_type` (`type_id`);
+  ADD CONSTRAINT `taak_id` FOREIGN KEY (`taak_id`) REFERENCES `taken` (`taak_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Beperkingen voor tabel `deelnemers`
+-- Constraints for table `deelnemers`
 --
 ALTER TABLE `deelnemers`
   ADD CONSTRAINT `deelnemers_ibfk_1` FOREIGN KEY (`deelnemers_type`) REFERENCES `deelnemers_type` (`type_id`),
@@ -513,20 +522,20 @@ ALTER TABLE `deelnemers`
   ADD CONSTRAINT `deelnemers_ibfk_3` FOREIGN KEY (`richting_id`) REFERENCES `richting` (`richting_id`);
 
 --
--- Beperkingen voor tabel `deelnemers_per_taak`
+-- Constraints for table `deelnemers_per_taak`
 --
 ALTER TABLE `deelnemers_per_taak`
   ADD CONSTRAINT `deelnemers_per_taak_ibfk_1` FOREIGN KEY (`deelnemers_id`) REFERENCES `deelnemers` (`deelnemers_id`),
   ADD CONSTRAINT `deelnemers_per_taak_ibfk_2` FOREIGN KEY (`taak_id`) REFERENCES `taken` (`taak_id`);
 
 --
--- Beperkingen voor tabel `kwitantie`
+-- Constraints for table `kwitantie`
 --
 ALTER TABLE `kwitantie`
   ADD CONSTRAINT `kwitantie_ibfk_1` FOREIGN KEY (`bestedingen_id`) REFERENCES `bestedingen` (`besteding_id`);
 
 --
--- Beperkingen voor tabel `projecten`
+-- Constraints for table `projecten`
 --
 ALTER TABLE `projecten`
   ADD CONSTRAINT `projecten_ibfk_1` FOREIGN KEY (`type`) REFERENCES `project_type` (`type_id`),
@@ -534,14 +543,14 @@ ALTER TABLE `projecten`
   ADD CONSTRAINT `projecten_ibfk_3` FOREIGN KEY (`richting_id`) REFERENCES `richting` (`richting_id`);
 
 --
--- Beperkingen voor tabel `taken`
+-- Constraints for table `taken`
 --
 ALTER TABLE `taken`
   ADD CONSTRAINT `taken_ibfk_1` FOREIGN KEY (`project_id`) REFERENCES `projecten` (`project_id`),
   ADD CONSTRAINT `taken_ibfk_2` FOREIGN KEY (`taak_type`) REFERENCES `taak_type` (`type_id`);
 
 --
--- Beperkingen voor tabel `user`
+-- Constraints for table `user`
 --
 ALTER TABLE `user`
   ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`user_type`) REFERENCES `user_type` (`type_id`);

@@ -42,11 +42,12 @@ if (empty($_GET['id']) == true) {
     <?php
     include 'components/navigation.php';
     ?>
-<!-- taken -->
+    <!-- taken -->
     <div id="main">
         <div class="row">
             <div class="col m5 offset-m1 s12 dark-2 z-depth-3 flip-in-ver-right">
                 <h5 class=" white-text center">Taak Informatie</h5>
+                <i class="right primary-text material-icons tooltipped" data-position="right" data-tooltip="Edit Deelnemer" id="edit">edit</i>
                 <form action="" method="post" name="taken_form" id="taken_form">
                     <div class="row">
                         <div class="input-field col s10 offset-s1">
@@ -64,10 +65,10 @@ if (empty($_GET['id']) == true) {
                                 <option class="" value="4">Materiaal</option>
                             </select>
                         </div>
-                        <div class="input-field col s10 offset-s1">
+                        <!-- <div class="input-field col s10 offset-s1">
                             <textarea id="taak_aantal" name="taak_aantal" type="text" class="materialize-textarea validate" disabled></textarea>
                             <label class="white-text active" for="taak_aantal">Aantal</label>
-                        </div>
+                        </div> -->
                         <div class="input-field col s10 offset-s1">
                             <textarea id="taak_prijs" name="taak_prijs" type="text" class="materialize-textarea validate" disabled></textarea>
                             <label class="white-text active" for="taak_prijs">Geschatte prijs</label>
@@ -78,18 +79,18 @@ if (empty($_GET['id']) == true) {
                         <div class="row">
                             <button class="btn waves-effect waves-light col s10 offset-s1 primary" type="submit" id="submit_taak" value='test' name="opslaan" enabled>Submit
                                 <i class="material-icons right">send</i>
-                             </button>
-                         </div>
-                          
-             </form>
-               
+                            </button>
+                        </div>
 
-             </div>
+                </form>
 
-             </div>
 
-<!-- deelnemers -->
-         <div class="col m4 offset-m1 s12 dark-2 z-depth-3 flip-in-ver-right">
+            </div>
+
+        </div>
+
+        <!-- deelnemers -->
+        <div class="col m4 offset-m1 s12 dark-2 z-depth-3 flip-in-ver-right">
             <h5 class=" white-text center">Deelnemers</h5>
             <ul id="deelnemers_collection" class="collection with-header white-text">
                 <li class="collection-header dark-2">
@@ -97,25 +98,25 @@ if (empty($_GET['id']) == true) {
                 </li>
 
             </ul>
-            </div>
-            </div>
-
-<!-- besteding -->       
-<div class="row">
-    <div class="col s12 table_container">
-    <?php
-             include 'components/besteding_table.php';
-             include 'components/besteding_modal.php';
-    ?>
-               
-</div>
+        </div>
     </div>
-    
-    <div class="fixed-action-btn">
-    <a class=" green lighten-1 btn-floating btn-large waves-effect waves-light modal-trigger" href="#modal1"><i class="material-icons">add</i></a>
-</div>
 
-    
+    <!-- besteding -->
+    <div class="row">
+        <div class="col s12 table_container">
+            <?php
+            include 'components/besteding_table.php';
+            include 'components/besteding_modal.php';
+            ?>
+
+        </div>
+    </div>
+
+    <div class="fixed-action-btn">
+        <a class=" green lighten-1 btn-floating btn-large waves-effect waves-light modal-trigger" href="#modal1"><i class="material-icons">add</i></a>
+    </div>
+
+
     <script src="../../lib/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../../lib/materialize/js/materialize.min.js"></script>
     <script type="text/javascript" src="../../lib/js/beheerder/app.js"></script>

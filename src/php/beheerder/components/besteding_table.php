@@ -21,7 +21,7 @@ include("../../db/conn.php");
 </head>
 
 <body>
-   
+
     <table id="projects_table" class="highlight responsive-table white-text z-depth-3 ">
         <thead class="blue-grey darken-3 ">
             <tr>
@@ -31,7 +31,7 @@ include("../../db/conn.php");
                 <th class='center'>Aantal</th>
                 <th class='center'>Prijs</th>
                 <th class='Center'></th>
-                
+
                 </th>
 
             </tr>
@@ -40,7 +40,7 @@ include("../../db/conn.php");
         <?php
 
 
-        $query =  mysqli_query($link, "SELECT `besteding_id`,`naam`,`type`,`aantal`,`prijs` FROM `bestedingen`"); 
+        $query =  mysqli_query($link, "SELECT `besteding_id`,`naam`,`type`,`aantal`,`prijs` FROM `bestedingen` WHERE taak_id =" . $_GET['id']);
 
         if (mysqli_num_rows($query) > 0) {
             while ($row = mysqli_fetch_assoc($query)) {
@@ -57,8 +57,8 @@ include("../../db/conn.php");
                     'aantal'} . "</td>";
                 echo "<td class='center'>" . $row{
                     'prijs'} . "</td>";
-                    echo "<td class='center'><a class='amber waves-effect waves-light btn btn-tiny' href='kwitantie.php?id=" . $row['besteding_id'] . "'><i class='material-icons tiny amber-text'>attach_file</i></a></td>";
-                    echo "</tr>";
+                echo "<td class='center'><a class='amber waves-effect waves-light btn btn-tiny' href='kwitantie.php?id=" . $row['besteding_id'] . "'><i class='material-icons tiny white-text'>attach_file</i></a></td>";
+                echo "</tr>";
 
                 //echo "<td class='center'><a class='amber waves-effect waves-light btn btn-tiny' href='view_project.php?id=" . $row['project_id'] . "'><i class='material-icons'>chevron_right</i></a></td>";
                 //echo "</tr>";

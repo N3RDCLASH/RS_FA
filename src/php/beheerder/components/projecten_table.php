@@ -21,7 +21,17 @@ include("../../db/conn.php");
 </head>
 
 <body>
-    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="zoek naar een project..">
+    <nav class="dark-1">
+        <div class="nav-wrapper">
+            <form action="">
+                <div class="input-field">
+                    <input class="white-text" type="search" id="myInput" onkeyup="myFunction()" placeholder="Zoek naar een project..">
+                    <label class="label-icon" for="myInput"><i class="material-icons">search</i></label>
+                    <i class="material-icons ">close</i>
+                </div>
+            </form>
+        </div>
+    </nav>
 
     <table id="projects_table" class="highlight responsive-table white-text z-depth-3 ">
         <thead class="blue-grey darken-3 ">

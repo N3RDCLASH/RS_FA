@@ -18,7 +18,9 @@ if (mysqli_num_rows($result) > 0) {
             "naam" => $row{
                 'naam'},
             "omschrijving" => $row{
-                'omschrijving'}
+                'omschrijving'},
+            "prijs" => $row{
+                'geschatteprijs'}
         ];
     }
     mysqli_close($link);

@@ -62,8 +62,6 @@ body {
     ;
 }
 
-.secondary {}
-
 /*-------------end theme-----------*/
 
 /* charts */
@@ -131,7 +129,7 @@ body {
 }
 
 #deelnemers_table {
-    margin-top: 5%;
+    margin-top: 3%;
 }
 
 #deelnemer_chips {
@@ -153,7 +151,7 @@ body {
 }
 
 #gebruikers_table {
-    margin-top: 5%;
+    margin-top: 3%;
 }
 
 #gebruiker_informatie {
@@ -173,8 +171,8 @@ body {
     padding-bottom: 30%;
 }
 
-#project_informatie {
-    /* display: none; */
+#projects_table {
+    margin-top: 3%;
 }
 
 #search {
@@ -185,8 +183,6 @@ body {
     margin-top: 5%;
     margin-bottom: 4%;
 }
-
-#taak_informatie {}
 
 #wrapper {
     margin-bottom: 0 !important;
