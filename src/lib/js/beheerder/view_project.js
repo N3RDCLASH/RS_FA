@@ -76,6 +76,7 @@ async function selectTaken() {
 
 // Display Project Data 
 async function showProject(data) {
+    // alert(JSON.stringify(data))
     naam = document.getElementById('naam')
     omschrijving = document.getElementById('omschrijving')
     begin_datum = document.getElementById('begin_datum')
@@ -92,20 +93,9 @@ async function showProject(data) {
         label.classList.add('active')
     }
     )
-    typeValue = []
 
-    function findType(id) {
-        return id == data.type
-    }
-
-    for (let x of type.options) {
-        typeValue.push(x.value)
-    }
-
-    type.options[typeValue.findIndex(findType)].setAttribute('selected', true)
-    type.options[typeValue.findIndex(findType)].classList.add('white-text')
+    selectType(data, type)
     refreshSelect(type)
-
 
     //value assignment
     naam.value = data.naam
@@ -141,7 +131,19 @@ async function editFields() {
 
 }
 
+/**
+ * @param {object} data //
+ * @param {HTMLElement} element // HTML select element
+ */
+function selectType(data, element) {
+    typeValue = [...element.options].map(el => el.value)
+    element.options[typeValue.findIndex(id => id == data.type)].setAttribute('selected', true)
+    element.options[typeValue.findIndex(id => id == data.type)].classList.add('white-text')
+}
 
+/**
+ * @param {HTMLElement} el // HTML select element
+ */
 function refreshSelect(el) {
     let instance = M.FormSelect.getInstance(el)
     instance.destroy()

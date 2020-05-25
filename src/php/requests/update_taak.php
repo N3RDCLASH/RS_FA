@@ -18,22 +18,20 @@ if (isset($_POST['opslaan'])) {
     // var_dump($_POST);
     // var_dump($_GET);
     $id = mysqli_real_escape_string($link, $_GET["id"]);
-    $taak_naam = mysqli_real_escape_string($link, $_POST["deelnemers_naam"]);
-    $taak_type = mysqli_real_escape_string($link, $_POST["deelnemers_type"]);
-    $taak_email = mysqli_real_escape_string($link, $_POST["deelnemers_email"]);
-    $taak_adres = mysqli_real_escape_string($link, $_POST["deelnemers_adres"]);
-    $taak_telefoonnummer = mysqli_real_escape_string($link, $_POST["deelnemers_telefoonnummer"]);
+    $taak_naam = mysqli_real_escape_string($link, $_POST["taak_naam"]);
+    $taak_omschrijving = mysqli_real_escape_string($link, $_POST["taak_omschrijving"]);
+    $taak_type = mysqli_real_escape_string($link, $_POST["type_taak"]);
+    $taak_prijs = mysqli_real_escape_string($link, $_POST["taak_prijs"]);
 
     $query =
-        "UPDATE `deelnemers`
+        "UPDATE `taken`
         SET
-          `deelnemers_naam` = '$taak_naam',
-          `deelnemers_email` = '$taak_email',
-          `deelnemers_type` = '$taak_type',
-          `deelnemers_adres` = '$taak_adres',
-          `deelnemers_telefoonnummer` = '$taak_telefoonnummer'
+          `naam` = '$taak_naam',
+          `omschrijving` = '$taak_omschrijving',
+          `geschatteprijs` = '$taak_prijs',
+          `taak_type` = '$taak_type'
         WHERE
-            deelnemers_id = '$id'; 
+            taak_id = '$id'; 
  ";
     executeQuery($link, $query);
 } else {

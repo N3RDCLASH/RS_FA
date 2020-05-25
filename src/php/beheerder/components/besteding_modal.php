@@ -9,11 +9,11 @@
                 </div>
 
                 <div class="input-field col s10 offset-s1">
-                <select id="besteding_type" name="besteding_type">
-                            <option value="" disabled selected>Type besteding</option>
-                            <option class="" value="3">Dienst</option>
-                            <option class="" value="4">Materiaal</option>
-                        </select>
+                    <select id="besteding_type" name="besteding_type">
+                        <option value="" disabled selected>Type besteding</option>
+                        <option class="" value="3">Dienst</option>
+                        <option class="" value="4">Materiaal</option>
+                    </select>
                 </div>
                 <div class="input-field col s10 offset-s1">
                     <textarea id="besteding_aantal" name="besteding_aantal" type="text" class="materialize-textarea validate"></textarea>
@@ -22,6 +22,15 @@
                 <div class="input-field col s10 offset-s1">
                     <textarea id="besteding_prijs" name="besteding_prijs" type="text" class="materialize-textarea validate"></textarea>
                     <label class="white-text active" for="prijs">Prijs</label>
+                </div>
+                <div class="file-field col s10 offset-s1 input-field">
+                    <div class="btn">
+                        <span>File</span>
+                        <input type="file" multiple>
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text" placeholder="Upload one or more files">
+                    </div>
                 </div>
 
                 <button class="btn waves-effect waves-light col s10 offset-s1 primary" type="submit" id="submit_taak" value='test' name="save">Submit

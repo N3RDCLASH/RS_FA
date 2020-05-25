@@ -31,7 +31,9 @@ document.addEventListener("DOMContentLoaded", async function () {
 function displayTaak(data) {
     document.getElementById("taak_naam").value = data.naam
     document.getElementById("taak_omschrijving").value = data.omschrijving
-    document.getElementById("type_taak").value = data
+    selectType(data, type)
+    refreshSelect(type)
+    updateUI()
     document.getElementById("taak_prijs").value = data.prijs
 }
 
@@ -69,7 +71,7 @@ async function editFields() {
         }
         type.removeAttribute('disabled')
         document.getElementById("submit_taak").removeAttribute('disabled')
-        selectType(taak, type)
+        // selectType(taak, type)
         refreshSelect(type)
         updateUI()
     } else if (editable == false) {
@@ -110,7 +112,8 @@ function updateUI() {
  * @param {HTMLElement} element // HTML select element
  */
 function selectType(data, element) {
-    typeValue = new Array(element.options)
-    type.options[typeValue.findIndex(id => id == data.type)].setAttribute('selected', true)
-    type.options[typeValue.findIndex(id => id == data.type)].classList.add('white-text')
+    typeValue = [...element.options].map(el => el.value)
+    console.log(arguments)
+    element.options[typeValue.findIndex(id => id == data.type)] ? element.options[typeValue.findIndex(id => id == data.type)].setAttribute('selected', true) : element.options[0].setAttribute("selected", true)
+    element.options[typeValue.findIndex(id => id == data.type)] ? element.options[typeValue.findIndex(id => id == data.type)].classList.add('white-text') : element.options[0].classList.add("white-text")
 }

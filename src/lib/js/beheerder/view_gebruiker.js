@@ -41,23 +41,24 @@ document.addEventListener("DOMContentLoaded", async function () {
     naam.value = data.naam
 
     // Select correct input value 
-    typeValue = []
-    for (let x of type.options) {
-        typeValue.push(x.value)
-    }
+    selectType(data, type)
 
-    function findType(id) {
-        return id == data.type
-    }
-
-    type.options[typeValue.findIndex(findType)].setAttribute('selected', true)
-    type.options[typeValue.findIndex(findType)].classList.add('white-text')
     refreshSelect(type)
 
 
     document.evaluate(path2, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.classList.add('white-text')
 
 })
+
+/**
+ * @param {object} data //
+ * @param {HTMLElement} element // HTML select element
+ */
+function selectType(data, element) {
+    typeValue = [...element.options].map(el => el.value)
+    type.options[typeValue.findIndex(id => id == data.type)].setAttribute('selected', true)
+    type.options[typeValue.findIndex(id => id == data.type)].classList.add('white-text')
+}
 
 let editable = false
 

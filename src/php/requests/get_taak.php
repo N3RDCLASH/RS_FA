@@ -20,7 +20,9 @@ if (mysqli_num_rows($result) > 0) {
             "omschrijving" => $row{
                 'omschrijving'},
             "prijs" => $row{
-                'geschatteprijs'}
+                'geschatteprijs'},
+            "type" => $row{
+                'taak_type'}
         ];
     }
     mysqli_close($link);

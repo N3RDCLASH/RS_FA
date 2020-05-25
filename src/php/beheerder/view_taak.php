@@ -48,7 +48,7 @@ if (empty($_GET['id']) == true) {
             <div class="col m5 offset-m1 s12 dark-2 z-depth-3 flip-in-ver-right">
                 <h5 class=" white-text center">Taak Informatie</h5>
                 <i class="right primary-text material-icons tooltipped" data-position="right" data-tooltip="Edit Deelnemer" id="edit">edit</i>
-                <form action="" method="post" name="taken_form" id="taken_form">
+                <form action="../requests/update_taak.php?id=<?php echo $_GET['id'] ?>" method="post" name="taken_form" id="taken_form">
                     <div class="row">
                         <div class="input-field col s10 offset-s1">
                             <input id="taak_naam" name="taak_naam" type="text" class="validate" required disabled>
@@ -60,7 +60,7 @@ if (empty($_GET['id']) == true) {
                         </div>
                         <div class="input-field col s10 offset-s1">
                             <select id="type_taak" name="type_taak" disabled>
-                                <option value="" disabled selected>Type Taak</option>
+                                <option value="" disabled selected>Selecteer Type Taak</option>
                                 <option class="" value="3">Dienst</option>
                                 <option class="" value="4">Materiaal</option>
                             </select>
