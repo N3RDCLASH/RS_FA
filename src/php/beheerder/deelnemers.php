@@ -12,7 +12,7 @@ $_COOKIE['page'] = 'Deelnemers';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Deelnemers</title>
+    <title>Deelnemers Overzicht</title>
 
     <!-- local resources -->
     <link type="text/css" rel="stylesheet" href="../../lib/materialize/css/materialize.css" media="screen,projection" />
@@ -42,11 +42,13 @@ $_COOKIE['page'] = 'Deelnemers';
                     <h5 class="center white-text">Deelnemer gegevens</h5>
                     <div class="input-field col m12 s12">
                         <input type="text" name="deelnemers_naam" tabindex="1" size="10" placeholder="Naam" required autofocus>
+                        <label for="deelnemers_naam">deelnemers naam</label>
+
                     </div>
 
                     <div class="input-field col m12 s12">
                         <select name="deelnemers_type" id="deelnemers_type" class="materialize-select">
-                            <option value="x" disabled selected>Select de type deelnemer</option>
+                            <option value="x" disabled selected>Selecteer de type deelnemer</option>
                             <option value="4">Student</option>
                             <option value="5 ">Docent</option>
                             <option value="6">Overige</option>
@@ -54,8 +56,8 @@ $_COOKIE['page'] = 'Deelnemers';
                     </div>
 
                     <div class="input-field col m12 s12">
-                        <input type="email" name="deelnemers_email" tabindex="1" size="10" placeholder="email" required>
-                        <label for="deelnemers_email">Email</label>
+                        <input type="email" name="deelnemers_email" tabindex="1" size="10" placeholder="e-mail" required>
+                        <label for="deelnemers_email">E-mail</label>
                     </div>
 
 
@@ -71,7 +73,7 @@ $_COOKIE['page'] = 'Deelnemers';
 
                     </div>
 
-                    <button class="green lighten-1 btn waves-effect waves-light col m12 s12" type="submit" name="opslaan">Submit
+                    <button class="green lighten-1 btn waves-effect waves-light col m12 s12" type="submit" name="opslaan">Verzenden
                         <i class="material-icons right">send</i>
                     </button>
                 </form>

@@ -73,11 +73,11 @@ $_COOKIE['page'] = 'Projecten';
 
                     <div class="input-field col s8 offset-s2">
                         <select name="type" id="type_project">
-                            <option value="" disabled selected>Kies het type project.</option>
+                            <option value="" disabled selected>Selecteer het type project.</option>
                             <option class="" value="0">Evenement</option>
                             <option class="" value="1">Werkzaamheid</option>
                         </select>
-                        <label>Kies Project</label>
+                        <label>Type project</label>
                     </div>
 
                     <div class="row">
@@ -94,7 +94,7 @@ $_COOKIE['page'] = 'Projecten';
                         </div>
                     </div>
 
-                    <button class="btn primary waves-effect waves-light col m8 s10 offset-s1 offset-m2 " type="submit" name="action">Submit
+                    <button class="btn primary waves-effect waves-light col m8 s10 offset-s1 offset-m2 " type="submit" name="action">Verzenden
                         <i class="material-icons right">send</i>
                     </button>
 

@@ -42,30 +42,30 @@ $_COOKIE['page'] = 'Gebruikers';
                     <h5 class="center">Deelnemer gegevens</h5>
                     <div class="input-field col m12 s12">
                         <input type="text" name="gebruiker_naam" tabindex="1" size="10" placeholder="Naam" required autofocus>
-                        <label for="gebruiker_naam">Username</label>
+                        <label for="gebruiker_naam">gebruikers naam</label>
                     </div>
 
                     <div class="input-field col m12 s12">
                         <select name="gebruiker_type" id="gebruiker_type" class="materialize-select">
-                            <option value="x" disabled selected>Select de type deelnemer</option>
+                            <option value="x" disabled selected>Selecteer de type deelnemer</option>
                             <option value="0">Beheerder</option>
-                            <option value="1">Adminstratie</option>
-                            <option value="2">Financiele Administratie</option>
+                            <option value="1">Adminstratie medewerker</option>
+                            <option value="2">Financiële medewerker</option>
                         </select>
                     </div>
 
                     <div class="input-field col m12 s12">
-                        <input type="password" name="gebruikers_password1" tabindex="1" size="10" placeholder="Enter Password" required>
-                        <label for="gebruiker_password1">Password</label>
+                        <input type="password" name="gebruikers_password1" tabindex="1" size="10" placeholder="Vul uw wachtwoord in" required>
+                        <label for="gebruiker_password1">Wachtwoord</label>
                     </div>
                     <div class="input-field col m12 s12">
-                        <input type="password" name="gebruikers_password2" tabindex="1" size="10" placeholder="Re-enter Password" required>
-                        <label for="gebruiker_password2">Password</label>
+                        <input type="password" name="gebruikers_password2" tabindex="1" size="10" placeholder="Vul uw wachtwoord nogeens in" required>
+                        <label for="gebruiker_password2">Wachtwoord</label>
                     </div>
 
 
 
-                    <button id="create_gebruikers" class="green lighten-1 btn waves-effect waves-light col m12 s12" type="submit" name="opslaan" >Submit
+                    <button id="create_gebruikers" class="green lighten-1 btn waves-effect waves-light col m12 s12" type="submit" name="opslaan">Verzenden
                         <i class="material-icons right">send</i>
                     </button>
                 </form>

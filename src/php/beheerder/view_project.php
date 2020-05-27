@@ -51,6 +51,23 @@ if (empty($_GET['id']) == true) {
             <div class="col m5 s10 offset-m1 offset-s1 z-depth-3 flip-in-ver-right dark-2" id="project_informatie" data-id="<?php echo $_GET['id'] ?>">
                 <form id="projecten_form" action="../requests/update_project.php?id=<?php echo $_GET['id'] ?>" method="post">
                     <h5 class="center white-text">Project Informatie</h5>
+
+                    <div class="switch">
+                        <label>
+                            open
+                            <input id="switch" type="checkbox" name="switch">
+                            <span class="lever"></span>
+                            gesloten
+                        </label>
+                    </div>
+
+                    <!-- <label>
+                        <input type="checkbox" id="switch" name="switch" value="Open" />
+                        <span data-on="open" data-of="closed"> </span> 
+                    </label> -->
+
+
+
                     <i class="right primary-text material-icons tooltipped" data-position="right" data-tooltip="Edit Project" id="edit">edit</i>
 
                     <div class="row">
@@ -71,7 +88,7 @@ if (empty($_GET['id']) == true) {
                             <option class="" value="0">Evenement</option>
                             <option class="" value="1">Werkzaamheid</option>
                         </select>
-                        <label class="active">Project Type</label>
+                        <label class="active">Type Project</label>
                     </div>
                     <div class="row">
                         <div class="input-field col s8 offset-s2">

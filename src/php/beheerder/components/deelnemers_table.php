@@ -50,7 +50,7 @@ include("../../db/conn.php");
                 <th class='center'>Email</th>
                 <th class='center'>Adres</th>
                 <th class='center'>Telefoonnummer </th>
-                <th class='center'>See More</th>
+                <th class='center'>Bekijk meer</th>
 
 
             </tr>

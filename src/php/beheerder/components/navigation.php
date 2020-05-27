@@ -9,10 +9,10 @@
         </div>
         <ul id="dropdown1" class="dropdown-content">
             <li>
-                <a href="#">Profile</a>
+                <a href="#">Profiel</a>
             </li>
             <li>
-                <a href="../scripts/logout.php">Log Out</a>
+                <a href="../scripts/logout.php">Uitloggen</a>
             </li>
         </ul>
         <ul id="slide-out" class="sidenav dark-2 sidenav-fixed -4 ">
@@ -28,16 +28,16 @@
             </li>
             <li class="<?php if ($_COOKIE['page'] == 'Dashboard') {
                             echo 'primary';
-                        }; ?>"><a href="home.php" class="white-text">Dashboard</a></li>
+                        }; ?>"><a href="home.php" class="white-text">Grafieken overzicht</a></li>
             <li class="<?php if ($_COOKIE['page'] == 'Projecten') {
                             echo 'primary';
-                        }; ?>"><a href="projecten.php" class="white-text">Projecten</a></li>
+                        }; ?>"><a href="projecten.php" class="white-text">Projecten overzicht</a></li>
             <li class="<?php if ($_COOKIE['page'] == 'Deelnemers') {
                             echo 'primary';
-                        }; ?>"><a href="deelnemers.php" class="white-text">Deelnemers</a></li>
+                        }; ?>"><a href="deelnemers.php" class="white-text">Deelnemers overzicht</a></li>
             <li class="<?php if ($_COOKIE['page'] == 'Gebruikers') {
                             echo 'primary';
-                        }; ?>"><a href="gebruikers.php" class="white-text">Gebruikers</a></li>
+                        }; ?>"><a href="gebruikers.php" class="white-text">Gebruikers overzicht</a></li>
         </ul>
     </nav>
 </div>

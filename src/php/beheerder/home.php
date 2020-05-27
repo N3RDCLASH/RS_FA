@@ -29,7 +29,7 @@ $_COOKIE['page'] = 'Dashboard';
 <body class="">
     <ul id="dropdown1" class="dropdown-content">
         <li>
-            <a href="../scripts/logout.php">Log Out</a>
+            <a href="../scripts/logout.php">Uitloggen</a>
         </li>
     </ul>
     <?php

@@ -4,7 +4,7 @@ require_once '../scripts/session.php';
 require '../scripts/check_session.php';
 $_COOKIE['page'] = 'Gebruiker Overview';
 
-if (empty($_GET['id'] == true)) {
+if (empty($_GET['id']) == true) {
     header('location:gebruikers.php');
 } else {
     if (is_numeric($_GET['id']) == false) {

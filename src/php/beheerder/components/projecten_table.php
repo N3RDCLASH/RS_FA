@@ -43,7 +43,7 @@ include("../../db/conn.php");
                 <th class='center'>Start Datum </th>
                 <th class='center'>Eind Datum</th>
                 <th class='center'>Status </th>
-                <th class='center'>See More</th>
+                <th class='center'>Bekijk meer</th>
 
 
             </tr>

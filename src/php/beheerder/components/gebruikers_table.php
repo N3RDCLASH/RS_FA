@@ -38,7 +38,7 @@ include("../../db/conn.php");
                 <th>ID</th>
                 <th>Gebruikernaamm</th>
                 <th>Type</th>
-                <th>See More</th>
+                <th>Bekijk meer</th>
 
 
             </tr>
