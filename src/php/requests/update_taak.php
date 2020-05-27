@@ -1,6 +1,6 @@
 <?php
 include '../../db/conn.php';
-echo $_POST['opslaan'];
+// echo $_POST['opslaan'];
 
 function executeQuery($link, $query)
 {

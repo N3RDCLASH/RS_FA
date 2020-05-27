@@ -26,14 +26,14 @@
                 <div class="file-field col s10 offset-s1 input-field">
                     <div class="btn">
                         <span>File</span>
-                        <input type="file" multiple>
+                        <input type="file" id="kwitantie_file" multiple>
                     </div>
                     <div class="file-path-wrapper">
-                        <input class="file-path validate" type="text" placeholder="Upload one or more files">
+                        <input class="file-path validate" id="kwitantie_link" name="kwitantie_link" type="text" placeholder="Upload one or more files">
                     </div>
                 </div>
 
-                <button class="btn waves-effect waves-light col s10 offset-s1 primary" type="submit" id="submit_taak" value='test' name="save">Submit
+                <button class="btn waves-effect waves-light col s10 offset-s1 primary" type="submit" id="submit_besteding" value='test' name="save">Submit
                     <i class="material-icons right">send</i>
                 </button>
             </div>
@@ -47,6 +47,6 @@
 
 </div>
 
-<div class="fixed-action-btn">
+<div class="fixed-action-btn
     <a class=" green lighten-1 btn-floating btn-large waves-effect waves-light modal-trigger" href="#modal1"><i class="material-icons">add</i></a>
-</div>
+</div>">
