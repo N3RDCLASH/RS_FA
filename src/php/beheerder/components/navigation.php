@@ -26,18 +26,21 @@
                     <a href="#email"><span class="white-text email">test@gmail.com</span></a>
                 </div>
             </li>
-            <li class="<?php if ($_COOKIE['page'] == 'Dashboard') {
+            <li class="<?php if ($_COOKIE['page'] == 'Grafieken Overzicht') {
                             echo 'primary';
-                        }; ?>"><a href="home.php" class="white-text">Grafieken overzicht</a></li>
-            <li class="<?php if ($_COOKIE['page'] == 'Projecten') {
+                        }; ?>"><a href="home.php" class="white-text">Grafieken </a></li>
+            <li class="<?php if ($_COOKIE['page'] == 'Grafieken Overzicht') {
                             echo 'primary';
-                        }; ?>"><a href="projecten.php" class="white-text">Projecten overzicht</a></li>
-            <li class="<?php if ($_COOKIE['page'] == 'Deelnemers') {
+                        }; ?>"><a href="projecten.php" class="white-text">Projecten</a></li>
+            <li class="<?php if ($_COOKIE['page'] == 'Projecten Overzicht') {
                             echo 'primary';
-                        }; ?>"><a href="deelnemers.php" class="white-text">Deelnemers overzicht</a></li>
-            <li class="<?php if ($_COOKIE['page'] == 'Gebruikers') {
+                        }; ?>"><a href="deelnemers.php" class="white-text">Deelnemers </a></li>
+            <li class="<?php if ($_COOKIE['page'] == 'Deelnemers Overzicht') {
                             echo 'primary';
-                        }; ?>"><a href="gebruikers.php" class="white-text">Gebruikers overzicht</a></li>
+                        }; ?>"><a href="gebruikers.php" class="white-text">Gebruikers</a></li>
+            <li class="<?php if ($_COOKIE['page'] == 'Gebruikers Overzicht') {
+                            echo 'primary';
+                        }; ?>">
         </ul>
     </nav>
 </div>

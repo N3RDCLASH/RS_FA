@@ -4,7 +4,7 @@ require_once '../scripts/session.php';
 require '../scripts/check_session.php';
 include('../requests/stats/get_aantal_projecten_per_status.php');
 setcookie('page', '', time() + 3600);
-$_COOKIE['page'] = 'Dashboard';
+$_COOKIE['page'] = 'Grafieken Overzicht';
 ?>
 
 <!DOCTYPE html>

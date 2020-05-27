@@ -2,7 +2,7 @@
     <div class="modal-content">
         <!-- form voor het maken van kwitantie -->
         <h4 class="white-text center">Kwitantie</h4>
-        <form action="../requests/.php?id=<?php echo $_GET['id']; ?>" method="POST">
+        <form action="../requests/update_kwitantie.php?id=<?php echo $_GET['id']; ?>" method="POST">
             <div class="row">
                 <div class="input-field col s10 offset-s1">
                     <input id="kwitantie_naam" name="kwitantie_naam" type="text" class="validate" required>
@@ -31,7 +31,7 @@
                     </td>
                 </table>
 
-                <button class="btn waves-effect waves-light col s10 offset-s1 primary" type="submit" id="submit_kwitantie" value='test' name="save">Verzenden
+                <button class="btn waves-effect waves-light col s10 offset-s1 primary" type="submit" id="submit_kwitantie" value='test' name="opslaan">Verzenden
                     <i class="material-icons right">send</i>
                 </button>
             </div>
