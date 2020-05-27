@@ -31,7 +31,7 @@
                     </td>
                 </table>
 
-                <button class="btn waves-effect waves-light col s10 offset-s1 primary" type="submit" id="submit_kwitantie" value='test' name="save">Submit
+                <button class="btn waves-effect waves-light col s10 offset-s1 primary" type="submit" id="submit_kwitantie" value='test' name="save">Verzenden
                     <i class="material-icons right">send</i>
                 </button>
             </div>

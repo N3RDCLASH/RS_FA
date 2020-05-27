@@ -42,7 +42,7 @@ include("../../db/conn.php");
             </form>
         </div>
     </nav>
-    <table id="projects_table" class="highlight responsive-table white-text z-depth-3 ">
+    <table id="besteding_table" class="highlight responsive-table white-text z-depth-3 ">
 
         <thead class="blue-grey darken-3 ">
 
