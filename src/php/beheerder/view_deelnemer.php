@@ -80,11 +80,7 @@ if (empty($_GET['id']) == true) {
 
 
 
-<<<<<<< Updated upstream
             <div class="col m5 s12 offset-m1 z-depth-3 flip-in-ver-right dark-2" id="lopende_projecten">
-=======
-            <div class="col m6 s4 offset-m1 z-depth-3 flip-in-ver-right dark-2" id="lopende_projecten">
->>>>>>> Stashed changes
 
                 <?php
                 include 'components/deelnemer_table.php';
