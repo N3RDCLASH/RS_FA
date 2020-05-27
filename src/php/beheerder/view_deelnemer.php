@@ -77,11 +77,19 @@ if (empty($_GET['id']) == true) {
                         <i class="material-icons right">send</i>
                     </button>
             </div>
-            <div class="col m6 dark-2 z-depth-3 chart2">
-                <div class="chart-container" style="position: relative; height:50vh; width:40vw">
-                    <canvas id="Chart2"></canvas>
-                </div>
-            </div>
+            
+                    
+            
+            <div class="col m6 s4 offset-m1 z-depth-3 flip-in-ver-right dark-2" id="lopende_projecten">
+                    
+            <?php
+            include 'components/deelnemer_table.php';
+            ?>
+
+      </div>
+  
+     
+                
             </form>
         </div>
         <script src="../../lib/js/jquery-3.2.1.min.js"></script>
@@ -89,45 +97,8 @@ if (empty($_GET['id']) == true) {
         <script type="text/javascript" src="../../lib/js/administratie/app.js"></script>
         <script type="text/javascript" src="../../lib/js/beheerder/view_deelnemer.js"></script>
         <script src="../../lib/js/node_modules/chart.js/dist/Chart.js"></script>
-        <script>
-            var ctx = document.getElementById('Chart2').getContext('2d');
-            var myChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                    datasets: [{
-                        label: '# of Votes',
-                        data: [12, 19, 3, 5, 2, 3],
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                        yAxes: [{
-                            ticks: {
-                                beginAtZero: true
-                            }
-                        }]
-                    }
-                }
-            });
-        </script>
+       
+        
 
 </body>
 

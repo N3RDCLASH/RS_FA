@@ -159,8 +159,9 @@ $_COOKIE['page'] = 'Dashboard';
                         fill: true,
                         data: data.ys,
                         backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)'
+                            'rgba(240,23,103, 0.7)',
+                            'rgba(69,72,230, 0.7)'
+
                         ]
                     }]
                 },
@@ -186,13 +187,13 @@ $_COOKIE['page'] = 'Dashboard';
                     labels: data2.xs,
                     datasets: [{
                         label: '# Aangemaakte Projecten per Datum',
-                        fill: false,
+                        fill: true,
                         data: data2.ys,
                         backgroundColor: [
-                            ''
+                            'rgba(69,72,230, 0.3)'
                         ],
                         borderColor: 'rgba(255, 99, 132, 1)',
-                        borderWidth: 1
+                        borderWidth: 2
                     }]
                 },
                 options: {

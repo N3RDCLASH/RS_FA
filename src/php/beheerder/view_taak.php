@@ -77,7 +77,11 @@ if (empty($_GET['id']) == true) {
 
                     <div class="modal-footer dark-2">
                         <div class="row">
+<<<<<<< HEAD
                             <button class="btn waves-effect waves-light col s10 offset-s1 primary" type="submit" id="submit_taak" value='test' name="opslaan" enabled>Verzenden
+=======
+                            <button class="btn waves-effect waves-light col s10 offset-s1 primary" type="submit" id="submit_taak" value='test' name="opslaan" disabled>Submit
+>>>>>>> 279ba32813a72fd86670065ff18894b3ab857af1
                                 <i class="material-icons right">send</i>
                             </button>
                         </div>
@@ -107,6 +111,7 @@ if (empty($_GET['id']) == true) {
             <?php
             include 'components/besteding_table.php';
             include 'components/besteding_modal.php';
+            include 'components/kwitantie_modal.php';
             ?>
 
         </div>
@@ -116,11 +121,18 @@ if (empty($_GET['id']) == true) {
         <a class=" green lighten-1 btn-floating btn-large waves-effect waves-light modal-trigger" href="#modal1"><i class="material-icons">add</i></a>
     </div>
 
-
     <script src="../../lib/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../../lib/materialize/js/materialize.min.js"></script>
     <script type="text/javascript" src="../../lib/js/beheerder/app.js"></script>
     <script type="text/javascript" src="../../lib/js/beheerder/view_taak.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-analytics.js"></script>
 </body>
 
 </html>
