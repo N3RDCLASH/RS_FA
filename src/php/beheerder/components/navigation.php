@@ -29,18 +29,16 @@
             <li class="<?php if ($_COOKIE['page'] == 'Grafieken Overzicht') {
                             echo 'primary';
                         }; ?>"><a href="home.php" class="white-text">Grafieken </a></li>
-            <li class="<?php if ($_COOKIE['page'] == 'Grafieken Overzicht') {
-                            echo 'primary';
-                        }; ?>"><a href="projecten.php" class="white-text">Projecten</a></li>
             <li class="<?php if ($_COOKIE['page'] == 'Projecten Overzicht') {
                             echo 'primary';
-                        }; ?>"><a href="deelnemers.php" class="white-text">Deelnemers </a></li>
+                        }; ?>"><a href="projecten.php" class="white-text">Projecten</a></li>
             <li class="<?php if ($_COOKIE['page'] == 'Deelnemers Overzicht') {
                             echo 'primary';
-                        }; ?>"><a href="gebruikers.php" class="white-text">Gebruikers</a></li>
+                        }; ?>"><a href="deelnemers.php" class="white-text">Deelnemers </a></li>
             <li class="<?php if ($_COOKIE['page'] == 'Gebruikers Overzicht') {
                             echo 'primary';
-                        }; ?>">
+                        }; ?>"><a href="gebruikers.php" class="white-text">Gebruikers</a></li>
+
         </ul>
     </nav>
 </div>

@@ -2,7 +2,7 @@
 require_once '../../db/conn.php';
 require_once '../scripts/session.php';
 require '../scripts/check_session.php';
-$_COOKIE['page'] = 'Gebruiker Overview';
+$_COOKIE['page'] = 'Gebruiker Overzicht';
 
 if (empty($_GET['id']) == true) {
     header('location:gebruikers.php');
@@ -77,19 +77,19 @@ if (empty($_GET['id']) == true) {
                         <i class="material-icons right">send</i>
                     </button>
             </div>
-            
-                    
-            
-            <div class="col m5 s12 offset-m1 z-depth-3 flip-in-ver-right dark-2" id="lopende_projecten">
-                    
-            <?php
-            include 'components/deelnemer_table.php';
-            ?>
 
-      </div>
-  
-     
-                
+
+
+            <div class="col m5 s12 offset-m1 z-depth-3 flip-in-ver-right dark-2" id="lopende_projecten">
+
+                <?php
+                include 'components/deelnemer_table.php';
+                ?>
+
+            </div>
+
+
+
             </form>
         </div>
         <script src="../../lib/js/jquery-3.2.1.min.js"></script>
@@ -97,8 +97,8 @@ if (empty($_GET['id']) == true) {
         <script type="text/javascript" src="../../lib/js/administratie/app.js"></script>
         <script type="text/javascript" src="../../lib/js/beheerder/view_deelnemer.js"></script>
         <script src="../../lib/js/node_modules/chart.js/dist/Chart.js"></script>
-       
-        
+
+
 
 </body>
 

@@ -2,7 +2,7 @@
 require_once '../../db/conn.php';
 require_once '../scripts/session.php';
 require '../scripts/check_session.php';
-$_COOKIE['page'] = 'Gebruiker Overview';
+$_COOKIE['page'] = 'Gebruiker Overzicht';
 
 if (empty($_GET['id']) == true) {
     header('location:gebruikers.php');
@@ -67,17 +67,17 @@ if (empty($_GET['id']) == true) {
 
                     <label>
                         <input type="checkbox" id="change_pass" name="change_pass" disabled>
-                        <span>Change Password</span>
+                        <span>Verander wachtwoord</span>
                     </label>
                     <div class="input-field col m12 s12" id="gebruikers_password1_container">
-                        <input type="password" id="password1" name="gebruikers_password1" tabindex="1" size="10" placeholder="Enter Password" disabled required>
-                        <label for="gebruiker_password1">Password</label>
+                        <input type="password" id="password1" name="gebruikers_password1" tabindex="1" size="10" placeholder="Vul uw wachtwoord" disabled required>
+                        <label for="gebruiker_password1">Vul uw wachtwoord</label>
                     </div>
                     <div class="input-field col m12 s12" id="gebruikers_password_container">
-                        <input type="password" id="password2" name="gebruikers_password2" tabindex="1" size="10" placeholder="Re-enter Password" disabled required>
-                        <label for="gebruiker_password2">Retype Password</label>
+                        <input type="password" id="password2" name="gebruikers_password2" tabindex="1" size="10" placeholder="Vul uw wachtwoord nogeens in" disabled required>
+                        <label for="gebruiker_password2"><Wachtwoord/label>
                     </div>
-                    <button id="submit" disabled class="btn waves-effect primary waves-light col m8 s10 offset-s1 offset-m2 " type="submit" name="opslaan">Update
+                    <button id="submit" disabled class="btn waves-effect primary waves-light col m8 s10 offset-s1 offset-m2 " type="submit" name="opslaan">Updaten
                         <i class="material-icons right">send</i>
                     </button>
             </div>
