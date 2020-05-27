@@ -55,7 +55,7 @@ if (empty($_GET['id']) == true) {
                     <div class="switch">
                         <label>
                             open
-                            <input id="switch" type="checkbox" name="switch">
+                            <input id="switch" type="checkbox" name="switch" disabled>
                             <span class="lever"></span>
                             gesloten
                         </label>
