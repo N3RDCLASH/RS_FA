@@ -50,7 +50,7 @@ if (empty($_GET['id']) == true) {
                         <select name="deelnemers_type" id="deelnemers_type" class="materialize-select" disabled>
                             <option value="x" disabled selected>Select de type deelnemer</option>
                             <option value="4">Student</option>
-                            <option value="5 ">Docent</option>
+                            <option value="5">Docent</option>
                             <option value="6">Overige</option>
                         </select>
                     </div>

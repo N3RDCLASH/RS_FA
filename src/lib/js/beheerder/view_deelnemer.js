@@ -49,7 +49,6 @@ async function editFields() {
 }
 
 function displayDeelnemer(data) {
-    console.log(data)
     document.getElementById("deelnemers_naam").value = data.naam
     document.getElementById("deelnemers_email").value = data.email
     selectType(data, type)
@@ -77,6 +76,6 @@ function refreshSelect(el) {
 
 function selectType(data, element) {
     typeValue = [...element.options].map(el => el.value)
-    element.options[typeValue.findIndex(id => id == data.type)].setAttribute('selected', true)
-    element.options[typeValue.findIndex(id => id == data.type)].classList.add('white-text')
+    element.options[typeValue.findIndex(id => id == data.type)] ? element.options[typeValue.findIndex(id => id == data.type)].setAttribute('selected', true) : element.options[0].setAttribute("selected", true)
+    element.options[typeValue.findIndex(id => id == data.type)] ? element.options[typeValue.findIndex(id => id == data.type)].classList.add('white-text') : element.options[0].classList.add("white-text")
 }

@@ -24,7 +24,7 @@ if (isset($_POST['opslaan'])) {
     $project_begin_datum = mysqli_real_escape_string($link, $_POST["begin_datum"]);
     $project_eind_datum = mysqli_real_escape_string($link, $_POST["eind_datum"]);
     $switch = mysqli_real_escape_string($link, $_POST["switch"]);
-
+    ((isset($switch)) ? $switch = "closed" : $switch = "open");
     $query =
         "UPDATE `projecten`
         SET
@@ -39,8 +39,6 @@ if (isset($_POST['opslaan'])) {
             project_id = '$id'; 
  ";
     executeQuery($link, $query);
-
-    
 } else {
     echo "post var not set";
 }
