@@ -90,7 +90,7 @@ $id = $_GET['id'];
                     'aantal'} . "</td>";
                 echo "<td class='center'>" . $row{
                     'prijs'} . "</td>";
-                echo "<td class='center'><a class='amber waves-effect waves-light btn btn-tiny' onclick='showKwitantie(" . $row['besteding_id'] . ")''><i class='material-icons tiny whiteext'>attach_file</i></a></td>";
+                echo "<td class='center'><a class='amber waves-effect waves-light btn btn-tiny' onclick='showKwitantie(" . $row['besteding_id'] . ")''><i class='material-icons tiny white-text modal-trigger' href='#modal2'>visibility</i></a></td>";
                 echo "</tr>";
 
                 //echo "<td class='center'><a class='amber waves-effect waves-light btn btn-tiny' href='view_project.php?id=" . $row['project_id'] . "'><i class='material-icons'>chevron_right</i></a></td>";

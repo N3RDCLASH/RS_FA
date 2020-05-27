@@ -162,6 +162,10 @@ body {
     margin-top: 5%;
 }
 
+#kwitantie_img {
+    margin: 0 auto;
+}
+
 #logo {
     width: 60px;
 }
