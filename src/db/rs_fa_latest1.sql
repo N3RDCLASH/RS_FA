@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 24, 2020 at 07:47 PM
+-- Generation Time: May 27, 2020 at 08:46 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.7
 
@@ -43,8 +43,21 @@ CREATE TABLE `bestedingen` (
 --
 
 INSERT INTO `bestedingen` (`besteding_id`, `taak_id`, `type_id`, `naam`, `type`, `aantal`, `prijs`) VALUES
-(0, 13, 0, 'fgdfdf', 3, 2323, 323),
-(1, 1, 4, 'bak', 12, 12, 25);
+(2, 33, 0, 'dfdf', 3, 1, 344),
+(3, 33, 0, 'sfsd', 3, 23, 333),
+(4, 33, 0, 'wdwd', 3, 4, 12),
+(5, 24, 0, 'fdf', 3, 12, 12),
+(6, 24, 0, 'vhp', 3, 34, 55),
+(7, 24, 0, 'vhp', 3, 34, 55),
+(8, 24, 0, 'vhp', 3, 34, 55),
+(9, 24, 0, 'vhp', 3, 34, 55),
+(10, 24, 0, 'vhp', 3, 34, 55),
+(11, 24, 0, 'gewe', 4, 34, 555),
+(12, 19, 0, 'fgdfdf', 3, 445, 5454),
+(14, 19, 0, 'sfdfdf', 3, 12, 2333),
+(15, 33, 0, 'dgete', 3, 232, 123232),
+(17, 19, 0, 'sfsd', 4, 12, 333),
+(18, 19, 0, 'owgeueobgegb`', 3, 234, 45454);
 
 -- --------------------------------------------------------
 
@@ -134,8 +147,11 @@ INSERT INTO `deelnemers_per_taak` (`deelnemers_id`, `taak_id`) VALUES
 (5, 34),
 (5, 35),
 (5, 36),
+(5, 37),
 (7, 17),
-(7, 31);
+(7, 31),
+(7, 37),
+(8, 37);
 
 -- --------------------------------------------------------
 
@@ -165,12 +181,22 @@ INSERT INTO `deelnemers_type` (`type_id`, `type_naam`) VALUES
 
 CREATE TABLE `kwitantie` (
   `kwitantie_id` int(11) NOT NULL,
-  `bestedingen_id` int(11) NOT NULL,
-  `kwitantie_titel` char(1) DEFAULT NULL,
+  `besteding_id` int(11) NOT NULL,
+  `kwitantie_titel` char(100) DEFAULT NULL,
   `kwitantie_omschrijving` text DEFAULT NULL,
   `kwitantie_prijs` int(11) DEFAULT NULL,
-  `kwitantie_file` blob DEFAULT NULL
+  `kwitantie_file` longtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `kwitantie`
+--
+
+INSERT INTO `kwitantie` (`kwitantie_id`, `besteding_id`, `kwitantie_titel`, `kwitantie_omschrijving`, `kwitantie_prijs`, `kwitantie_file`) VALUES
+(6, 14, 'sfdfdf', NULL, 2333, 'https://firebasestorage.googleapis.com/v0/b/rs-fa-1eb3d.appspot.com/o/IMG_0065.jpg?alt=media&token=53abd98d-0cb0-46b3-b1d5-b7ee1a680d8f'),
+(7, 15, 'dgete', NULL, 123232, 'https://firebasestorage.googleapis.com/v0/b/rs-fa-1eb3d.appspot.com/o/WhatsApp%20Image%202019-07-18%20at%2010.14.07%20PM.jpeg?alt=media&token=4bca38b8-ff4d-4fed-bf8b-a9a355c79bcc'),
+(8, 17, 'sfsd', NULL, 333, 'https://firebasestorage.googleapis.com/v0/b/rs-fa-1eb3d.appspot.com/o/x.png?alt=media&token=812dfad9-15e6-4378-9813-cbba91fbed1e'),
+(9, 18, 'owgeueobgegb`', NULL, 45454, 'https://firebasestorage.googleapis.com/v0/b/rs-fa-1eb3d.appspot.com/o/WhatsApp%20Image%202019-07-18%20at%2010.14.07%20PM.jpeg?alt=media&token=89b1dbc9-4749-4604-8b5e-20f27eafa9b7');
 
 -- --------------------------------------------------------
 
@@ -278,7 +304,7 @@ CREATE TABLE `taken` (
   `geschatteprijs` int(11) DEFAULT NULL,
   `datum_start` date DEFAULT NULL,
   `datum_eind` date DEFAULT NULL,
-  `taak_type` int(11) DEFAULT NULL
+  `taak_type` int(11) DEFAULT 3
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -286,12 +312,12 @@ CREATE TABLE `taken` (
 --
 
 INSERT INTO `taken` (`taak_id`, `project_id`, `naam`, `omschrijving`, `aantal`, `geschatteprijs`, `datum_start`, `datum_eind`, `taak_type`) VALUES
-(1, 3, 'Cupcakes Kopen', 'iem bai de san toh owru mang', 10, 200, NULL, NULL, NULL),
-(2, 4, 'Kaarten schrijven', 'iem skrief den karta ', NULL, NULL, NULL, NULL, NULL),
-(3, 3, 'Tent Opzetten', 'iem set a tenti \r\njwz!', NULL, NULL, NULL, NULL, NULL),
-(4, 9, 'test', 'test', NULL, NULL, NULL, NULL, NULL),
+(1, 3, 'Cupcakes Kopen', 'iem bai de san toh owru mang', 10, 200, NULL, NULL, 4),
+(2, 4, 'Kaarten schrijven', 'iem skrief den karta ', NULL, NULL, NULL, NULL, 3),
+(3, 3, 'Tent Opzetten', 'iem set a tenti \r\njwz!', NULL, 5622, NULL, NULL, 4),
+(4, 9, 'test', 'test', NULL, NULL, NULL, NULL, 3),
 (5, 9, 'test2', 'test2', NULL, NULL, NULL, NULL, NULL),
-(6, 9, 'test3', 'test3', NULL, NULL, NULL, NULL, NULL),
+(6, 9, 'test3', 'test3', NULL, 500, NULL, NULL, 3),
 (7, 9, 'test3', 'test3', NULL, NULL, NULL, NULL, NULL),
 (8, 9, 'test3', 'test3', NULL, NULL, NULL, NULL, NULL),
 (9, 9, 'test4', 'test4', NULL, NULL, NULL, NULL, NULL),
@@ -303,8 +329,8 @@ INSERT INTO `taken` (`taak_id`, `project_id`, `naam`, `omschrijving`, `aantal`, 
 (15, 14, 'New taak', 'gang shhhh', NULL, NULL, NULL, NULL, NULL),
 (17, 12, 'trololol', 'memeLORD', NULL, NULL, NULL, NULL, NULL),
 (18, 12, 'T’Challa', 'Wakanda Forever', NULL, NULL, NULL, NULL, NULL),
-(19, 13, 'sdasd', 'asdas', NULL, NULL, NULL, NULL, NULL),
-(20, 12, 'ss', 'ss', NULL, NULL, NULL, NULL, NULL),
+(19, 13, 'sdasd', 'asdas', NULL, 500, NULL, NULL, 3),
+(20, 12, 'ss', 'ss', NULL, 2000, NULL, NULL, NULL),
 (21, 14, 'kiwi', 'fruit', 1, 0, NULL, NULL, NULL),
 (22, 14, 'pineapple', 'fruit', NULL, NULL, NULL, NULL, NULL),
 (23, 6, 'Hark Kopen', 'xd', 4, 40, NULL, NULL, NULL),
@@ -320,7 +346,8 @@ INSERT INTO `taken` (`taak_id`, `project_id`, `naam`, `omschrijving`, `aantal`, 
 (33, 15, 'degpg-gj', 'sdsad', NULL, NULL, NULL, NULL, NULL),
 (34, 18, 'Uitschrijven implementatie plan', 'Het uitschrijven van de stappen die ondernomen moeten worden', NULL, NULL, NULL, NULL, NULL),
 (35, 3, 'dhfiwjfjk', 'hjgjeg;jl', 0, 0, NULL, NULL, 3),
-(36, 3, 'houfhpsiofougogo[ih', 'nipo[', 0, 0, NULL, NULL, 3);
+(36, 3, 'houfhpsiofougogo[ih', 'nipo[', 0, 0, NULL, NULL, 3),
+(37, 19, 'ggr', 'grsrrg', 0, 0, NULL, NULL, 3);
 
 -- --------------------------------------------------------
 
@@ -407,8 +434,8 @@ ALTER TABLE `deelnemers_type`
 -- Indexes for table `kwitantie`
 --
 ALTER TABLE `kwitantie`
-  ADD PRIMARY KEY (`kwitantie_id`,`bestedingen_id`),
-  ADD KEY `taak_id` (`bestedingen_id`);
+  ADD PRIMARY KEY (`kwitantie_id`,`besteding_id`),
+  ADD KEY `taak_id` (`besteding_id`);
 
 --
 -- Indexes for table `projecten`
@@ -462,6 +489,12 @@ ALTER TABLE `user_type`
 --
 
 --
+-- AUTO_INCREMENT for table `bestedingen`
+--
+ALTER TABLE `bestedingen`
+  MODIFY `besteding_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
 -- AUTO_INCREMENT for table `deelnemers`
 --
 ALTER TABLE `deelnemers`
@@ -472,6 +505,12 @@ ALTER TABLE `deelnemers`
 --
 ALTER TABLE `deelnemers_type`
   MODIFY `type_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `kwitantie`
+--
+ALTER TABLE `kwitantie`
+  MODIFY `kwitantie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `projecten`
@@ -495,7 +534,7 @@ ALTER TABLE `taak_type`
 -- AUTO_INCREMENT for table `taken`
 --
 ALTER TABLE `taken`
-  MODIFY `taak_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `taak_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `user`
@@ -511,7 +550,7 @@ ALTER TABLE `user`
 -- Constraints for table `bestedingen`
 --
 ALTER TABLE `bestedingen`
-  ADD CONSTRAINT `taak_id` FOREIGN KEY (`taak_id`) REFERENCES `taken` (`taak_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `taak_id` FOREIGN KEY (`taak_id`) REFERENCES `taken` (`taak_id`);
 
 --
 -- Constraints for table `deelnemers`
@@ -527,12 +566,6 @@ ALTER TABLE `deelnemers`
 ALTER TABLE `deelnemers_per_taak`
   ADD CONSTRAINT `deelnemers_per_taak_ibfk_1` FOREIGN KEY (`deelnemers_id`) REFERENCES `deelnemers` (`deelnemers_id`),
   ADD CONSTRAINT `deelnemers_per_taak_ibfk_2` FOREIGN KEY (`taak_id`) REFERENCES `taken` (`taak_id`);
-
---
--- Constraints for table `kwitantie`
---
-ALTER TABLE `kwitantie`
-  ADD CONSTRAINT `kwitantie_ibfk_1` FOREIGN KEY (`bestedingen_id`) REFERENCES `bestedingen` (`besteding_id`);
 
 --
 -- Constraints for table `projecten`

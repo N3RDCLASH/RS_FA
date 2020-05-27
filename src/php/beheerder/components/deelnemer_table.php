@@ -4,27 +4,27 @@ $id = $_GET['id'];
 
 ?>
 
-<table id="deelnemers_table" class="highlight white-text responsive-table z-depth-3 " style="position: relative; height:50vh; width:40vw">
-        <thead class="blue-grey darken-3 ">
-            <tr>
-                <th class='center'>DeelnemersNaam</th>
-                <th class='center'>Type</th>
-                <th class='center'>ProjectNaam</th>
-                <th class='center'>STATUS</th>
+<table id="deelnemers_table" class="highlight white-text responsive-table z-depth-3 ">
+    <thead class="blue-grey darken-3 ">
+        <tr>
+            <th class='center'>Type</th>
+            <th class='center'>ProjectNaam</th>
+            <th class='center'>STATUS</th>
 
 
-            </tr>
-        </thead>
-        <?php
-    $query =  mysqli_query($link,
-    "SELECT 
-    deelnemers_naam,
-    projecten.type,
+        </tr>
+    </thead>
+    <?php
+    $query =  mysqli_query(
+        $link,
+        "SELECT 
+    project_type.type_name,
     projecten.naam AS project,
     STATUS
 FROM
     deelnemers,
     projecten,
+    project_type,
     taken,
     deelnemers_per_taak
 WHERE
@@ -32,29 +32,23 @@ WHERE
         AND taken.taak_id = deelnemers_per_taak.taak_id
         AND deelnemers_per_taak.deelnemers_id = deelnemers.deelnemers_id
         AND deelnemers.deelnemers_id = $id
-        ORDER BY project ASC");  
+        GROUP BY project ASC"
+    );
 
-if (mysqli_num_rows($query) > 0) {
-    while ($row = mysqli_fetch_assoc($query)) 
-    {
-        echo "<tr>";
-                echo "<td class='center'>" . $row{
-                    'deelnemers_naam'} . "</td>";
-                    echo "<td class='center'>" . $row{
-                        'type'} . "</td>";   
-                        echo "<td class='center'>" . $row{
-                            'project'} . "</td>";
-                            $Status = $row['STATUS'];
-                            echo "<td class='center'>" . $Status . "</td>";
-                         
- 
-                    }
-                    
-                }
-        else{
-            echo mysqli_error($link);
+    if (mysqli_num_rows($query) > 0) {
+        while ($row = mysqli_fetch_assoc($query)) {
+            echo "<tr>";
+            echo "<td class='center'>" . $row{
+                'type_name'} . "</td>";
+            echo "<td class='center'>" . $row{
+                'project'} . "</td>";
+            $Status = $row['STATUS'];
+            echo "<td class='center'>" . $Status . "</td>";
         }
-        
-                ?>
-            </table>
-        </body>
+    } else {
+        echo mysqli_error($link);
+    }
+
+    ?>
+</table>
+</body>
