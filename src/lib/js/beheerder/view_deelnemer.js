@@ -2,7 +2,7 @@ const back_button = document.createElement("i")
 const edit = document.getElementById('edit')
 const taak_informatie = document.getElementById("deelnemer_informatie")
 const row = document.getElementsByClassName('col')[0]
-const type = document.getElementById("type_taak")
+const type = document.getElementById("deelnemers_type")
 back_button.className = 'material-icons small white-text back'
 back_button.innerHTML = 'arrow_back';
 back_button.id = 'back_button'
@@ -49,9 +49,10 @@ async function editFields() {
 }
 
 function displayDeelnemer(data) {
+    console.log(data)
     document.getElementById("deelnemers_naam").value = data.naam
     document.getElementById("deelnemers_email").value = data.email
-    document.getElementById("deelnemers_type").value = data.type
+    selectType(data, type)
     document.getElementById("deelnemers_adres").value = data.adres
     document.getElementById("deelnemers_telefoonnummer").value = data.telefoon
 }
@@ -72,4 +73,10 @@ function refreshSelect(el) {
     instance.destroy()
     el.classList.add('white-text')
     M.FormSelect.init(el)
+}
+
+function selectType(data, element) {
+    typeValue = [...element.options].map(el => el.value)
+    element.options[typeValue.findIndex(id => id == data.type)].setAttribute('selected', true)
+    element.options[typeValue.findIndex(id => id == data.type)].classList.add('white-text')
 }

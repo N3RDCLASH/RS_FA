@@ -3,31 +3,32 @@ include("../../db/conn.php");
 ?>
 
 <head>
-     <head>
-    <script>
-        function myFunction() {
-            // Declare variables
-            var input, filter, table, tr, td, i, txtValue;
-            input = document.getElementById("myInput");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("besteding_table");
-            tr = table.getElementsByTagName("tr");
 
-            // Loop through all table rows, and hide those who don't match the search query
-            for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[1];
-                if (td) {
-                    txtValue = td.textContent || td.innerText;
-                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        tr[i].style.display = "";
-                    } else {
-                        tr[i].style.display = "none";
+    <head>
+        <script>
+            function myFunction() {
+                // Declare variables
+                var input, filter, table, tr, td, i, txtValue;
+                input = document.getElementById("myInput");
+                filter = input.value.toUpperCase();
+                table = document.getElementById("besteding_table");
+                tr = table.getElementsByTagName("tr");
+
+                // Loop through all table rows, and hide those who don't match the search query
+                for (i = 0; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td")[1];
+                    if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
                     }
                 }
             }
-        }
-    </script>
-</head>
+        </script>
+    </head>
 
 <body>
     <nav class="dark-1">
@@ -42,9 +43,9 @@ include("../../db/conn.php");
         </div>
     </nav>
     <table id="projects_table" class="highlight responsive-table white-text z-depth-3 ">
-    
+
         <thead class="blue-grey darken-3 ">
-        
+
             <tr>
                 <th class='center'>ID</th>
                 <th class='center'>KwitantieID</th>
@@ -61,16 +62,31 @@ include("../../db/conn.php");
 
         <?php
 
-$id = $_GET['id'];
-        $query =  mysqli_query($link, 
+        $id = $_GET['id'];
+        $query =  mysqli_query(
+            $link,
 
-        "SELECT besteding_id, kwitantie.kwitantie_id, bestedingen.naam, bestedingen.type, bestedingen.aantal, bestedingen.prijs 
-        FROM bestedingen, kwitantie
-        WHERE 
-        kwitantie.bestedingen_id = bestedingen.besteding_id 
-        and 
-        bestedingen.besteding_id in (select besteding_id from  bestedingen, taken where bestedingen.taak_id = taken.taak_id AND taken.taak_id = $id)");
-       
+            "SELECT
+            bestedingen.besteding_id,
+            kwitantie.kwitantie_id,
+            bestedingen.naam,
+            bestedingen.type,
+            bestedingen.aantal,
+            bestedingen.prijs
+        FROM
+            bestedingen,
+            kwitantie
+        WHERE
+            kwitantie.besteding_id = bestedingen.besteding_id AND bestedingen.besteding_id IN(
+            SELECT
+                besteding_id
+            FROM
+                bestedingen,
+                taken
+            WHERE
+                bestedingen.taak_id = taken.taak_id AND taken.taak_id =$id)"
+        );
+
 
 
         if (mysqli_num_rows($query) > 0) {
@@ -80,7 +96,7 @@ $id = $_GET['id'];
                 echo "<td class='center'><b>" . $row{
                     'besteding_id'} . "</b></td>";
                 // echo "<td><a href='test.html'>Edit</a></td>";
-                 echo "<td class='center'><b>" . $row{
+                echo "<td class='center'><b>" . $row{
                     'kwitantie_id'} . "</b></td>";
                 echo "<td class='center'>" . $row{
                     'naam'} . "</td>";
@@ -96,7 +112,9 @@ $id = $_GET['id'];
                 //echo "<td class='center'><a class='amber waves-effect waves-light btn btn-tiny' href='view_project.php?id=" . $row['project_id'] . "'><i class='material-icons'>chevron_right</i></a></td>";
                 //echo "</tr>";
             }
-        };
+        } else {
+            echo mysqli_error($link);
+        }
 
         ?>
         <!-- <i class='tiny right material-icons'>arrow_forward</i>-->

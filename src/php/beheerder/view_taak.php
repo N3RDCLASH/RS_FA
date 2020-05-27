@@ -77,11 +77,7 @@ if (empty($_GET['id']) == true) {
 
                     <div class="modal-footer dark-2">
                         <div class="row">
-<<<<<<< HEAD
                             <button class="btn waves-effect waves-light col s10 offset-s1 primary" type="submit" id="submit_taak" value='test' name="opslaan" enabled>Verzenden
-=======
-                            <button class="btn waves-effect waves-light col s10 offset-s1 primary" type="submit" id="submit_taak" value='test' name="opslaan" disabled>Submit
->>>>>>> 279ba32813a72fd86670065ff18894b3ab857af1
                                 <i class="material-icons right">send</i>
                             </button>
                         </div>
