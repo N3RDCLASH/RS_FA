@@ -2,7 +2,7 @@
 require_once '../../db/conn.php';
 require_once '../scripts/session.php';
 require '../scripts/check_session.php';
-$_COOKIE['page'] = 'Gebruiker Overview';
+$_COOKIE['page'] = 'Deelnemers overzicht';
 
 if (empty($_GET['id']) == true) {
     header('location:gebruikers.php');

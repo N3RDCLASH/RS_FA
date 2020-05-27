@@ -2,7 +2,7 @@
 require_once '../../db/conn.php';
 require_once '../scripts/session.php';
 require '../scripts/check_session.php';
-$_COOKIE['page'] = 'Taak Overview';
+$_COOKIE['page'] = 'Taak Overzicht';
 
 if (empty($_GET['id']) == true) {
     header('location:projecten.php');
