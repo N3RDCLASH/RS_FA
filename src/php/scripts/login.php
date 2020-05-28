@@ -35,19 +35,17 @@ if (isset($_POST['action'])) {
                     }
                     switch ($type) {
                         case '0':
-                            if ($_SESSION["role"] = "beheerder") {
-
-                                echo $_SESSION['role'];
-                                // header('location:../beheerder/');
-                                break;
-                            }
+                            $_SESSION['role'] = "beheerder";
+                            echo "redirect overal_user";
+                            header('location:../beheerder/');
+                            break;
                         case '1':
-                            setcookie('role', "adminstratie", time() + 3600);
+                            $_SESSION['role'] = "administratie";
                             echo "redirect administratie";
                             header('location:../administratie/');
                             break;
                         case '2':
-                            setcookie('role', "financieel", time() + 3600);
+                            $_SESSION['role'] = "financieel";
                             echo "redirect financiele administratie 2";
                             header('location:../financieel/');
                             break;

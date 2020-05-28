@@ -32,7 +32,7 @@
             <li class="<?php if ($_COOKIE['page'] == 'Projecten Overzicht') {
                             echo 'primary';
                         }; ?>"><a href="projecten.php" class="white-text">Projecten </a></li>
-            <li class="<?php if ($_COOKIE['page'] == 'Deelnemers overzicht') {
+            <li class="<?php if ($_COOKIE['page'] == 'Deelnemers Overzicht') {
                             echo 'primary';
                         }; ?>"><a href="deelnemers.php" class="white-text">Deelnemers </a></li>
 

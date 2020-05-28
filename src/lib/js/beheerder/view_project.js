@@ -81,6 +81,8 @@ async function showProject(data) {
     omschrijving = document.getElementById('omschrijving')
     begin_datum = document.getElementById('begin_datum')
     eind_datum = document.getElementById('eind_datum')
+    let toggle = document.getElementById('switch')
+    project_status = await fetch(`../requests/get_status.php?id=${project_id}`).then(res => res.json());
 
     const labels = document.querySelectorAll("label")
     labels.forEach(label => {
@@ -96,6 +98,8 @@ async function showProject(data) {
     omschrijving.value = data.omschrijving
     begin_datum.value = data.datum_start
     eind_datum.value = data.datum_eind
+    project_status.status == "closed" ? toggle.checked = true : toggle.checked = false
+
 }
 
 
@@ -169,7 +173,7 @@ async function showTaak() {
         </span >
         <br>
     
-        <a class="waves-effect waves-light btn btn-tiny right amber" href="view_taak.php?id=${taak.id}">View</a>
+        <a class="waves-effect waves-light btn btn-tiny right amber" href="view_taak.php?id=${taak.id}">Bekijk</a>
         </div >
         </li > `
         // window.alert(JSON.stringify(taak.deelnemers.length))

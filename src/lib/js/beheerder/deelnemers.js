@@ -8,6 +8,8 @@ const deelnemers_table = document.getElementById('deelnemers_table')
 const row = document.getElementsByClassName('col')[0]
 row.appendChild(back_button)
 
+M.AutoInit()
+
 
 function showForm() {
     for (let x of document.getElementsByTagName("input")) {

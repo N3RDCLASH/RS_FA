@@ -8,6 +8,7 @@ const deelnemers_table = document.getElementById('deelnemers_table')
 const row = document.getElementsByClassName('col')[0]
 row.appendChild(back_button)
 
+M.autoInit()
 
 function showForm() {
     instance = M.FormSelect.init(document.getElementById('deelnemers_type'))
