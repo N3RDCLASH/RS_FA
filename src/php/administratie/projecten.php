@@ -2,7 +2,7 @@
 require_once '../../db/conn.php';
 require_once '../scripts/session.php';
 require '../scripts/check_session.php';
-$_COOKIE['page'] = 'Projecten';
+$_COOKIE['page'] = 'Projecten Overzicht';
 ?>
 
 <!DOCTYPE html>
@@ -31,21 +31,10 @@ $_COOKIE['page'] = 'Projecten';
 
     <div id="main">
         <div class="row">
-            <!-- <div class="col m9 offset-m3">
-                <div class="nav-wrapper" id="search_bar">
-                    <form>
-                        <div class="input-field">
-                            <input id="search" type="search" required>
-                            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                            <i class="material-icons">close</i>
-                        </div>
-                    </form>
-                </div>
-            </div> -->
         </div>
 
         <div class="row">
-            <div class="col s12">
+            <div class="col s12 table_container">
                 <?php
                 include 'components/projecten_table.php';
                 ?>
@@ -53,9 +42,9 @@ $_COOKIE['page'] = 'Projecten';
         </div>
         <div class="row">
             <form action="../requests/create_project.php" method="POST">
-                <div id="add_form" class="col m6 s10 offset-s1 offset-m3 white z-depth-3 flip-in-ver-right ">
+                <div id="add_form" class="col m6 s10 offset-s1 offset-m3 white z-depth-3 flip-in-ver-right dark-2 ">
 
-                    <h5 class="center ">Project Informatie</h5>
+                    <h5 class="center white-text">Project Informatie</h5>
 
                     <div class="row">
                         <div class="input-field col s8 offset-s2">
@@ -73,11 +62,11 @@ $_COOKIE['page'] = 'Projecten';
 
                     <div class="input-field col s8 offset-s2">
                         <select name="type" id="type_project">
-                            <option value="" disabled selected>Kies het type project.</option>
+                            <option value="" disabled selected>Selecteer het type project.</option>
                             <option class="" value="0">Evenement</option>
                             <option class="" value="1">Werkzaamheid</option>
                         </select>
-                        <label>Kies Project</label>
+                        <label>Type project</label>
                     </div>
 
                     <div class="row">
@@ -94,7 +83,7 @@ $_COOKIE['page'] = 'Projecten';
                         </div>
                     </div>
 
-                    <button class="btn waves-effect waves-light col m8 s10 offset-s1 offset-m2 " type="submit" name="action">Submit
+                    <button class="btn primary waves-effect waves-light col m8 s10 offset-s1 offset-m2 " type="submit" name="action">Verzenden
                         <i class="material-icons right">send</i>
                     </button>
 

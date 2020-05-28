@@ -4,7 +4,7 @@ require_once '../scripts/session.php';
 require '../scripts/check_session.php';
 include('../requests/stats/get_aantal_projecten_per_status.php');
 setcookie('page', '', time() + 3600);
-$_COOKIE['page'] = 'Dashboard';
+$_COOKIE['page'] = 'Grafieken Overzicht';
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +29,7 @@ $_COOKIE['page'] = 'Dashboard';
 <body class="">
     <ul id="dropdown1" class="dropdown-content">
         <li>
-            <a href="../scripts/logout.php">Log Out</a>
+            <a href="../scripts/logout.php">Uitloggen</a>
         </li>
     </ul>
     <?php
@@ -103,13 +103,13 @@ $_COOKIE['page'] = 'Dashboard';
         </div>
 
         <div class="row">
-            <div class="col m7 z-depth-3 chart2" id="chart_container">
+            <div class="col m7 z-depth-3 chart2 chart2-sm" id="chart_container">
                 <div class="chart-container" style="position: relative; height:60vh; width:45vw">
                     <canvas id="Chart2"></canvas>
                 </div>
             </div>
-            <div class="col m4 z-depth-3 chart1" id="chart_container">
-                <div class="chart-container" style="position: relative; height:60vh; width:22vw">
+            <div class="col m4 z-depth-3 chart1 chart1-sm" id="chart_container">
+                <div class="chart-container" style="position: relative; height:60vh; width:23vw">
                     <canvas id="Chart1"></canvas>
                 </div>
             </div>
@@ -141,6 +141,10 @@ $_COOKIE['page'] = 'Dashboard';
                 ys
             }
         }
+        var gradientFill = ctx.createLinearGradient(500, 0, 100, 0);
+        gradientFill.addColorStop(0, "rgba(128, 182, 244, 0.6)");
+        gradientFill.addColorStop(1, "rgba(244, 144, 128, 0.6)");
+
 
         async function ChartIt() {
             let ctx = document.getElementById('Chart1');
@@ -155,8 +159,9 @@ $_COOKIE['page'] = 'Dashboard';
                         fill: true,
                         data: data.ys,
                         backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)'
+                            'rgba(240,23,103, 0.7)',
+                            'rgba(69,72,230, 0.7)'
+
                         ]
                     }]
                 },
@@ -185,10 +190,10 @@ $_COOKIE['page'] = 'Dashboard';
                         fill: true,
                         data: data2.ys,
                         backgroundColor: [
-                            'rgba(54, 162, 235, 0.2)'
+                            'rgba(69,72,230, 0.3)'
                         ],
                         borderColor: 'rgba(255, 99, 132, 1)',
-                        borderWidth: 1
+                        borderWidth: 2
                     }]
                 },
                 options: {

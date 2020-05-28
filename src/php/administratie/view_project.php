@@ -2,9 +2,9 @@
 require_once '../../db/conn.php';
 require_once '../scripts/session.php';
 require '../scripts/check_session.php';
-$_COOKIE['page'] = 'Project Overview';
+$_COOKIE['page'] = 'Project Overzicht';
 
-if (empty($_GET['id'] == true)) {
+if (empty($_GET['id']) == true) {
     header('location:projecten.php');
 } else {
     if (is_numeric($_GET['id']) == false) {
@@ -48,57 +48,66 @@ if (empty($_GET['id'] == true)) {
 
             <!-- Project Informatie Display -->
 
-            <div class="col m5 s10 offset-m1 offset-s1 z-depth-3 flip-in-ver-right white" id="project_informatie" data-id="<?php echo $_GET['id'] ?>">
-                <h5 class="center">Project Informatie</h5>
-                <div class="row">
-                    <div class="input-field col s8 offset-s2">
-                        <input placeholder="naam" id="naam" name="naam" type="text" class="validate" disabled>
-                        <label for="naam" class="active">Naam</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s8 offset-s2">
-                        <textarea id="omschrijving" name="omschrijving" id="textarea1" cols="30" rows="10" class="materialize-textarea" disabled></textarea>
-                        <label for="omschrijving" class="active">Omschrijving</label>
-                    </div>
-                </div>
-                <div class="input-field col s8 offset-s2">
-                    <select id="type" disabled>
-                        <option value="" disabled selected>Kies het type project.</option>
-                        <option class="" value="0">Evenement</option>
-                        <option class="" value="1">Werkzaamheid</option>
-                    </select>
-                    <label class="active">Project Type</label>
-                </div>
-                <div class="row">
-                    <div class="input-field col s8 offset-s2">
-                        <input id="begin_datum" name="begin_datum" type="text" class="validate  datepicker " disabled>
-                        <label for="begin_datum" class="active">Begin Datum</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s8 offset-s2">
-                        <input id="eind_datum" name="eind_datum" type="text" class="validate datepicker" disabled>
-                        <label for="eind_datum" class="active">Eind Datum</label>
-                    </div>
-                </div>
-            </div>
-            <div class="col m4 s12 flip-in-ver-right" id="project_taken">
+            <div class="col m5 s10 offset-m1 offset-s1 z-depth-3 flip-in-ver-right dark-2" id="project_informatie" data-id="<?php echo $_GET['id'] ?>">
+                <form id="projecten_form" action="../requests/update_project.php?id=<?php echo $_GET['id'] ?>" method="post">
+                    <h5 class="center white-text">Project Informatie</h5>
+                    <i class="right primary-text material-icons tooltipped" data-position="right" data-tooltip="Edit Project" id="edit">edit</i>
 
-                <div class="col s12 m12 z-depth-3 white" id="taken">
-                    <h5 class="center">Taken</h5>
+                    <div class="row">
+                        <div class="input-field col s8 offset-s2">
+                            <input placeholder="naam" id="naam" name="naam" type="text" class="validate" disabled>
+                            <label for="naam" class="active">Naam</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s8 offset-s2">
+                            <textarea id="omschrijving" name="omschrijving" form="projecten_form" id="textarea1" cols="30" rows="10" class="materialize-textarea" disabled></textarea>
+                            <label for="omschrijving" class="active">Omschrijving</label>
+                        </div>
+                    </div>
+                    <div class="input-field col s8 offset-s2">
+                        <select id="type" name="type" disabled>
+                            <option value="" disabled selected>Kies het type project.</option>
+                            <option class="" value="0">Evenement</option>
+                            <option class="" value="1">Werkzaamheid</option>
+                        </select>
+                        <label class="active">Type Project</label>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s8 offset-s2">
+                            <input id="begin_datum" name="begin_datum" type="text" class="validate  datepicker " disabled>
+                            <label for="begin_datum" class="active">Begin Datum</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s8 offset-s2">
+                            <input id="eind_datum" name="eind_datum" type="text" class="validate datepicker" disabled>
+                            <label for="eind_datum" class="active">Eind Datum</label>
+                        </div>
+                    </div>
+
+                    <button id="submit" disabled class="btn waves-effect primary waves-light col m8 s10 offset-s1 offset-m2 " type="submit" name="opslaan">Bijwerken
+                        <i class="material-icons right">send</i>
+                    </button>
+                </form>
+            </div>
+            <div class="col m4 s10 offset-s1 offset-m1 flip-in-ver-right" id="project_taken">
+
+                <div class="col s12 m12 z-depth-3 dark-2" id="taken">
+                    <h5 class="center white-text">Taken</h5>
                     <ul class="collapsible" id='taken_lijst'>
                     </ul>
-                    <i class="material-icons right modal-trigger" id="add_taak" href="#modal1">add</i>
+                    <i class="material-icons right modal-trigger white-text" id="add_taak" href="#modal1">add</i>
                 </div>
+
             </div>
         </div>
     </div>
 
     <!-- Taak Registratie Modal -->
-    <div id="modal1" class="modal">
+    <div id="modal1" class="modal dark-2">
         <div class="modal-content">
-            <h4>Taken Registratie</h4>
+            <h4 class="white-text">Taken Registratie</h4>
             <form action="../requests/create_taak.php" method="post" name="taken_form" id="taken_form">
                 <div class="row">
                     <div class="input-field col s12">
@@ -112,13 +121,12 @@ if (empty($_GET['id'] == true)) {
                     <div class="input-field col s12">
                         <select id="type_taak" name="type_taak">
                             <option value="" disabled selected>Type Taak</option>
-                            <option class="" value="3">Uitvoering</option>
-                            <option class="" value="4">UItgave</option>
+                            <option class="" value="3">Dienst</option>
+                            <option class="" value="4">Materiaal</option>
                         </select>
                     </div>
                     <div class="input-field col s12">
                         <select id="taak_verantwoordelijke" name="taak_verantwoordelijke[]" multiple>
-                            <option value="" disabled>Selecteer de deelnemers</option>
                         </select>
                         <label class="active">Verantwoordelijke</label>
                     </div>
@@ -131,9 +139,9 @@ if (empty($_GET['id'] == true)) {
                         <label for="taak_prijs">Prijs</label>
                     </div>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer dark-2">
                     <div class="row">
-                        <button class="btn waves-effect waves-light col m12" type="submit" id="submit_taak" value='test' name="opslaan">Submit
+                        <button class="btn waves-effect waves-light col m12 primary" type="submit" id="submit_taak" value='test' name="opslaan">Submit
                             <i class="material-icons right">send</i>
                         </button>
                     </div>

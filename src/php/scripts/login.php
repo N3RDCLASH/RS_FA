@@ -20,10 +20,13 @@ if (isset($_POST['action'])) {
             // echo $type;
             // echo $type, $name, $_password;
             if (password_verify($password, $_password)) {
-                if ($type != null) {
+                if (isset($type)) {
                     session_start();
                     $_SESSION['user'] = $username;
                     $_SESSION['type'] = $type;
+
+
+
                     if ($_SESSION['user'] != null) {
                         echo 'welcome' . $_SESSION['user'];
                     }
@@ -31,16 +34,26 @@ if (isset($_POST['action'])) {
                         setcookie('username', $username, time() + 3600);
                     }
                     switch ($type) {
-                        case 0:
+                        case '0':
+                            $_SESSION['role'] = "beheerder";
                             echo "redirect overal_user";
+                            header('location:../beheerder/');
                             break;
-                        case 1:
+                        case '1':
+                            $_SESSION['role'] = "administratie";
                             echo "redirect administratie";
                             header('location:../administratie/');
                             break;
-                        case 2:
+                        case '2':
+                            $_SESSION['role'] = "financieel";
                             echo "redirect financiele administratie 2";
+                            header('location:../financieel/');
                             break;
+                    }
+                } else {
+                    echo "user type does not exist";
+                    if ($type == 0) {
+                        echo 'idk wtf is going on ';
                     }
                 }
             } else {

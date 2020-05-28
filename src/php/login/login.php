@@ -1,8 +1,7 @@
 <?php
 include '../scripts/session.php';
 if (isset($_SESSION['user'])) {
-    // echo $_SESSION['user'], $_SESSION['type'];
-    header('location:../administratie/home.php');
+    header('location:../../index.php');
 }
 ?>
 <!DOCTYPE html>
@@ -30,24 +29,26 @@ if (isset($_SESSION['user'])) {
         <div class="col s12 m8" id="col-left">
             <img src="../../lib/images/fin.jpg" id="lg_img" class="center">
         </div>
-        <div class="col s12  m4 blue-grey darken-2" id="col-right">
+        <div class="col s12 m4 blue-grey darken-2" id="col-right">
+            <!-- <!-- <img src="../../lib/images/logo.png" id="logo" class="center"> -->
+            <h1 class="white-text center">Log In</h1>
             <form class="col s10 offset-s1" id="form" action="../scripts/login.php" method="POST">
                 <div class="input-field col s12">
-                    <input placeholder="Enter Username" id="user_name" name="user_name" type="text" class="validate white-text" required>
-                    <label for="user_name">username</label>
+                    <input placeholder="Naam" id="user_name" name="user_name" type="text" class="validate white-text" required>
+                    <label for="user_name">Gebruikersnaam</label>
                 </div>
                 <div class="input-field col s12">
-                    <input placeholder="Enter Password" id="password" name="password" type="password" class="validate white-text" required>
-                    <label for="password">Last Name</label>
+                    <input placeholder="Vul uw wachtwoord in " id="password" name="password" type="password" class="validate white-text" required>
+                    <label for="password">Wachtwoord</label>
                 </div>
                 <div class="switch">
                     <label>
                         <input type="checkbox" name='check' value="test">
                         <span class="lever"></span>
-                        Remember me
+                        Wachtwoord onthouden
                     </label>
                 </div>
-                <button class="btn waves-effect waves-light col s12 cyan accent-4" id="submit" type="submit" name="action">Log In
+                <button class="btn waves-effect waves-light col s12 cyan accent-4" id="submit" type="submit" name="action">Inloggen
                     <i class="material-icons right">send</i>
                 </button>
         </div>

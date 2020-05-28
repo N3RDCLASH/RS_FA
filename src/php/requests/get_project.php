@@ -21,8 +21,8 @@ if (mysqli_num_rows($result) > 0) {
                 'datum_start'},
             "datum_eind" => $row{
                 'datum_eind'},
-            "status" => $row{
-                'status'}
+            // "status" => $row{
+            //     'status'}
         ];
     }
     mysqli_close($link);

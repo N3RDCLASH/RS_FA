@@ -6,7 +6,7 @@
 $host = "localhost";
 $user = "root";
 $pass = "";
-$db = "rs_fa";
+$db = "rs_fa_latest1";
 
 try {
     $link = mysqli_connect($host, $user, $pass, $db);
@@ -14,4 +14,3 @@ try {
     throw $th;
     echo mysqli_error($link);
 }
-?>
