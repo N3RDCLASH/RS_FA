@@ -31,17 +31,6 @@ $_COOKIE['page'] = 'Projecten Overzicht';
 
     <div id="main">
         <div class="row">
-            <!-- <div class="col m9 offset-m3">
-                <div class="nav-wrapper" id="search_bar">
-                    <form>
-                        <div class="input-field">
-                            <input id="search" type="search" required>
-                            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                            <i class="material-icons">close</i>
-                        </div>
-                    </form>
-                </div>
-            </div> -->
         </div>
 
         <div class="row">

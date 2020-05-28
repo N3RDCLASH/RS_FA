@@ -38,7 +38,6 @@ function selectProject(id) {
         return response.json()
     })
         .then(function (body) {
-            // console.table(body)
             response = body
             showProject(body)
         });
@@ -68,11 +67,8 @@ async function selectTaken() {
 
     }
 
-    // console.log(await data)
-    // window.alert(JSON.stringify(await data))
     return taken == [] ? console.log('leeg') : taken
 }
-// console.log(taken)
 
 // Display Project Data 
 async function showProject(data) {
@@ -98,8 +94,6 @@ async function showProject(data) {
     omschrijving.value = data.omschrijving
     begin_datum.value = data.datum_start
     eind_datum.value = data.datum_eind
-    project_status.status == "closed" ? toggle.checked = true : toggle.checked = false
-
 }
 
 
@@ -109,7 +103,6 @@ edit.addEventListener('click', editFields)
 
 async function editFields() {
     editable = !editable
-    console.log(editable)
     if (editable == true) {
         for (let e of project_informatie.getElementsByTagName('input')) {
             e.removeAttribute('disabled')
@@ -157,7 +150,6 @@ function refreshSelect(el) {
 // Display Taak Data
 async function showTaak() {
     const data = await selectTaken();
-    // console.log(data)
     taken_lijst.innerHTML = ''
     data.forEach((taak, i) => {
         taken_lijst.innerHTML +=
@@ -176,12 +168,7 @@ async function showTaak() {
         <a class="waves-effect waves-light btn btn-tiny right amber" href="view_taak.php?id=${taak.id}">Bekijk</a>
         </div >
         </li > `
-        // window.alert(JSON.stringify(taak.deelnemers.length))
-        // taak.deelnemers.forEach(deelnemer => console.log(deelnemer))
-        // console.log(taak)
         instance = document.getElementsByClassName('deelnemer_chips')[i]
-        // instance = M.Chips.getInstance(document.getElementById('chips'))
-        console.log(instance)
         for (const deelnemer of taak.deelnemers[0]) {
             if (deelnemer.length > 1) {
                 instance.innerHTML += `<div class="chip">${deelnemer}</div>`
@@ -197,7 +184,6 @@ add_taak.addEventListener('click', function () {
     fetch('../requests/get_deelnemers.php').then(res => {
         return res.json()
     }).then(body => {
-        // console.log(body)
         var selectList = document.getElementById("taak_verantwoordelijke");
         //Create and append the options
         var instance = M.FormSelect.getInstance(selectList)
@@ -209,16 +195,13 @@ add_taak.addEventListener('click', function () {
             option.value = body[i].id;
             option.text = body[i].naam;
             selectList.appendChild(option);
-            console.log(selectList)
         }
         instance = M.FormSelect.init(selectList);
-        // console.log(deelnemers)
     })
 })
 
 // Disable financial boxes
 document.getElementById('type_taak').addEventListener('change', () => {
-    console.log(document.getElementById('type_taak').value)
     if (document.getElementById('type_taak').value == 3) {
         document.getElementById('taak_aantal').setAttribute('disabled', true)
         document.getElementById('taak_prijs').setAttribute('disabled', true)
@@ -232,10 +215,8 @@ document.getElementById('type_taak').addEventListener('change', () => {
 document.getElementById('taken_form').addEventListener('submit', function (e) {
 
     e.preventDefault()
-    // console.log('test')
     tform = document.forms['taken_form']
     const formdata = new FormData(tform);
-    // console.log(verantwoordelijk)
     id = project_id
     fetch(`../requests/create_taak.php?id=${id}`, {
         method: 'POST',
@@ -243,7 +224,6 @@ document.getElementById('taken_form').addEventListener('submit', function (e) {
     }).then(res => {
         return res.text()
     }).then(data => {
-        console.log(data)
         let elem = document.getElementById('modal1')
         var instance = M.Modal.getInstance(elem)
         instance.close()

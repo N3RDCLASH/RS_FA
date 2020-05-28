@@ -43,7 +43,7 @@ WHERE
             echo "<td class='center'>" . $row{
                 'project'} . "</td>";
             $Status = $row['STATUS'];
-            echo "<td class='center'>" . $Status . "</td>";
+            echo "<td class='center'><i class='tiny " . (($Status == 'open') ? "red-text" : "green-text") . " center  material-icons'>check_circle</i></td>";
         }
     } else {
         echo mysqli_error($link);

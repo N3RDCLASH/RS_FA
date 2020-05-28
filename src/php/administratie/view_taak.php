@@ -65,10 +65,6 @@ if (empty($_GET['id']) == true) {
                                 <option class="" value="4">Materiaal</option>
                             </select>
                         </div>
-                        <!-- <div class="input-field col s10 offset-s1">
-                            <textarea id="taak_aantal" name="taak_aantal" type="text" class="materialize-textarea validate" disabled></textarea>
-                            <label class="white-text active" for="taak_aantal">Aantal</label>
-                        </div> -->
                         <div class="input-field col s10 offset-s1">
                             <textarea id="taak_prijs" name="taak_prijs" type="text" class="materialize-textarea validate" disabled></textarea>
                             <label class="white-text active" for="taak_prijs">Geschatte prijs</label>
@@ -77,7 +73,7 @@ if (empty($_GET['id']) == true) {
 
                     <div class="modal-footer dark-2">
                         <div class="row">
-                            <button class="btn waves-effect waves-light col s10 offset-s1 primary" type="submit" id="submit_taak" value='test' name="opslaan" enabled>Verzenden
+                            <button class="btn waves-effect waves-light col s10 offset-s1 primary" type="submit" id="submit_taak" value='test' name="opslaan" disabled>Verzenden
                                 <i class="material-icons right">send</i>
                             </button>
                         </div>
@@ -104,8 +100,8 @@ if (empty($_GET['id']) == true) {
 
     <script src="../../lib/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../../lib/materialize/js/materialize.min.js"></script>
-    <script type="text/javascript" src="../../lib/js/beheerder/app.js"></script>
-    <script type="text/javascript" src="../../lib/js/beheerder/view_taak.js"></script>
+    <script type="text/javascript" src="../../lib/js/administratie/app.js"></script>
+    <script type="text/javascript" src="../../lib/js/administratie/view_taak.js"></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
 
     <!-- TODO: Add SDKs for Firebase products that you want to use

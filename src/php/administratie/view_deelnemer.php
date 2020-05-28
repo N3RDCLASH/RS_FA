@@ -73,7 +73,7 @@ if (empty($_GET['id']) == true) {
 
                     </div>
 
-                    <button class="green primary btn waves-effect waves-light col m12 s12" id="submit" type="submit" name="opslaan" disabled>Submit
+                    <button class="green primary btn waves-effect waves-light col m12 s12" id="submit" type="submit" name="opslaan" disabled>Bijwerken
                         <i class="material-icons right">send</i>
                     </button>
             </div>
