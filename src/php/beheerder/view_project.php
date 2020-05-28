@@ -102,7 +102,7 @@ if (empty($_GET['id']) == true) {
                             <label for="eind_datum" class="active">Eind Datum</label>
                         </div>
                     </div>
-                    <button id="submit" disabled class="btn waves-effect primary waves-light col m8 s10 offset-s1 offset-m2 " type="submit" name="opslaan">Update
+                    <button id="submit" disabled class="btn waves-effect primary waves-light col m8 s10 offset-s1 offset-m2 " type="submit" name="opslaan">verzenden
                         <i class="material-icons right">send</i>
                     </button>
                 </form>
@@ -157,7 +157,7 @@ if (empty($_GET['id']) == true) {
                 </div>
                 <div class="modal-footer dark-2">
                     <div class="row">
-                        <button class="btn waves-effect waves-light col m12 primary" type="submit" id="submit_taak" value='test' name="opslaan">Submit
+                        <button class="btn waves-effect waves-light col m12 primary" type="submit" id="submit_taak" value='test' name="opslaan">verzenden
                             <i class="material-icons right">send</i>
                         </button>
                     </div>

@@ -121,8 +121,8 @@ $_COOKIE['page'] = 'Grafieken Overzicht';
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script> -->
     <script src="../../lib/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../../lib/materialize/js/materialize.min.js"></script>
-    <script type="text/javascript" src="../../lib/js/administratie/app.js"></script>
-    <script type="text/javascript" src="../../lib/js/administratie/home.js"></script>
+    <script type="text/javascript" src="../../lib/js/financieel/app.js"></script>
+    <script type="text/javascript" src="../../lib/js/financieel/home.js"></script>
     <script src="../../lib/js/node_modules/chart.js/dist/Chart.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", ChartIt)

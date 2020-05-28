@@ -107,8 +107,8 @@ $_COOKIE['page'] = 'Projecten Overzicht';
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script> -->
     <script src="../../lib/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../../lib/materialize/js/materialize.min.js"></script>
-    <script type="text/javascript" src="../../lib/js/beheerder/app.js"></script>
-    <script type="text/javascript" src="../../lib/js/beheerder/projecten.js"></script>
+    <script type="text/javascript" src="../../lib/js/financieel/app.js"></script>
+    <script type="text/javascript" src="../../lib/js/financieel/projecten.js"></script>
 
 </body>
 

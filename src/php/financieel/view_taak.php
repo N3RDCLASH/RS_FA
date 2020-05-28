@@ -116,8 +116,8 @@ if (empty($_GET['id']) == true) {
 
     <script src="../../lib/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../../lib/materialize/js/materialize.min.js"></script>
-    <script type="text/javascript" src="../../lib/js/beheerder/app.js"></script>
-    <script type="text/javascript" src="../../lib/js/beheerder/view_taak.js"></script>
+    <script type="text/javascript" src="../../lib/js/financieel/app.js"></script>
+    <script type="text/javascript" src="../../lib/js/financieel/view_taak.js"></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
 
     <!-- TODO: Add SDKs for Firebase products that you want to use

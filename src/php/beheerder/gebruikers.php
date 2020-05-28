@@ -39,7 +39,7 @@ $_COOKIE['page'] = 'Gebruikers Overzicht';
         <div class="row">
             <div class="col m7 offset-m3 z-depth-3" id="gebruikers">
                 <form id="" action="../requests/create_gebruiker.php" class="white-text" method="POST">
-                    <h5 class="center">Deelnemer gegevens</h5>
+                    <h5 class="center">Gebruiker gegevens</h5>
                     <div class="input-field col m12 s12">
                         <input type="text" name="gebruiker_naam" tabindex="1" size="10" placeholder="Naam" required autofocus>
                         <label for="gebruiker_naam">gebruikers naam</label>

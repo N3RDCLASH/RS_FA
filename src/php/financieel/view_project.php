@@ -123,8 +123,8 @@ if (empty($_GET['id']) == true) {
 
     <script src="../../lib/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../../lib/materialize/js/materialize.min.js"></script>
-    <script type="text/javascript" src="../../lib/js/beheerder/app.js"></script>
-    <script type="text/javascript" src="../../lib/js/beheerder/view_project.js"></script>
+    <script type="text/javascript" src="../../lib/js/financieel/app.js"></script>
+    <script type="text/javascript" src="../../lib/js/financieel/view_project.js"></script>
 </body>
 
 </html>
