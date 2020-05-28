@@ -37,7 +37,7 @@ $_COOKIE['page'] = 'Deelnemers Overzicht';
             </div>
         </div>
         <div class="row">
-            <div class="col m7 offset-m3 z-depth-3" id="deelnemers">
+            <div class="col m6 s10 offset-s1 offset-m3 white z-depth-3 flip-in-ver-right dark-2 " id="deelnemers">
                 <form id="" action="../requests/create_deelnemer.php" class="white-text" method="POST">
                     <h5 class="center white-text">Deelnemer gegevens</h5>
                     <div class="input-field col m12 s12">
@@ -73,7 +73,7 @@ $_COOKIE['page'] = 'Deelnemers Overzicht';
 
                     </div>
 
-                    <button class="green lighten-1 btn waves-effect waves-light col m12 s12" type="submit" name="opslaan">Verzenden
+                    <button class="primary  btn waves-effect waves-light col m12 s12" type="submit" name="opslaan">Verzenden
                         <i class="material-icons right">send</i>
                     </button>
                 </form>

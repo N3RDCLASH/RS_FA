@@ -5,6 +5,7 @@ back_button.id = 'back_button'
 back_button.onclick = showTable
 const gebruikers_form = document.getElementById('gebruikers')
 const gebruikers_table = document.getElementById('gebruikers_table')
+const search = document.getElementById('search')
 const row = document.getElementsByClassName('col')[0]
 row.appendChild(back_button)
 
@@ -30,13 +31,14 @@ function showForm() {
     gebruikers_form.style.display = 'block';
     gebruikers_form.classList.toggle('flip-in-ver-right', true)
     gebruikers_table.style.display = 'none';
-    // search.style.display = 'none';
+    search.style.display = 'none';
     back_button.style.setProperty('display', 'inline-block', 'important')
 }
 
 function showTable() {
     gebruikers_table.style.display = 'table'
     gebruikers_table.classList.toggle('flip-in-ver-right', true)
+    search.style.display = 'block';
     gebruikers_form.style.display = 'none'
     back_button.style.display = 'none'
 }

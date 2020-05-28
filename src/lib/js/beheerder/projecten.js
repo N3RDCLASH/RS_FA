@@ -7,7 +7,7 @@ const form = document.getElementById('add_form')
 const row = document.getElementsByClassName('col')[0]
 const info = document.getElementById('project_informatie')
 const taken = document.getElementById('project_taken')
-const search = document.getElementById('search_bar')
+const search = document.getElementById('search')
 let response
 let deelnemers = []
 const back_button = document.createElement("i")
@@ -26,14 +26,13 @@ function showForm() {
     form.style.display = 'block'
     form.classList.toggle('flip-in-ver-right', true)
     projects_table.style.display = 'none'
-    // deelnemers_table.style.display = 'none';
-    // search.style.display = 'none'
+    search.style.display = 'none'
     back_button.style.setProperty('display', 'inline-block', 'important')
 }
 
 function showTable() {
     projects_table.style.display = 'table'
-    // search.style.display = 'block'
+    search.style.display = 'block'
     projects_table.classList.toggle('flip-in-ver-right', true)
     form.style.display = 'none'
     back_button.style.display = 'none'

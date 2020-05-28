@@ -37,7 +37,7 @@ $_COOKIE['page'] = 'Gebruikers Overzicht';
             </div>
         </div>
         <div class="row">
-            <div class="col m7 offset-m3 z-depth-3" id="gebruikers">
+            <div class="col m6 s10 dark-2 offset-m3 z-depth-3" id="gebruikers">
                 <form id="" action="../requests/create_gebruiker.php" class="white-text" method="POST">
                     <h5 class="center">Gebruiker gegevens</h5>
                     <div class="input-field col m12 s12">
@@ -65,7 +65,7 @@ $_COOKIE['page'] = 'Gebruikers Overzicht';
 
 
 
-                    <button id="create_gebruikers" class="green lighten-1 btn waves-effect waves-light col m12 s12" type="submit" name="opslaan">Verzenden
+                    <button id="create_gebruikers" class="primary btn waves-effect waves-light col m12 s12" type="submit" name="opslaan">Verzenden
                         <i class="material-icons right">send</i>
                     </button>
                 </form>
@@ -82,7 +82,7 @@ $_COOKIE['page'] = 'Gebruikers Overzicht';
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script> -->
     <script src="../../lib/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../../lib/materialize/js/materialize.js"></script>
-    <script type="text/javascript" src="../../lib/js/administratie/app.js"></script>
+    <script type="text/javascript" src="../../lib/js/beheerder/app.js"></script>
     <script type="text/javascript" src="../../lib/js/beheerder/gebruikers.js"></script>
 </body>
 

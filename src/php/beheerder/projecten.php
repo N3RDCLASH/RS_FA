@@ -53,7 +53,7 @@ $_COOKIE['page'] = 'Projecten Overzicht';
         </div>
         <div class="row">
             <form action="../requests/create_project.php" method="POST">
-                <div id="add_form" class="col m6 s10 offset-s1 offset-m3 white z-depth-3 flip-in-ver-right dark-2 ">
+                <div id="add_form" class="col m6 s10 offset-s1 offset-m3 white z-depth-3 flip-in-ver-right dark-2">
 
                     <h5 class="center white-text">Project Informatie</h5>
 

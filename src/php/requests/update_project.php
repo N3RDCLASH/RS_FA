@@ -24,21 +24,23 @@ if (isset($_POST['opslaan'])) {
     $project_omschrijving = mysqli_real_escape_string($link, $_POST["omschrijving"]);
     $project_begin_datum = mysqli_real_escape_string($link, $_POST["begin_datum"]);
     $project_eind_datum = mysqli_real_escape_string($link, $_POST["eind_datum"]);
-    $switch = mysqli_real_escape_string($link, $_POST["switch"]);
+    $switch = ((!empty($_POST['switch'])) ? mysqli_real_escape_string($link, $_POST["switch"]) : null);
     ((isset($switch)) ? $switch = "closed" : $switch = "open");
+
+
     $query =
         "UPDATE `projecten`
-        SET
-          `project_id` = '$id',
-          `naam` = '$project_naam',
-          `omschrijving` = '$project_omschrijving',
-          `type` = '$project_type',
-          `datum_start` = '$project_begin_datum',
-          `datum_eind` = '$project_eind_datum',
-          `status`='$switch'
-        WHERE
-            project_id = '$id'; 
- ";
+            SET
+              `project_id` = '$id',
+              `naam` = '$project_naam',
+              `omschrijving` = '$project_omschrijving',
+              `type` = '$project_type',
+              `datum_start` = '$project_begin_datum',
+              `datum_eind` = '$project_eind_datum',
+              `status`='$switch'
+            WHERE
+                project_id = '$id'; 
+     ";
     executeQuery($link, $query);
 } else {
     echo "post var not set";

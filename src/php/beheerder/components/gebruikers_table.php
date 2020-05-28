@@ -21,7 +21,7 @@ include("../../db/conn.php");
 </head>
 
 <body>
-    <nav class="dark-1">
+    <nav id="search" class="dark-1">
         <div class="nav-wrapper">
             <form action="">
                 <div class="input-field">
@@ -39,8 +39,6 @@ include("../../db/conn.php");
                 <th>Gebruikernaamm</th>
                 <th>Type</th>
                 <th>Bekijk meer</th>
-
-
             </tr>
         </thead>
 

@@ -29,7 +29,7 @@ include("../../db/conn.php");
 </head>
 
 <body>
-    <nav class="dark-1">
+    <nav id="search" class="dark-1">
         <div class="nav-wrapper">
             <form action="">
                 <div class="input-field">

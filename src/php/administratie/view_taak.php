@@ -59,14 +59,14 @@ if (empty($_GET['id']) == true) {
                             <label class="white-text active" for="taak_omschrijving">Omschrijving</label>
                         </div>
                         <div class="input-field col s10 offset-s1">
-                            <select id="type_taak" name="type_taak" disabled>
+                            <select id="type_taak" name="type_taak" required disabled>
                                 <option value="" disabled selected>Selecteer Type Taak</option>
                                 <option class="" value="3">Dienst</option>
                                 <option class="" value="4">Materiaal</option>
                             </select>
                         </div>
                         <div class="input-field col s10 offset-s1">
-                            <textarea id="taak_prijs" name="taak_prijs" type="text" class="materialize-textarea validate" disabled></textarea>
+                            <textarea id="taak_prijs" name="taak_prijs" type="text" class="materialize-textarea validate" required disabled></textarea>
                             <label class="white-text active" for="taak_prijs">Geschatte prijs</label>
                         </div>
                     </div>

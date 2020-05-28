@@ -94,7 +94,7 @@ if (empty($_GET['id']) == true) {
         </div>
         <script src="../../lib/js/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="../../lib/materialize/js/materialize.js"></script>
-        <script type="text/javascript" src="../../lib/js/administratie/app.js"></script>
+        <script type="text/javascript" src="../../lib/js/beheerder/app.js"></script>
         <script type="text/javascript" src="../../lib/js/beheerder/view_deelnemer.js"></script>
         <script src="../../lib/js/node_modules/chart.js/dist/Chart.js"></script>
 

@@ -59,18 +59,14 @@ if (empty($_GET['id']) == true) {
                             <label class="white-text active" for="taak_omschrijving">Omschrijving</label>
                         </div>
                         <div class="input-field col s10 offset-s1">
-                            <select id="type_taak" name="type_taak" disabled>
+                            <select id="type_taak" name="type_taak" required disabled>
                                 <option value="" disabled selected>Selecteer Type Taak</option>
                                 <option class="" value="3">Dienst</option>
                                 <option class="" value="4">Materiaal</option>
                             </select>
                         </div>
-                        <!-- <div class="input-field col s10 offset-s1">
-                            <textarea id="taak_aantal" name="taak_aantal" type="text" class="materialize-textarea validate" disabled></textarea>
-                            <label class="white-text active" for="taak_aantal">Aantal</label>
-                        </div> -->
                         <div class="input-field col s10 offset-s1">
-                            <textarea id="taak_prijs" name="taak_prijs" type="text" class="materialize-textarea validate" disabled></textarea>
+                            <textarea id="taak_prijs" name="taak_prijs" type="text" class="materialize-textarea validate" required disabled></textarea>
                             <label class="white-text active" for="taak_prijs">Geschatte prijs</label>
                         </div>
                     </div>
@@ -101,15 +97,15 @@ if (empty($_GET['id']) == true) {
         </div>
     </div>
     <!--besteding -->
-    
-    <div class ="col S12 table_container">
-    <?php 
-    include 'components/besteding_table.php';
-    include 'components/besteding_modal.php';
-    include 'components/kwitantie_modal.php';
-    ?>
-          </div>
-    
+
+    <div class="col S12 table_container">
+        <?php
+        include 'components/besteding_table.php';
+        include 'components/besteding_modal.php';
+        include 'components/kwitantie_modal.php';
+        ?>
+    </div>
+
 
     <div class="fixed-action-btn">
         <a class=" green lighten-1 btn-floating btn-large waves-effect waves-light modal-trigger" href="#modal1"><i class="material-icons">add</i></a>

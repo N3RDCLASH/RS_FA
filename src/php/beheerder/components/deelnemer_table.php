@@ -8,8 +8,8 @@ $id = $_GET['id'];
     <thead class="blue-grey darken-3 ">
         <tr>
             <th class='center'>Type</th>
-            <th class='center'>ProjectNaam</th>
-            <th class='center'>STATUS</th>
+            <th class='center'>Project naam</th>
+            <th class='center'>Status</th>
 
 
         </tr>
@@ -43,7 +43,7 @@ WHERE
             echo "<td class='center'>" . $row{
                 'project'} . "</td>";
             $Status = $row['STATUS'];
-            echo "<td class='center'>" . $Status . "</td>";
+            echo "<td class='center'><i class='tiny " . (($Status == 'open') ? "red-text" : "green-text") . " center  material-icons'>check_circle</i></td>";
         }
     } else {
         echo mysqli_error($link);
