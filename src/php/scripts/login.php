@@ -24,6 +24,9 @@ if (isset($_POST['action'])) {
                     session_start();
                     $_SESSION['user'] = $username;
                     $_SESSION['type'] = $type;
+
+
+
                     if ($_SESSION['user'] != null) {
                         echo 'welcome' . $_SESSION['user'];
                     }
@@ -32,16 +35,21 @@ if (isset($_POST['action'])) {
                     }
                     switch ($type) {
                         case '0':
-                            echo "redirect overal_user";
-                            header('location:../beheerder/');
-                            break;
+                            if ($_SESSION["role"] = "beheerder") {
+
+                                echo $_SESSION['role'];
+                                // header('location:../beheerder/');
+                                break;
+                            }
                         case '1':
+                            setcookie('role', "adminstratie", time() + 3600);
                             echo "redirect administratie";
                             header('location:../administratie/');
                             break;
                         case '2':
+                            setcookie('role', "financieel", time() + 3600);
                             echo "redirect financiele administratie 2";
-                            header ('location:../financieel/');
+                            header('location:../financieel/');
                             break;
                     }
                 } else {

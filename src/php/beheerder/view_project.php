@@ -51,7 +51,7 @@ if (empty($_GET['id']) == true) {
             <div class="col m5 s10 offset-m1 offset-s1 z-depth-3 flip-in-ver-right dark-2" id="project_informatie" data-id="<?php echo $_GET['id'] ?>">
                 <form id="projecten_form" action="../requests/update_project.php?id=<?php echo $_GET['id'] ?>" method="post">
                     <h5 class="center white-text">Project Informatie</h5>
-
+                    <? echo $_SESSION['role'] ?>
                     <div class="switch">
                         <label>
                             open

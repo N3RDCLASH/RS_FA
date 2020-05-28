@@ -7,7 +7,7 @@ function executeQuery($link, $query)
     $id = mysqli_real_escape_string($link, $_GET["id"]);
     if (mysqli_query($link, $query) === TRUE) {
         mysqli_close($link);
-        header("location:../beheerder/kwitantie_modal.php?id=$id");
+        header("location:../" . $_SESSION['role'] . "/beheerder/kwitantie_modal.php?id=$id");
     } else {
         die($link->error);
     }
