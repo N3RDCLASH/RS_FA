@@ -101,6 +101,18 @@ if (empty($_GET['id']) == true) {
         </div>
     </div>
 
+    <!-- besteding -->
+    <div class="row">
+        <div class="col s12 table_container">
+            <?php
+            include 'components/besteding_table.php';
+            include 'components/besteding_modal.php';
+            include 'components/kwitantie_modal.php';
+            ?>
+
+        </div>
+    </div>
+
     <div class="fixed-action-btn">
         <a class=" green lighten-1 btn-floating btn-large waves-effect waves-light modal-trigger" href="#modal1"><i class="material-icons">add</i></a>
     </div>

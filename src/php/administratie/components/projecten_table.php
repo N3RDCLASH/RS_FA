@@ -10,29 +10,40 @@ include("../../db/conn.php");
             document.querySelectorAll('#projects_table tr:not(.header)').forEach((tr) => {
                 const anyMatch = [...tr.children]
                     .some(td => td.textContent.toUpperCase().includes(inputStr));
-                if (anyMatch) tr.style.removeProperty('display');
-                else tr.style.display = 'none';
+                if (anyMatch) {
+                    tr.style.removeProperty('display');
+                } else {
+                    tr.style.display = 'none';
+                }
             });
         }
     </script>
 </head>
 
 <body>
-
-    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="zoek naar een project..">
-
+    <nav class="dark-1">
+        <div class="nav-wrapper">
+            <form action="">
+                <div class="input-field">
+                    <input class="white-text" type="search" id="myInput" onkeyup="myFunction()" placeholder="Zoek naar een project..">
+                    <label class="label-icon" for="myInput"><i class="material-icons">search</i></label>
+                    <i class="material-icons ">close</i>
+                </div>
+            </form>
+        </div>
+    </nav>
 
     <table id="projects_table" class="highlight responsive-table white-text z-depth-3 ">
         <thead class="blue-grey darken-3 ">
             <tr>
-                <th>ID</th>
-                <th>Naam project</th>
-                <th>Project omschrijving</th>
-                <th>Soort project</th>
-                <th>Start Datum </th>
-                <th>Eind Datum</th>
-                <th>Status </th>
-                <th>See More</th>
+                <th class='center'>ID</th>
+                <th class='center'>Naam</th>
+                <th class='center'>Omschrijving</th>
+                <th class='center'>Type</th>
+                <th class='center'>Start Datum </th>
+                <th class='center'>Eind Datum</th>
+                <th class='center'>Status </th>
+                <th class='center'>Bekijk meer</th>
 
 
             </tr>
@@ -46,29 +57,23 @@ include("../../db/conn.php");
             while ($row = mysqli_fetch_assoc($query)) {
                 echo "<tr data-id=" . $row{
                     'project_id'} . ">";
-                echo "<td>" . $row{
-                    'project_id'} . "</td>";
+                echo "<td class='center'><b>" . $row{
+                    'project_id'} . "</b></td>";
                 // echo "<td><a href='test.html'>Edit</a></td>";
-                echo "<td>" . $row{
+                echo "<td class='center'>" . $row{
                     'naam'} . "</td>";
-                echo "<td>" . $row{
+                echo "<td class='center'>" . $row{
                     'omschrijving'} . "</td>";
-                echo "<td>" . $row{
+                echo "<td class='center'>" . $row{
                     'type_name'} . "</td>";
-                echo "<td>" . $row{
+                echo "<td class='center'>" . $row{
                     'datum_start'} . "</td>";
-                echo "<td>" . $row{
+                echo "<td class='center'>" . $row{
                     'datum_eind'} . "</td>";
-                if ($row{
-                    'status'} == 'open') {
-                    echo "<td class='center'><i class='tiny red-text material-icons'>check_circle</i> " . $row{
-                        'status'} . "</td>";
-                    // echo "</tr>";
-                } else {
-                    echo "<td class='center'><i class='tiny green-text material-icons'>check_circle</i> " . $row{
-                        'status'} . "</td>";
-                }
-                echo "<td><a class='amber waves-effect waves-light btn btn-tiny' href='view_project.php?id=" . $row['project_id'] . "'>view</a></td>";
+                echo "<td class='center'><i class='tiny " . (($row{
+                    'status'} == 'open') ? "red-text" : "green-text") . " center  material-icons'>check_circle</i></td>";
+                // echo "</tr>";
+                echo "<td class='center'><a class='amber waves-effect waves-light btn btn-tiny' href='view_project.php?id=" . $row['project_id'] . "'><i class='material-icons'>chevron_right</i></a></td>";
                 echo "</tr>";
             }
         };
@@ -76,4 +81,5 @@ include("../../db/conn.php");
         ?>
         <!-- <i class='tiny right material-icons'>arrow_forward</i>-->
     </table>
-</body>
+
+    <body>
