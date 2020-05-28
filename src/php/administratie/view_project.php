@@ -21,7 +21,7 @@ if (empty($_GET['id']) == true) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Overzicht administratie</title>
+    <title>Overzicht Administratie</title>
 
     <!-- local resources -->
     <link type="text/css" rel="stylesheet" href="../../lib/materialize/css/materialize.css" media="screen,projection" />
@@ -52,14 +52,7 @@ if (empty($_GET['id']) == true) {
                 <form id="projecten_form" action="../requests/update_project.php?id=<?php echo $_GET['id'] ?>" method="post">
                     <h5 class="center white-text">Project Informatie</h5>
 
-                    <div class="switch">
-                        <label>
-                            open
-                            <input id="switch" type="checkbox" name="switch" disabled>
-                            <span class="lever"></span>
-                            gesloten
-                        </label>
-                    </div>
+                   
 
                     <!-- <label>
                         <input type="checkbox" id="switch" name="switch" value="Open" />
@@ -68,7 +61,7 @@ if (empty($_GET['id']) == true) {
 
 
 
-                    <i class="right primary-text material-icons tooltipped" data-position="right" data-tooltip="Edit Project" id="edit">edit</i>
+                    <i class="right primary-text material-icons tooltipped" data-position="right" data-tooltip="Edit Project" id="edit"></i>
 
                     <div class="row">
                         <div class="input-field col s8 offset-s2">
@@ -102,9 +95,6 @@ if (empty($_GET['id']) == true) {
                             <label for="eind_datum" class="active">Eind Datum</label>
                         </div>
                     </div>
-                    <button id="submit" disabled class="btn waves-effect primary waves-light col m8 s10 offset-s1 offset-m2 " type="submit" name="opslaan">Update
-                        <i class="material-icons right">send</i>
-                    </button>
                 </form>
             </div>
             <div class="col m4 s10 offset-s1 offset-m1 flip-in-ver-right" id="project_taken">
@@ -167,8 +157,8 @@ if (empty($_GET['id']) == true) {
 
     <script src="../../lib/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../../lib/materialize/js/materialize.min.js"></script>
-    <script type="text/javascript" src="../../lib/js/administratie/app.js"></script>
-    <script type="text/javascript" src="../../lib/js/administratie/view_project.js"></script>
+    <script type="text/javascript" src="../../lib/js/beheerder/app.js"></script>
+    <script type="text/javascript" src="../../lib/js/beheerder/view_project.js"></script>
 </body>
 
 </html>
