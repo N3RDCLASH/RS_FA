@@ -49,7 +49,7 @@ if (empty($_GET['id']) == true) {
             <!-- Project Informatie Display -->
 
             <div class="col m5 s10 offset-m1 offset-s1 z-depth-3 flip-in-ver-right dark-2" id="project_informatie" data-id="<?php echo $_GET['id'] ?>">
-                <form id="projecten_form" action="../requests/update_project.php?id=<?php echo $_GET['id'] ?>" method="post">
+                <form id="projecten_form" action="../requests/update_project.php?id=<?php echo $_GET['id'] ?>&rid=finance" method="post">
                     <h5 class="center white-text">Project Informatie</h5>
 
                     <div class="switch">
@@ -119,7 +119,7 @@ if (empty($_GET['id']) == true) {
         </div>
     </div>
 
-   
+
 
     <script src="../../lib/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../../lib/materialize/js/materialize.min.js"></script>

@@ -4,6 +4,8 @@ const row = document.getElementsByClassName('col')[0]
 const taken_lijst = document.getElementById('taken_lijst')
 const type = document.getElementById("type")
 const edit = document.getElementById('edit')
+const toggle = document.getElementById('switch')
+const submit = document.getElementById('submit')
 back_button.className = 'material-icons small white-text back'
 back_button.innerHTML = 'arrow_back';
 back_button.id = 'back_button'
@@ -102,32 +104,18 @@ async function showProject(data) {
     omschrijving.value = data.omschrijving
     begin_datum.value = data.datum_start
     eind_datum.value = data.datum_eind
+    project_status.status == "closed" ? toggle.checked = true : toggle.checked = false
+
 }
 
 
 let editable = false
 // 
 edit.addEventListener('click', editFields)
-
-async function editFields() {
+function editFields() {
     editable = !editable
-    console.log(editable)
-    if (editable == true) {
-        for (let e of project_informatie.getElementsByTagName('input')) {
-            e.removeAttribute('disabled')
-        }
-        document.getElementById("omschrijving").removeAttribute("disabled")
-        type.removeAttribute('disabled')
-        document.getElementById("submit").removeAttribute('disabled')
-        refreshSelect(type)
-    } else if (editable == false) {
-        for (let e of project_informatie.getElementsByTagName('input')) {
-            e.setAttribute('disabled', true)
-        }
-        type.setAttribute('disabled', true)
-        document.getElementById("omschrijving").setAttribute("disabled", true)
-        document.getElementById("submit").setAttribute('disabled', true)
-    }
+    editable == true ? toggle.removeAttribute("disabled") : toggle.setAttribute("disabled", true)
+    editable == true ? submit.removeAttribute("disabled") : submit.setAttribute("disabled", true)
 
 }
 
@@ -193,64 +181,3 @@ async function showTaak() {
 
     })
 }
-
-// Create Verantwoordelijke Option Select
-add_taak.addEventListener('click', function () {
-    fetch('../requests/get_deelnemers.php').then(res => {
-        return res.json()
-    }).then(body => {
-        // console.log(body)
-        var selectList = document.getElementById("taak_verantwoordelijke");
-        //Create and append the options
-        var instance = M.FormSelect.getInstance(selectList)
-        instance.destroy()
-        selectList.innerHTML = '<option value="" disabled>Selecteer de deelnemers</option>'
-
-        for (var i = 0; i < body.length; i++) {
-            var option = document.createElement("option");
-            option.value = body[i].id;
-            option.text = body[i].naam;
-            selectList.appendChild(option);
-            console.log(selectList)
-        }
-        instance = M.FormSelect.init(selectList);
-        // console.log(deelnemers)
-    })
-})
-
-// Disable financial boxes
-document.getElementById('type_taak').addEventListener('change', () => {
-    console.log(document.getElementById('type_taak').value)
-    if (document.getElementById('type_taak').value == 3) {
-        document.getElementById('taak_aantal').setAttribute('disabled', true)
-        document.getElementById('taak_prijs').setAttribute('disabled', true)
-    } else {
-        document.getElementById('taak_aantal').removeAttribute('disabled')
-        document.getElementById('taak_prijs').removeAttribute('disabled')
-    }
-})
-
-// Create New Taak + Display new taak (Form Handling)
-document.getElementById('taken_form').addEventListener('submit', function (e) {
-
-    e.preventDefault()
-    // console.log('test')
-    tform = document.forms['taken_form']
-    const formdata = new FormData(tform);
-    // console.log(verantwoordelijk)
-    id = project_id
-    fetch(`../requests/create_taak.php?id=${id}`, {
-        method: 'POST',
-        body: formdata
-    }).then(res => {
-        return res.text()
-    }).then(data => {
-        console.log(data)
-        let elem = document.getElementById('modal1')
-        var instance = M.Modal.getInstance(elem)
-        instance.close()
-        selectProject(id)
-
-    })
-
-})

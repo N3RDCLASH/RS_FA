@@ -25,6 +25,7 @@ if (isset($_POST['opslaan'])) {
     $project_begin_datum = mysqli_real_escape_string($link, $_POST["begin_datum"]);
     $project_eind_datum = mysqli_real_escape_string($link, $_POST["eind_datum"]);
     $switch = ((!empty($_POST['switch'])) ? mysqli_real_escape_string($link, $_POST["switch"]) : null);
+    $role = ((!empty($_GET["rid"])) ? mysqli_real_escape_string($link, $_GET["rid"]) : null);
     ((isset($switch)) ? $switch = "closed" : $switch = "open");
 
 
@@ -41,7 +42,17 @@ if (isset($_POST['opslaan'])) {
             WHERE
                 project_id = '$id'; 
      ";
-    executeQuery($link, $query);
+    $query2 =
+        "UPDATE `projecten`
+            SET
+              `status`='$switch'
+            WHERE
+                project_id = '$id'; 
+     ";
+
+
+
+    ((isset($role)) ? executeQuery($link, $query2) : executeQuery($link, $query));
 } else {
     echo "post var not set";
 }
