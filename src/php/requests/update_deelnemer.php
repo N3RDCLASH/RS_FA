@@ -1,4 +1,5 @@
 <?php
+session_start();
 include '../../db/conn.php';
 echo $_POST['opslaan'];
 
@@ -7,7 +8,7 @@ function executeQuery($link, $query)
     $id = mysqli_real_escape_string($link, $_GET["id"]);
     if (mysqli_query($link, $query) === TRUE) {
         mysqli_close($link);
-        header("location:../beheerder/view_deelnemer.php?id=$id");
+        header("location:../" . $_SESSION['role'] . "/view_deelnemer.php?id=$id");
     } else {
         die($link->error);
     }

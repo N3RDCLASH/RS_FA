@@ -81,12 +81,6 @@ async function showProject(data) {
     omschrijving = document.getElementById('omschrijving')
     begin_datum = document.getElementById('begin_datum')
     eind_datum = document.getElementById('eind_datum')
-    project_status = await fetch(`../requests/get_status.php?id=${project_id}`).then(res => res.json())
-
-    if (project_status.status == "closed") {
-        edit.classList.replace("primary-text", "grey-text")
-        edit.removeEventListener("click", editFields)
-    }
 
     const labels = document.querySelectorAll("label")
     labels.forEach(label => {
