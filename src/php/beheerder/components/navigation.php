@@ -35,9 +35,6 @@
             <li class="<?php if ($_COOKIE['page'] == 'Deelnemers overzicht') {
                             echo 'primary';
                         }; ?>"><a href="deelnemers.php" class="white-text">Deelnemers </a></li>
-            <li class="<?php if ($_COOKIE['page'] == 'Gebruikers Overzicht') {
-                            echo 'primary';
-                        }; ?>"><a href="gebruikers.php" class="white-text">Gebruikers</a></li>
 
         </ul>
     </nav>
