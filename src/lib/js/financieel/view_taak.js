@@ -155,7 +155,7 @@ function uploadFile() {
             console.log("Upload succesvol")
             uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
                 document.getElementById("kwitantie_link").value = downloadURL
-                document.forms[1].submit();
+                document.forms[2].submit();
             });
         })
 }

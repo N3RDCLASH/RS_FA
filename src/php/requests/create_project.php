@@ -1,4 +1,6 @@
 <?php
+// echo"no error"
+session_start();
 include "../../db/conn.php";
 //error_reporting (E_ALL ^ E_NOTICE ^ E_WARNING);
 if (isset($_POST['action'])) {
@@ -12,7 +14,7 @@ if (isset($_POST['action'])) {
 
     if (!mysqli_query($link, $sql)) {
         echo mysqli_error($link);
-    };
+    }
     mysqli_close($link);
-    header("location:../beheerder/projecten.php");
+    header("location:../".$_SESSION['role']."/projecten.php");
 }

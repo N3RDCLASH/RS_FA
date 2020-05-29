@@ -7,8 +7,8 @@ $id = $_GET['id'];
 <table id="deelnemers_table" class="highlight white-text responsive-table z-depth-3 ">
     <thead class="blue-grey darken-3 ">
         <tr>
+            <th class='center'>Project Naam</th>
             <th class='center'>Type</th>
-            <th class='center'>Project naam</th>
             <th class='center'>Status</th>
 
 
@@ -39,9 +39,9 @@ WHERE
         while ($row = mysqli_fetch_assoc($query)) {
             echo "<tr>";
             echo "<td class='center'>" . $row{
-                'type_name'} . "</td>";
-            echo "<td class='center'>" . $row{
                 'project'} . "</td>";
+            echo "<td class='center'>" . $row{
+                'type_name'} . "</td>";
             $Status = $row['STATUS'];
             echo "<td class='center'><i class='tiny " . (($Status == 'open') ? "red-text" : "green-text") . " center  material-icons'>check_circle</i></td>";
         }

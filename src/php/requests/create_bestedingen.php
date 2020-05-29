@@ -1,5 +1,6 @@
 
 <?php
+session_start();
 include "../../db/conn.php";
 $id = $_GET["id"];
 //error_reporting (E_ALL ^ E_NOTICE ^ E_WARNING);
@@ -22,7 +23,7 @@ if (!mysqli_query($link, $sql)) {
     $sql2 = "INSERT INTO `kwitantie`(`besteding_id`, `kwitantie_titel`,`kwitantie_prijs`, `kwitantie_file`) VALUES ('$besteding_id','$naam','$prijs','$kwitantie_link')";
     if (mysqli_query($link, $sql2)) {
         mysqli_close($link);
-        header("location:../beheerder/view_taak.php?id=" . $id);
+        header("location:../" . $_SESSION['role'] . "/view_taak.php?id=" . $id);
     } else {
         echo mysqli_error($link);
     }

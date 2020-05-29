@@ -26,14 +26,14 @@
                 <div class="file-field col s10 offset-s1 input-field">
                     <div class="btn">
                         <span>Documenten</span>
-                        <input type="file" multiple>
+                        <input id="kwitantie_file" type="file" multiple>
                     </div>
                     <div class="file-path-wrapper">
-                        <input class="file-path validate" type="text" placeholder=" voeg 1 of meer documenten toe">
+                        <input class="file-path validate" id="kwitantie_link" name="kwitantie_link" type="text" placeholder=" voeg 1 of meer documenten toe">
                     </div>
                 </div>
 
-                <button class="btn waves-effect waves-light col s10 offset-s1 primary" type="submit" id="submit_taak" value='test' name="save">Verzenden
+                <button class="btn waves-effect waves-light col s10 offset-s1 primary" type="submit" id="submit_besteding" value='test' name="save">Verzenden
                     <i class="material-icons right">send</i>
                 </button>
             </div>

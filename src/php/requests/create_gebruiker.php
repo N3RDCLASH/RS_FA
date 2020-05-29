@@ -1,4 +1,5 @@
 <?php
+session_start();
 include '../../db/conn.php';
 echo $_POST['opslaan'];
 if (isset($_POST['opslaan'])) {
@@ -13,13 +14,13 @@ if (isset($_POST['opslaan'])) {
         $query = "INSERT INTO `user`(`user_type`, `user_name`, `user_password`) VALUES('$gebruikers_type','$gebruikers_naam','$gebruikers_password')";
         if (mysqli_query($link, $query) === TRUE) {
             mysqli_close($link);
-            header("location:../beheerder/gebruikers.php");
+            header("location:../" . $_SESSION['role'] . "/gebruikers.php");
         } else {
             die($link->error);
         }
     } else {
         echo "passwords do not match";
     }
-}else{
+} else {
     echo "post var not set";
 }

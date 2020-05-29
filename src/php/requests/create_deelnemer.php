@@ -1,4 +1,5 @@
 <?php
+session_start();
 include '../../db/conn.php';
 
 if (isset($_POST['opslaan'])) {
@@ -11,7 +12,7 @@ if (isset($_POST['opslaan'])) {
 
     if (mysqli_query($link, $query) === TRUE) {
         mysqli_close($link);
-        header("location:../deelnemers.php");
+        header("location:../" . $_SESSION['role'] . "/deelnemers.php");
     } else {
         die($link->error);
     }
