@@ -1,6 +1,6 @@
 # RS_FA
 
-A school project written in PHP & JS that keeps track of the financial administration of NATIN.
+A school project written in PHP & Javascript that keeps track of the financial administration of NATIN.
 
 # What I Learned
 
