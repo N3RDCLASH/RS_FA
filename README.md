@@ -14,3 +14,7 @@ A school project written in PHP & JS that keeps track of the financial administr
 * Http requests  (fetch api)
 * Ternary operators (statement?true:fals)
 * Nullish coalescing (statement?? Value if null)
+
+## PHP
+
+
