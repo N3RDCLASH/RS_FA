@@ -12,8 +12,8 @@ A school project written in PHP & JS that keeps track of the financial administr
 * Object destructuring 
 * Async / Await (asynchronous programming)
 * Http requests  (fetch api)
-* Ternary operators (statement?true:fals)
-* Nullish coalescing (statement?? Value if null)
+* Ternary operators (statement?true:false)
+* Nullish coalescing (statement ?? Value if null)
 
 ## PHP
 
