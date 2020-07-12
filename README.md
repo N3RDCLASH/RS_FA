@@ -16,5 +16,8 @@ A school project written in PHP & Javascript that keeps track of the financial a
 * Nullish coalescing (statement ?? Value if null)
 
 ## PHP
-
+* Procedural Programming in PHP
+* Session Managememnt 
+* Cookies 
+* Database Operations 
 
