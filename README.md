@@ -21,3 +21,6 @@ A school project written in PHP & Javascript that keeps track of the financial a
 * Cookies 
 * Database Operations 
 
+# Preview
+
+![Dashboard](https://user-images.githubusercontent.com/35632308/87248909-50ba0a80-c432-11ea-83c7-8de1b806837c.png)
