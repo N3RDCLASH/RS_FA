@@ -15,6 +15,11 @@ A school project written in PHP & Javascript that keeps track of the financial a
 * Ternary operators (statement?true:false)
 * Nullish coalescing (statement ?? Value if null)
 
+## Firebase 
+
+* Firebase Javascript SDK
+* Used Firebase Storage to store kwitantie images as a CDN
+
 ## PHP
 * Procedural Programming in PHP
 * Session Managememnt 
